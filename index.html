@@ -53,6 +53,12 @@
 				display: block !important;
 			}
 
+			/* REMOVE ALL ACCENT/NAVY BLUE LINES UNDER HEADERS FROM HTML5 UP TEMPLATE */
+			header.major::after, .major::after {
+				background: transparent !important;
+				display: none !important;
+			}
+
 			section {
 				opacity: 0;
 				transform: translateY(30px);
@@ -162,11 +168,6 @@
 				background: radial-gradient(circle at 50% 0%, rgba(200, 200, 200, 0.25) 0%, rgba(255, 255, 255, 0.05) 60%, transparent 80%);
 				padding: 50px 25px;
 				border-radius: 20px;
-			}
-
-			/* Remove line underneath Projects heading */
-			#projects-header::after {
-				display: none !important;
 			}
 
 			/* Scrollable Project Image Carousels */
@@ -543,7 +544,7 @@
 								</section>
 
 							<section>
-									<header class="major" id="projects-header">
+									<header class="major">
 										<h2>Projects</h2>
 									</header>
 									<div class="posts">
