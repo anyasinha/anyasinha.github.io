@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -8,15 +7,21 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Force Poppins Font across every element */
+			/* Force Poppins Font across every element and ensure dark readable text */
 			*, body, h1, h2, h3, h4, h5, h6, p, a, span, input, select, textarea, .button {
 				font-family: 'Poppins', sans-serif !important;
+				color: #2c3e50;
 			}
-			/* Custom Interactive Scroll Animations & Styling */
+			p {
+				color: #4a5568 !important;
+				line-height: 1.8 !important;
+			}
+			/* Custom Interactive Scroll Animations & Layout */
 			section {
 				opacity: 0;
 				transform: translateY(30px);
 				transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+				margin-bottom: 5em !important;
 			}
 			section.visible {
 				opacity: 1;
@@ -24,8 +29,8 @@
 			}
 			.resume-box {
 				text-align: center;
-				margin: 50px 0;
-				padding: 30px;
+				margin: 60px 0 30px 0;
+				padding: 40px 20px;
 				background: rgba(29, 53, 87, 0.05);
 				border-radius: 8px;
 				border: 2px dashed #1d3557;
@@ -34,13 +39,29 @@
 				font-size: 1.25em !important;
 				padding: 15px 40px !important;
 			}
+			
+			/* Modern Timeline Design for Experience */
+			.timeline {
+				position: relative;
+				margin: 40px 0 20px 20px;
+				padding-left: 30px;
+				border-left: 3px solid #1d3557;
+			}
 			.experience-item {
-				margin-bottom: 3em;
-				background: #ffffff;
-				padding: 25px;
-				border-radius: 8px;
-				box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-				border: 1px solid #f0f0f0;
+				position: relative;
+				margin-bottom: 3.5em;
+			}
+			.experience-item::before {
+				content: '';
+				position: absolute;
+				left: -37px;
+				top: 5px;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				background: #1d3557;
+				border: 3px solid #ffffff;
+				box-shadow: 0 0 0 2px #1d3557;
 			}
 			.experience-header {
 				display: flex;
@@ -48,15 +69,16 @@
 				align-items: flex-start;
 				flex-wrap: wrap;
 				gap: 10px;
-				margin-bottom: 0.5em;
+				margin-bottom: 0.6em;
 			}
 			.experience-item h3 {
-				color: #1d3557;
+				color: #1d3557 !important;
 				margin-bottom: 0;
+				font-weight: 600;
 			}
 			.exp-date {
 				font-size: 0.85em;
-				color: #1d3557;
+				color: #1d3557 !important;
 				font-weight: 600;
 				background: rgba(29, 53, 87, 0.08);
 				padding: 4px 10px;
@@ -64,8 +86,8 @@
 			}
 			.exp-image-box {
 				margin-top: 15px;
-				width: 100%;
-				height: 180px;
+				max-width: 400px;
+				height: 160px;
 				background: #f8f9fa;
 				border: 2px dashed #cbd5e1;
 				border-radius: 6px;
@@ -73,12 +95,12 @@
 				align-items: center;
 				justify-content: center;
 				color: #64748b;
-				font-size: 0.9em;
+				font-size: 0.85em;
 				font-weight: 500;
 			}
 			.project-date {
 				font-size: 0.85em;
-				color: #1d3557;
+				color: #1d3557 !important;
 				font-weight: 600;
 				margin-bottom: 0.5em;
 				display: block;
@@ -86,30 +108,34 @@
 			/* Modern Navy Theme Overrides */
 			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
 				background-color: #1d3557 !important;
+				color: #ffffff !important;
 			}
 			a.logo strong, .project-date {
 				color: #1d3557 !important;
 			}
 			.button.primary {
 				background-color: #1d3557 !important;
+				color: #ffffff !important;
 			}
-			/* Hero Header Flex Box for Status Tag */
+			/* Hero Header Flex Box for Status Tag positioned right and higher */
 			.hero-title-wrapper {
 				display: flex;
-				align-items: center;
-				justify-content: flex-start;
+				align-items: flex-start;
+				justify-content: space-between;
 				flex-wrap: wrap;
-				gap: 20px;
+				gap: 15px;
+				margin-top: -10px;
 			}
 			.status-badge {
 				background: #1d3557;
-				color: #ffffff;
-				padding: 8px 16px;
+				color: #ffffff !important;
+				padding: 10px 18px;
 				border-radius: 20px;
 				font-size: 0.9em;
 				font-weight: 500;
 				letter-spacing: 0.5px;
-				box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+				text-align: right;
 			}
 		</style>
 	</head>
@@ -130,17 +156,19 @@
 									</ul>
 								</header>
 
-							<!-- Banner (No image placeholder next to name, badge on the right) -->
+							<!-- Banner -->
 								<section id="banner" class="visible">
 									<div class="content" style="width: 100%;">
 										<header>
 											<div class="hero-title-wrapper">
-												<h1>Hi, I’m Anya!</h1>
+												<div>
+													<h1 style="color: #1d3557; margin-bottom: 5px;">Hi, I’m Anya!</h1>
+													<p style="font-size: 1.35em; font-weight: 600; color: #1d3557 !important; margin-top: 0;">Where Marketing Meets Metrics</p>
+												</div>
 												<span class="status-badge">Data Cleaning Intern @ MacroAsia</span>
 											</div>
-											<p style="margin-top: 15px; font-size: 1.4em; font-weight: 600; color: #1d3557;">Where Marketing Meets Metrics</p>
 										</header>
-										<ul class="actions" style="margin-top: 20px;">
+										<ul class="actions" style="margin-top: 25px;">
 											<li><a href="#experience" class="button big primary">View Work</a></li>
 											<li><a href="mailto:anyasinha18@gmail.com" class="button big">Get in Touch</a></li>
 										</ul>
@@ -156,111 +184,113 @@
 										<article>
 											<span class="icon solid fa-graduation-cap"></span>
 											<div class="content">
-												<h3>Asian Institute of Management</h3>
+												<h3 style="color: #1d3557;">Asian Institute of Management</h3>
 												<p>Junior (3rd Year) pursuing a double degree in Data Science & Business Administration. Focusing on quantitative methods, business strategy, and analytical problem-solving.</p>
 											</div>
 										</article>
 										<article>
 											<span class="icon solid fa-laptop-code"></span>
 											<div class="content">
-												<h3>University of Houston</h3>
+												<h3 style="color: #1d3557;">University of Houston</h3>
 												<p>Concentrating in Management Information Systems. Bridging technical database knowledge with enterprise systems and marketing operations.</p>
 											</div>
 										</article>
 									</div>
 								</section>
 
-							<!-- Experience & Leadership Section -->
+							<!-- Experience & Leadership Section (Timeline Layout) -->
 								<section id="experience">
 									<header class="major">
 										<h2>Experience & Leadership</h2>
 									</header>
 									
-									<div class="experience-item">
-										<div class="experience-header">
-											<h3>Data Cleaning Intern | MacroAsia Corporation</h3>
-											<span class="exp-date">Aug 2026 - Present</span>
+									<div class="timeline">
+										<div class="experience-item">
+											<div class="experience-header">
+												<h3>Data Cleaning Intern | MacroAsia Corporation</h3>
+												<span class="exp-date">Aug 2026 - Present</span>
+											</div>
+											<p>Diving headfirst into dynamic supply chain operations! I love scrubbing vendor and material records to prep everything seamlessly for SAP migration. Tracking down duplicates and standardizing datasets with advanced Excel brings me so much joy because clean data truly powers brilliant business decisions!</p>
+											<div class="exp-image-box">
+												<span>[ Insert MacroAsia Photo Here ]</span>
+											</div>
 										</div>
-										<p>Diving headfirst into dynamic supply chain operations! I love scrubbing vendor and material records to prep everything seamlessly for SAP migration. Tracking down duplicates and standardizing datasets with advanced Excel brings me so much joy because clean data truly powers brilliant business decisions!</p>
-										<div class="exp-image-box">
-											<span>[ Insert MacroAsia Experience Photo Here ]</span>
-										</div>
-									</div>
 
-									<div class="experience-item">
-										<div class="experience-header">
-											<h3>President & Former Graphic Designer | AIM Explorer</h3>
-											<span class="exp-date">Jan 2025 - Present</span>
+										<div class="experience-item">
+											<div class="experience-header">
+												<h3>President & Former Graphic Designer | AIM Explorer</h3>
+												<span class="exp-date">Jan 2025 - Present</span>
+											</div>
+											<p>Steering our energetic marketing community with full creative passion! From spearheading exciting rebranding campaigns and setting vibrant visual identities as a designer to now leading our core team, I love turning fresh student stories into magnetic marketing gold that celebrates undergraduate life at AIM!</p>
+											<div class="exp-image-box">
+												<span>[ Insert AIM Explorer Photo Here ]</span>
+											</div>
 										</div>
-										<p>Steering our energetic marketing community with full creative passion! From spearheading exciting rebranding campaigns and setting vibrant visual identities as a designer to now leading our core team, I love turning fresh student stories into magnetic marketing gold that celebrates undergraduate life at AIM!</p>
-										<div class="exp-image-box">
-											<span>[ Insert AIM Explorer Photo Here ]</span>
-										</div>
-									</div>
 
-									<div class="experience-item">
-										<div class="experience-header">
-											<h3>Undersecretary General of Internal Affairs | AIM Model UN</h3>
-											<span class="exp-date">Aug 2025 - Present</span>
+										<div class="experience-item">
+											<div class="experience-header">
+												<h3>Undersecretary General of Internal Affairs | AIM Model UN</h3>
+												<span class="exp-date">Aug 2025 - Present</span>
+											</div>
+											<p>Orchestrating high-energy global discussions and dynamic training sessions with a smile! It is such a rewarding adventure helping delegates sharpen their public speaking, negotiation, and diplomatic flair while keeping all our internal operations running like clockwork.</p>
+											<div class="exp-image-box">
+												<span>[ Insert AIM MUN Photo Here ]</span>
+											</div>
 										</div>
-										<p>Orchestrating high-energy global discussions and dynamic training sessions with a smile! It is such a rewarding adventure helping delegates sharpen their public speaking, negotiation, and diplomatic flair while keeping all our internal operations running like clockwork.</p>
-										<div class="exp-image-box">
-											<span>[ Insert AIM MUN Photo Here ]</span>
-										</div>
-									</div>
 
-									<div class="experience-item">
-										<div class="experience-header">
-											<h3>Marketing Intern | Wadhwani Foundation</h3>
-											<span class="exp-date">Jun 2025 - Aug 2025</span>
+										<div class="experience-item">
+											<div class="experience-header">
+												<h3>Marketing Intern | Wadhwani Foundation</h3>
+												<span class="exp-date">Jun 2025 - Aug 2025</span>
+											</div>
+											<p>Kicked off my professional journey by championing empowering entrepreneurial initiatives! By analyzing the digital behaviors of modern moms, I helped launch hybrid outreach campaigns that successfully connected over 252K Filipinos with life-changing career upskilling paths.</p>
+											<div class="exp-image-box">
+												<span>[ Insert Wadhwani Foundation Photo Here ]</span>
+											</div>
 										</div>
-										<p>Kicked off my professional journey by championing empowering entrepreneurial initiatives! By analyzing the digital behaviors of modern moms, I helped launch hybrid outreach campaigns that successfully connected over 252K Filipinos with life-changing career upskilling paths.</p>
-										<div class="exp-image-box">
-											<span>[ Insert Wadhwani Foundation Photo Here ]</span>
-										</div>
-									</div>
 
-									<div class="experience-item">
-										<div class="experience-header">
-											<h3>Duolingo English Test Ambassador</h3>
-											<span class="exp-date">Nov 2025 - Jul 2026</span>
+										<div class="experience-item">
+											<div class="experience-header">
+												<h3>Duolingo English Test Ambassador</h3>
+												<span class="exp-date">Nov 2025 - Jul 2026</span>
+											</div>
+											<p>Spreading contagious enthusiasm for global language learning! Crafting lively promotional content allowed me to connect with a thriving community of over 40K followers, cheering test-takers on as they crossed global communication milestones.</p>
+											<div class="exp-image-box">
+												<span>[ Insert Duolingo Photo Here ]</span>
+											</div>
 										</div>
-										<p>Spreading contagious enthusiasm for global language learning! Crafting lively promotional content allowed me to connect with a thriving community of over 40K followers, cheering test-takers on as they crossed global communication milestones.</p>
-										<div class="exp-image-box">
-											<span>[ Insert Duolingo Photo Here ]</span>
-										</div>
-									</div>
 
-									<div class="experience-item">
-										<div class="experience-header">
-											<h3>Scholar & Community Leader | DataCamp x Data Engineering Pilipinas</h3>
-											<span class="exp-date">Jun 2025 - Present</span>
+										<div class="experience-item">
+											<div class="experience-header">
+												<h3>Scholar & Community Leader | DataCamp x Data Engineering Pilipinas</h3>
+												<span class="exp-date">Jun 2025 - Present</span>
+											</div>
+											<p>Supercharging my data engineering and data governance toolkit with pure excitement! Beyond winning a merit-based scholarship, I loved leading community initiatives that made data literacy fun and accessible for aspiring tech learners everywhere.</p>
+											<div class="exp-image-box">
+												<span>[ Insert Data Engineering Pilipinas Photo Here ]</span>
+											</div>
 										</div>
-										<p>Supercharging my data engineering and data governance toolkit with pure excitement! Beyond winning a merit-based scholarship, I loved leading community initiatives that made data literacy fun and accessible for aspiring tech learners everywhere.</p>
-										<div class="exp-image-box">
-											<span>[ Insert Data Engineering Pilipinas Photo Here ]</span>
-										</div>
-									</div>
 
-									<div class="experience-item">
-										<div class="experience-header">
-											<h3>Head of Content & Content Writer | Youthify</h3>
-											<span class="exp-date">Aug 2022 - Mar 2024</span>
+										<div class="experience-item">
+											<div class="experience-header">
+												<h3>Head of Content & Content Writer | Youthify</h3>
+												<span class="exp-date">Aug 2022 - Mar 2024</span>
+											</div>
+											<p>Grew from a passionate mental health writer into the Content Head, guiding a brilliant editorial team! I loved crafting deeply empathetic stories that fostered safe, supportive digital communities around psychological well-being.</p>
+											<div class="exp-image-box">
+												<span>[ Insert Youthify Photo Here ]</span>
+											</div>
 										</div>
-										<p>Grew from a passionate mental health writer into the Content Head, guiding a brilliant editorial team! I loved crafting deeply empathetic stories that fostered safe, supportive digital communities around psychological well-being.</p>
-										<div class="exp-image-box">
-											<span>[ Insert Youthify Photo Here ]</span>
-										</div>
-									</div>
 
-									<div class="experience-item">
-										<div class="experience-header">
-											<h3>Alumni & Scholar | Girls Who Code</h3>
-											<span class="exp-date">Jun 2023 - Sep 2023</span>
-										</div>
-										<p>Immersed myself in an incredible sisterhood of code! From building game projects in partnership with the London Stock Exchange Group to mastering Web Development, Cybersecurity, and Data Science tracks, this community ignited my lifelong love for creative tech problem-solving.</p>
-										<div class="exp-image-box">
-											<span>[ Insert Girls Who Code Photo Here ]</span>
+										<div class="experience-item">
+											<div class="experience-header">
+												<h3>Alumni & Scholar | Girls Who Code</h3>
+												<span class="exp-date">Jun 2023 - Sep 2023</span>
+											</div>
+											<p>Immersed myself in an incredible sisterhood of code! From building game projects in partnership with the London Stock Exchange Group to mastering Web Development, Cybersecurity, and Data Science tracks, this community ignited my lifelong love for creative tech problem-solving.</p>
+											<div class="exp-image-box">
+												<span>[ Insert Girls Who Code Photo Here ]</span>
+											</div>
 										</div>
 									</div>
 								</section>
@@ -273,7 +303,7 @@
 									<div class="posts">
 										<article>
 											<a href="#" class="image"><img src="images/pic01.jpg" alt="H2GO Project" /></a>
-											<h3>H2GO | Product & Marketing Strategy</h3>
+											<h3 style="color: #1d3557;">H2GO | Product & Marketing Strategy</h3>
 											<span class="project-date">July 2026</span>
 											<p>Developed a marketing pitch for a multipurpose water bottle carrier concept for college students and young professionals, using secondary market research to identify consumer needs and shape product positioning.</p>
 											<ul class="actions">
@@ -282,7 +312,7 @@
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic02.jpg" alt="Kanin Na Project" /></a>
-											<h3>Kanin Na | Rice Yield Anomaly Forecasting</h3>
+											<h3 style="color: #1d3557;">Kanin Na | Rice Yield Anomaly Forecasting</h3>
 											<span class="project-date">May 2026</span>
 											<p>Developed a Machine Learning Model to forecast rice yield changes across 3 Philippine provinces, analyzing historical weather and agricultural data. Generated forecasts to help identify potential shortfalls and support agricultural planning.</p>
 											<ul class="actions">
@@ -291,7 +321,7 @@
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic03.jpg" alt="Student Performance Analytics" /></a>
-											<h3>Student Performance Analytics</h3>
+											<h3 style="color: #1d3557;">Student Performance Analytics</h3>
 											<span class="project-date">April 2026</span>
 											<p>Analyzed academic performance data from 6,607 students across 20 variables to identify factors influencing academic outcomes and translated findings into an interactive Tableau dashboard.</p>
 											<ul class="actions">
@@ -300,7 +330,7 @@
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic04.jpg" alt="Coming Soon" /></a>
-											<h3>Coming Soon!</h3>
+											<h3 style="color: #1d3557;">Coming Soon!</h3>
 											<p>More exciting data-driven marketing and analytics projects are currently in progress. Stay tuned for updates!</p>
 										</article>
 									</div>
@@ -308,7 +338,7 @@
 
 							<!-- Prominent Resume Download Button at the Bottom -->
 								<div class="resume-box">
-									<h3>Ready to see my full professional background?</h3>
+									<h3 style="color: #1d3557;">Ready to see my full professional background?</h3>
 									<p>Download my resume to explore my complete technical toolkit and journey.</p>
 									<ul class="actions stacked">
 										<li><a href="resume.pdf" target="_blank" class="button primary huge">Download Resume</a></li>
@@ -381,5 +411,3 @@
 
 	</body>
 </html>
-
-```
