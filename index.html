@@ -1,21 +1,28 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Anya Sinha | Marketing Analytics Portfolio</title>
+		<title>Anya Sinha | Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Force Poppins Font across every element and ensure dark readable text */
+			/* Typography Overrides: Bodoni for Titles, Plus Jakarta Sans for Body, Pure Black Colors */
 			*, body, h1, h2, h3, h4, h5, h6, p, a, span, input, select, textarea, .button {
-				font-family: 'Poppins', sans-serif !important;
-				color: #2c3e50;
+				font-family: 'Plus Jakarta Sans', sans-serif !important;
+				color: #000000 !important;
+			}
+			h1, h2, h3, h4, h5, h6, .major h2, a.logo strong {
+				font-family: 'Bodoni Moda', serif !important;
+				color: #000000 !important;
+				font-weight: 700 !important;
 			}
 			p {
-				color: #4a5568 !important;
+				color: #000000 !important;
 				line-height: 1.8 !important;
+				opacity: 0.85;
 			}
+			
 			/* Custom Interactive Scroll Animations & Layout */
 			section {
 				opacity: 0;
@@ -31,15 +38,32 @@
 				text-align: center;
 				margin: 60px 0 30px 0;
 				padding: 40px 20px;
-				background: rgba(29, 53, 87, 0.05);
+				background: rgba(0, 0, 0, 0.03);
 				border-radius: 8px;
-				border: 2px dashed #1d3557;
+				border: 2px dashed #000000;
 			}
 			.button.huge {
 				font-size: 1.25em !important;
 				padding: 15px 40px !important;
 			}
 			
+			/* Typing Animation for Hero Title */
+			.typing-container {
+				display: inline-block;
+				border-right: 3px solid #000000;
+				white-space: nowrap;
+				animation: blink-caret 0.75s step-end infinite;
+				font-family: 'Bodoni Moda', serif !important;
+				font-size: 2.2em;
+				font-weight: 700;
+				color: #000000 !important;
+				margin-bottom: 5px;
+			}
+			@keyframes blink-caret {
+				from, to { border-color: transparent }
+				50% { border-color: #000000; }
+			}
+
 			/* 3D Double Doors Educational Showcase (Opening Outward / Away From Center) */
 			.doors-container {
 				display: grid;
@@ -57,8 +81,8 @@
 				background: #ffffff;
 				padding: 35px 30px;
 				border-radius: 6px;
-				box-shadow: 0 10px 30px rgba(29, 53, 87, 0.08);
-				border: 2px solid #1d3557;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+				border: 2px solid #000000;
 				position: relative;
 				transform-style: preserve-3d;
 				transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
@@ -66,45 +90,39 @@
 				flex-direction: column;
 				justify-content: space-between;
 			}
-			/* Left door opens to the left (counter-clockwise / positive rotateY) */
 			.college-door.open-left {
 				transform-origin: left center;
 				transform: rotateY(22deg) translateY(-5px);
-				box-shadow: -25px 20px 40px rgba(29, 53, 87, 0.18);
+				box-shadow: -25px 20px 40px rgba(0, 0, 0, 0.15);
 			}
-			/* Right door opens to the right (clockwise / negative rotateY) */
 			.college-door.open-right {
 				transform-origin: right center;
 				transform: rotateY(-22deg) translateY(-5px);
-				box-shadow: 25px 20px 40px rgba(29, 53, 87, 0.18);
+				box-shadow: 25px 20px 40px rgba(0, 0, 0, 0.15);
 			}
-			/* Simulated Door Handles */
 			.college-door::after {
 				content: '';
 				position: absolute;
 				top: 50%;
 				width: 8px;
 				height: 45px;
-				background: #1d3557;
+				background: #000000;
 				border-radius: 4px;
 				transform: translateY(-50%);
 				transition: transform 1s ease;
 			}
-			#door-aim::after {
-				right: 12px;
-			}
-			#door-uh::after {
-				left: 12px;
-			}
+			#door-aim::after { right: 12px; }
+			#door-uh::after { left: 12px; }
+			
 			.college-door h3 {
-				color: #1d3557 !important;
+				font-family: 'Bodoni Moda', serif !important;
+				color: #000000 !important;
 				font-size: 1.25em;
 				margin-bottom: 0.2em;
-				font-weight: 600;
 			}
 			.edu-degree {
-				font-weight: 600;
-				color: #1d3557 !important;
+				font-weight: 700;
+				color: #000000 !important;
 				font-size: 0.95em;
 				margin-bottom: 1em;
 			}
@@ -113,7 +131,7 @@
 				width: 100%;
 				height: 90px;
 				background: #f8f9fa;
-				border: 2px dashed #cbd5e1;
+				border: 2px dashed #000000;
 				border-radius: 6px;
 				display: flex;
 				align-items: center;
@@ -132,8 +150,8 @@
 				transition: all 1.2s ease;
 			}
 			#experience.illuminated {
-				box-shadow: 0 -15px 50px rgba(29, 53, 87, 0.18);
-				background: radial-gradient(circle at 50% 0%, rgba(29, 53, 87, 0.04) 0%, transparent 70%);
+				box-shadow: 0 -15px 50px rgba(0, 0, 0, 0.1);
+				background: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
 				padding: 40px 20px;
 				border-radius: 16px;
 			}
@@ -143,7 +161,7 @@
 				width: 100%;
 				height: 180px;
 				background: #f8f9fa;
-				border: 2px dashed #cbd5e1;
+				border: 2px dashed #000000;
 				border-radius: 6px;
 				overflow-x: auto;
 				display: flex;
@@ -153,29 +171,22 @@
 				margin-bottom: 15px;
 				scroll-snap-type: x mandatory;
 			}
-			.project-carousel img {
-				height: 100%;
-				object-fit: cover;
-				border-radius: 4px;
-				scroll-snap-align: center;
-				flex-shrink: 0;
-			}
 			.carousel-placeholder {
 				min-width: 100%;
 				height: 100%;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: #64748b;
+				color: #000000;
 				font-size: 0.85em;
-				font-weight: 500;
+				font-weight: 600;
 				scroll-snap-align: center;
 			}
 
 			/* The Output Box Design */
 			.output-box {
-				background: rgba(29, 53, 87, 0.06);
-				border-left: 4px solid #1d3557;
+				background: rgba(0, 0, 0, 0.04);
+				border-left: 4px solid #000000;
 				padding: 12px 15px;
 				border-radius: 0 6px 6px 0;
 				margin: 15px 0;
@@ -184,16 +195,40 @@
 				font-size: 0.8em;
 				text-transform: uppercase;
 				letter-spacing: 1px;
-				font-weight: 700;
-				color: #1d3557 !important;
+				font-weight: 800;
+				color: #000000 !important;
 				margin-bottom: 3px;
 				display: block;
 			}
 			.output-desc {
 				font-size: 0.9em;
 				margin-bottom: 0 !important;
-				color: #2c3e50 !important;
+				color: #000000 !important;
 				font-weight: 500;
+			}
+
+			/* Interests / Vibe Section Grid */
+			.interests-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				gap: 20px;
+				margin-top: 30px;
+			}
+			.interest-card {
+				background: #ffffff;
+				border: 2px solid #000000;
+				padding: 25px 20px;
+				border-radius: 8px;
+				text-align: center;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			.interest-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+			}
+			.interest-card h3 {
+				font-size: 1.1em;
+				margin-bottom: 8px;
 			}
 
 			/* Modern Timeline Design for Experience */
@@ -201,7 +236,7 @@
 				position: relative;
 				margin: 40px 0 20px 20px;
 				padding-left: 30px;
-				border-left: 3px solid #1d3557;
+				border-left: 3px solid #000000;
 			}
 			.experience-item {
 				position: relative;
@@ -215,9 +250,9 @@
 				width: 14px;
 				height: 14px;
 				border-radius: 50%;
-				background: #1d3557;
+				background: #000000;
 				border: 3px solid #ffffff;
-				box-shadow: 0 0 0 2px #1d3557;
+				box-shadow: 0 0 0 2px #000000;
 			}
 			.experience-header {
 				display: flex;
@@ -228,15 +263,15 @@
 				margin-bottom: 0.6em;
 			}
 			.experience-item h3 {
-				color: #1d3557 !important;
+				color: #000000 !important;
 				margin-bottom: 0;
-				font-weight: 600;
+				font-weight: 700;
 			}
 			.exp-date {
 				font-size: 0.85em;
-				color: #1d3557 !important;
-				font-weight: 600;
-				background: rgba(29, 53, 87, 0.08);
+				color: #000000 !important;
+				font-weight: 700;
+				background: rgba(0, 0, 0, 0.06);
 				padding: 4px 10px;
 				border-radius: 4px;
 			}
@@ -245,35 +280,43 @@
 				max-width: 400px;
 				height: 160px;
 				background: #f8f9fa;
-				border: 2px dashed #cbd5e1;
+				border: 2px dashed #000000;
 				border-radius: 6px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				color: #64748b;
+				color: #000000;
 				font-size: 0.85em;
-				font-weight: 500;
+				font-weight: 600;
 			}
 			.project-date {
 				font-size: 0.85em;
-				color: #1d3557 !important;
-				font-weight: 600;
+				color: #000000 !important;
+				font-weight: 700;
 				margin-bottom: 0.5em;
 				display: block;
 			}
-			/* Modern Navy Theme Overrides */
-			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
-				background-color: #1d3557 !important;
-				color: #ffffff !important;
+
+			/* Pure Black Monochrome Button Styles */
+			input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+				background-color: transparent !important;
+				border: 2px solid #000000 !important;
+				color: #000000 !important;
+				font-weight: 700 !important;
+				border-radius: 4px !important;
 			}
-			a.logo strong, .project-date {
-				color: #1d3557 !important;
+			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
+				background-color: #000000 !important;
+				color: #ffffff !important;
 			}
 			.button.primary {
-				background-color: #1d3557 !important;
+				background-color: #000000 !important;
 				color: #ffffff !important;
 			}
-			/* Hero Header Flex Box for Status Tag positioned right and higher */
+			a.logo strong {
+				color: #000000 !important;
+			}
+			
 			.hero-title-wrapper {
 				display: flex;
 				align-items: flex-start;
@@ -283,12 +326,12 @@
 				margin-top: -10px;
 			}
 			.status-badge {
-				background: #1d3557;
+				background: #000000;
 				color: #ffffff !important;
 				padding: 10px 18px;
 				border-radius: 20px;
 				font-size: 0.9em;
-				font-weight: 500;
+				font-weight: 600;
 				letter-spacing: 0.5px;
 				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 				text-align: right;
@@ -314,8 +357,8 @@
 										<header>
 											<div class="hero-title-wrapper">
 												<div>
-													<h1 style="color: #1d3557; margin-bottom: 5px;">Hi, I’m Anya!</h1>
-													<p style="font-size: 1.35em; font-weight: 600; color: #1d3557 !important; margin-top: 0;">Where Marketing Meets Metrics</p>
+													<div class="typing-container" id="typing-text"></div>
+													<p style="font-size: 1.35em; font-weight: 700; color: #000000 !important; margin-top: 5px;">Where Marketing Meets Metrics</p>
 												</div>
 												<span class="status-badge">Data Cleaning Intern @ MacroAsia</span>
 											</div>
@@ -359,6 +402,32 @@
 											<div class="edu-logo-box">
 												<img src="images/uh'.png" alt="UH Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='[ UH Logo ]';" />
 											</div>
+										</div>
+									</div>
+								</section>
+
+							<section id="interests">
+									<header class="major">
+										<h2>Beyond the Metrics</h2>
+									</header>
+									<p style="font-weight: 600; margin-bottom: 10px;">A quick peek into what fuels my curiosity, creativity, and daily drive:</p>
+									
+									<div class="interests-grid">
+										<div class="interest-card">
+											<h3>🎨 Visual Storytelling</h3>
+											<p>Blending graphic design and branding aesthetics to ensure data insights are communicated with absolute clarity and flair.</p>
+										</div>
+										<div class="interest-card">
+											<h3>🌐 Global Diplomacy</h3>
+											<p>Active involvement in Model UN and international discussions, championing collaboration across cultural lines.</p>
+										</div>
+										<div class="interest-card">
+											<h3>📚 Language & Culture</h3>
+											<p>Passionate about linguistic milestones and community advocacy, driven by experiences like my time with Duolingo & Youthify.</p>
+										</div>
+										<div class="interest-card">
+											<h3>⚙️ Data Engineering</h3>
+											<p>Constantly exploring data pipelines, governance models, and automation tools to make information instantly accessible.</p>
 										</div>
 									</div>
 								</section>
@@ -468,12 +537,12 @@
 											<div class="project-carousel">
 												<div class="carousel-placeholder">[ Scrollable Project Images / Slides ]</div>
 											</div>
-											<h3 style="color: #1d3557;">H2GO | Product & Marketing Strategy</h3>
+											<h3>H2GO | Product & Marketing Strategy</h3>
 											<span class="project-date">July 2026</span>
 											<p>Developed a marketing pitch for a multipurpose water bottle carrier concept for college students and young professionals, using secondary market research to identify consumer needs and shape product positioning.</p>
 											<div class="output-box">
 												<span class="output-title">The Output</span>
-												<p class="output-desc">A comprehensive presentation pitch detailing market validation, consumer personas, and product positioning strategy.</p>
+												<p class="output-desc">A presentation pitch detailing market validation, consumer personas, and product positioning strategy.</p>
 											</div>
 											<ul class="actions">
 												<li><a href="#" class="button">View Details</a></li>
@@ -483,12 +552,12 @@
 											<div class="project-carousel">
 												<div class="carousel-placeholder">[ Scrollable Project Images / Slides ]</div>
 											</div>
-											<h3 style="color: #1d3557;">Kanin Na | Rice Yield Anomaly Forecasting</h3>
+											<h3>Kanin Na | Rice Yield Anomaly Forecasting</h3>
 											<span class="project-date">May 2026</span>
 											<p>Developed a Machine Learning Model to forecast rice yield changes across 3 Philippine provinces, analyzing historical weather and agricultural data. Generated forecasts to help identify potential shortfalls and support agricultural planning.</p>
 											<div class="output-box">
 												<span class="output-title">The Output</span>
-												<p class="output-desc">A polished machine learning presentation outlining predictive modeling results, data pipeline mechanics, and agricultural impact forecasts.</p>
+												<p class="output-desc">A presentation based on machine learning outlining predictive modeling results, data pipeline mechanics, and agricultural impact forecasts.</p>
 											</div>
 											<ul class="actions">
 												<li><a href="#" class="button">View Code</a></li>
@@ -498,12 +567,12 @@
 											<div class="project-carousel">
 												<div class="carousel-placeholder">[ Scrollable Project Images / Slides ]</div>
 											</div>
-											<h3 style="color: #1d3557;">Student Performance Analytics</h3>
+											<h3>Student Performance Analytics</h3>
 											<span class="project-date">April 2026</span>
 											<p>Analyzed academic performance data from 6,607 students across 20 variables to identify factors influencing academic outcomes and translated findings into an interactive dashboard.</p>
 											<div class="output-box">
 												<span class="output-title">The Output</span>
-												<p class="output-desc">An interactive Tableau dashboard featuring multi-variable filtering, demographic correlation charts, and key student performance metrics.</p>
+												<p class="output-desc">A Tableau dashboard featuring multi-variable filtering, demographic correlation charts, and key student performance metrics.</p>
 											</div>
 											<ul class="actions">
 												<li><a href="#" class="button">View Dashboard</a></li>
@@ -513,7 +582,7 @@
 											<div class="project-carousel">
 												<div class="carousel-placeholder">[ Scrollable Project Images / Slides ]</div>
 											</div>
-											<h3 style="color: #1d3557;">Coming Soon!</h3>
+											<h3>Coming Soon!</h3>
 											<p>More exciting data-driven marketing and analytics projects are currently in progress. Stay tuned for updates!</p>
 											<div class="output-box">
 												<span class="output-title">The Output</span>
@@ -524,7 +593,7 @@
 								</section>
 
 							<div class="resume-box">
-									<h3 style="color: #1d3557;">Ready to see my full professional background?</h3>
+									<h3>Ready to see my full professional background?</h3>
 									<p>Download my resume to explore my complete technical toolkit and journey.</p>
 									<ul class="actions stacked">
 										<li><a href="resume.pdf" target="_blank" class="button primary huge">Download Resume</a></li>
@@ -573,8 +642,22 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				// Interactive Scroll Animations & Outward-Opening Door / Light Glow Effects
+				// Typing Animation Script for "Hi, I'm Anya!"
 				document.addEventListener("DOMContentLoaded", function () {
+					const textElement = document.getElementById("typing-text");
+					const phrase = "Hi, I’m Anya!";
+					let index = 0;
+
+					function typeWriter() {
+						if (index < phrase.length) {
+							textElement.innerHTML += phrase.charAt(index);
+							index++;
+							setTimeout(typeWriter, 120);
+						}
+					}
+					setTimeout(typeWriter, 400);
+
+					// Interactive Scroll Animations & Outward-Opening Door / Light Glow Effects
 					const sections = document.querySelectorAll("section");
 					const doorAim = document.getElementById("door-aim");
 					const doorUh = document.getElementById("door-uh");
