@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -34,11 +35,46 @@
 				padding: 15px 40px !important;
 			}
 			.experience-item {
-				margin-bottom: 2.5em;
+				margin-bottom: 3em;
+				background: #ffffff;
+				padding: 25px;
+				border-radius: 8px;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+				border: 1px solid #f0f0f0;
+			}
+			.experience-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-bottom: 0.5em;
 			}
 			.experience-item h3 {
 				color: #1d3557;
-				margin-bottom: 0.2em;
+				margin-bottom: 0;
+			}
+			.exp-date {
+				font-size: 0.85em;
+				color: #1d3557;
+				font-weight: 600;
+				background: rgba(29, 53, 87, 0.08);
+				padding: 4px 10px;
+				border-radius: 4px;
+			}
+			.exp-image-box {
+				margin-top: 15px;
+				width: 100%;
+				height: 180px;
+				background: #f8f9fa;
+				border: 2px dashed #cbd5e1;
+				border-radius: 6px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #64748b;
+				font-size: 0.9em;
+				font-weight: 500;
 			}
 			.project-date {
 				font-size: 0.85em;
@@ -51,7 +87,7 @@
 			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
 				background-color: #1d3557 !important;
 			}
-			a.logo strong, .experience-item h3, .project-date {
+			a.logo strong, .project-date {
 				color: #1d3557 !important;
 			}
 			.button.primary {
@@ -61,16 +97,16 @@
 			.hero-title-wrapper {
 				display: flex;
 				align-items: center;
-				justify-content: space-between;
+				justify-content: flex-start;
 				flex-wrap: wrap;
-				gap: 15px;
+				gap: 20px;
 			}
 			.status-badge {
 				background: #1d3557;
 				color: #ffffff;
-				padding: 6px 14px;
+				padding: 8px 16px;
 				border-radius: 20px;
-				font-size: 0.8em;
+				font-size: 0.9em;
 				font-weight: 500;
 				letter-spacing: 0.5px;
 				box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -94,24 +130,21 @@
 									</ul>
 								</header>
 
-							<!-- Banner -->
+							<!-- Banner (No image placeholder next to name, badge on the right) -->
 								<section id="banner" class="visible">
-									<div class="content">
+									<div class="content" style="width: 100%;">
 										<header>
 											<div class="hero-title-wrapper">
 												<h1>Hi, I’m Anya!</h1>
 												<span class="status-badge">Data Cleaning Intern @ MacroAsia</span>
 											</div>
-											<p>Where Marketing Meets Metrics</p>
+											<p style="margin-top: 15px; font-size: 1.4em; font-weight: 600; color: #1d3557;">Where Marketing Meets Metrics</p>
 										</header>
-										<ul class="actions">
+										<ul class="actions" style="margin-top: 20px;">
 											<li><a href="#experience" class="button big primary">View Work</a></li>
 											<li><a href="mailto:anyasinha18@gmail.com" class="button big">Get in Touch</a></li>
 										</ul>
 									</div>
-									<span class="image object">
-										<img src="images/pic10.jpg" alt="Anya Sinha" />
-									</span>
 								</section>
 
 							<!-- Education Section -->
@@ -144,38 +177,91 @@
 									</header>
 									
 									<div class="experience-item">
-										<h3>Data Cleaning Intern | MacroAsia</h3>
-										<p>Diving headfirst into large datasets with excitement! I love transforming messy, unorganized data into clean, pristine information that helps the team make crystal-clear, smart business choices.</p>
+										<div class="experience-header">
+											<h3>Data Cleaning Intern | MacroAsia Corporation</h3>
+											<span class="exp-date">Aug 2026 - Present</span>
+										</div>
+										<p>Diving headfirst into dynamic supply chain operations! I love scrubbing vendor and material records to prep everything seamlessly for SAP migration. Tracking down duplicates and standardizing datasets with advanced Excel brings me so much joy because clean data truly powers brilliant business decisions!</p>
+										<div class="exp-image-box">
+											<span>[ Insert MacroAsia Experience Photo Here ]</span>
+										</div>
 									</div>
 
 									<div class="experience-item">
-										<h3>President | AIM Explorer (AIM’s Marketing Club)</h3>
-										<p>Leading our vibrant marketing community with passion and creativity! I love brainstorming fresh campaign ideas, organizing exciting events, and bringing creative minds together to explore the wonderful world of marketing.</p>
+										<div class="experience-header">
+											<h3>President & Former Graphic Designer | AIM Explorer</h3>
+											<span class="exp-date">Jan 2025 - Present</span>
+										</div>
+										<p>Steering our energetic marketing community with full creative passion! From spearheading exciting rebranding campaigns and setting vibrant visual identities as a designer to now leading our core team, I love turning fresh student stories into magnetic marketing gold that celebrates undergraduate life at AIM!</p>
+										<div class="exp-image-box">
+											<span>[ Insert AIM Explorer Photo Here ]</span>
+										</div>
 									</div>
 
 									<div class="experience-item">
-										<h3>Secretary | AIM Model United Nations</h3>
-										<p>Keeping everything running smoothly and cheerfully behind the scenes! I love coordinating global-scale discussions, organizing logistics, and helping foster inspiring diplomatic debates.</p>
+										<div class="experience-header">
+											<h3>Undersecretary General of Internal Affairs | AIM Model UN</h3>
+											<span class="exp-date">Aug 2025 - Present</span>
+										</div>
+										<p>Orchestrating high-energy global discussions and dynamic training sessions with a smile! It is such a rewarding adventure helping delegates sharpen their public speaking, negotiation, and diplomatic flair while keeping all our internal operations running like clockwork.</p>
+										<div class="exp-image-box">
+											<span>[ Insert AIM MUN Photo Here ]</span>
+										</div>
 									</div>
 
 									<div class="experience-item">
-										<h3>Marketing Intern (Freshman Year) | Wadhwani Foundation</h3>
-										<p>Kicked off my marketing journey by helping amplify impactful entrepreneurial initiatives! It was such a thrill to dive right into outreach and support programs that empower businesses.</p>
+										<div class="experience-header">
+											<h3>Marketing Intern | Wadhwani Foundation</h3>
+											<span class="exp-date">Jun 2025 - Aug 2025</span>
+										</div>
+										<p>Kicked off my professional journey by championing empowering entrepreneurial initiatives! By analyzing the digital behaviors of modern moms, I helped launch hybrid outreach campaigns that successfully connected over 252K Filipinos with life-changing career upskilling paths.</p>
+										<div class="exp-image-box">
+											<span>[ Insert Wadhwani Foundation Photo Here ]</span>
+										</div>
 									</div>
 
 									<div class="experience-item">
-										<h3>Duolingo English Test Ambassador</h3>
-										<p>Spreading enthusiasm for language learning globally! It's a joy to connect with test-takers, share helpful tips, and support a community breaking down global communication barriers.</p>
+										<div class="experience-header">
+											<h3>Duolingo English Test Ambassador</h3>
+											<span class="exp-date">Nov 2025 - Jul 2026</span>
+										</div>
+										<p>Spreading contagious enthusiasm for global language learning! Crafting lively promotional content allowed me to connect with a thriving community of over 40K followers, cheering test-takers on as they crossed global communication milestones.</p>
+										<div class="exp-image-box">
+											<span>[ Insert Duolingo Photo Here ]</span>
+										</div>
 									</div>
 
 									<div class="experience-item">
-										<h3>Scholar | DataCamp x Data Engineering Pilipinas</h3>
-										<p>Supercharging my data skills with pure enthusiasm! Leveling up my technical toolkit through intensive data engineering pipelines and advanced analytics training.</p>
+										<div class="experience-header">
+											<h3>Scholar & Community Leader | DataCamp x Data Engineering Pilipinas</h3>
+											<span class="exp-date">Jun 2025 - Present</span>
+										</div>
+										<p>Supercharging my data engineering and data governance toolkit with pure excitement! Beyond winning a merit-based scholarship, I loved leading community initiatives that made data literacy fun and accessible for aspiring tech learners everywhere.</p>
+										<div class="exp-image-box">
+											<span>[ Insert Data Engineering Pilipinas Photo Here ]</span>
+										</div>
 									</div>
 
 									<div class="experience-item">
-										<h3>Alumni | Girls Who Code</h3>
-										<p>Proudly part of a supportive sisterhood of tech creators! This community sparked my early love for coding, problem-solving, and building cool things with technology.</p>
+										<div class="experience-header">
+											<h3>Head of Content & Content Writer | Youthify</h3>
+											<span class="exp-date">Aug 2022 - Mar 2024</span>
+										</div>
+										<p>Grew from a passionate mental health writer into the Content Head, guiding a brilliant editorial team! I loved crafting deeply empathetic stories that fostered safe, supportive digital communities around psychological well-being.</p>
+										<div class="exp-image-box">
+											<span>[ Insert Youthify Photo Here ]</span>
+										</div>
+									</div>
+
+									<div class="experience-item">
+										<div class="experience-header">
+											<h3>Alumni & Scholar | Girls Who Code</h3>
+											<span class="exp-date">Jun 2023 - Sep 2023</span>
+										</div>
+										<p>Immersed myself in an incredible sisterhood of code! From building game projects in partnership with the London Stock Exchange Group to mastering Web Development, Cybersecurity, and Data Science tracks, this community ignited my lifelong love for creative tech problem-solving.</p>
+										<div class="exp-image-box">
+											<span>[ Insert Girls Who Code Photo Here ]</span>
+										</div>
 									</div>
 								</section>
 
@@ -295,3 +381,5 @@
 
 	</body>
 </html>
+
+```
