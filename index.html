@@ -29,8 +29,10 @@
 		#header, header.major > :last-child { border-bottom: none !important; }
 		header.major > :last-child { padding-bottom: 0 !important; }
 
-		#sidebar, #sidebar > .inner, #sidebar > .inner > section {
-			background: transparent !important;
+		#sidebar,
+		#sidebar > .inner,
+		#sidebar > .inner > section {
+			background: #ffffff !important;
 			box-shadow: none !important;
 		}
 
@@ -112,6 +114,24 @@
 			to { opacity: 1; transform: translateY(0); }
 		}
 
+		.education-note {
+			margin-top: -1.4em;
+			font-size: 1.05em;
+			font-weight: 400 !important;
+			letter-spacing: 0.03em;
+			opacity: 0;
+			transform: translateY(10px);
+		}
+
+		#education.visible .education-note {
+			animation: education-note-reveal 0.8s ease-out 0.25s forwards;
+		}
+
+		@keyframes education-note-reveal {
+			from { opacity: 0; transform: translateY(10px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+
 		.edu-degree { font-weight: 700; font-size: 1.05em; margin-bottom: 1em; }
 
 		.edu-logo-box {
@@ -121,9 +141,11 @@
 			height: 120px;
 			margin-top: 25px;
 			padding: 10px;
+			background: transparent !important;
 		}
 
 		.edu-logo-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+		#door-uh .edu-logo-box img { background: transparent !important; mix-blend-mode: multiply; }
 
 		#experience.illuminated {
 			background: transparent;
@@ -325,14 +347,15 @@
 				</section>
 
 				<section id="education">
-					<header class="major"><h2>Education</h2></header>
+					<header class="major">
+						<h2>Education</h2>
+						<p class="education-note">Pursuing a double degree</p>
+					</header>
+
 					<div class="doors-container">
 						<div class="college-door" id="door-aim">
 							<div>
-								<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-									<h3>Asian Institute of Management</h3>
-									<span class="exp-date">Junior (3rd Year)</span>
-								</div>
+								<h3>Asian Institute of Management</h3>
 								<p class="edu-degree">Bachelor of Science in Data Science</p>
 								<p>Immersing myself in rigorous quantitative frameworks, advanced statistical modeling, and sharp data analytics to decode complex market trends.</p>
 							</div>
@@ -341,10 +364,7 @@
 
 						<div class="college-door" id="door-uh">
 							<div>
-								<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-									<h3>University of Houston</h3>
-									<span class="exp-date">Double Degree</span>
-								</div>
+								<h3>University of Houston</h3>
 								<p class="edu-degree">BBA in Management Information Systems (MIS)</p>
 								<p>Building the critical bridge between technical database architectures and enterprise systems to optimize modern business strategies.</p>
 							</div>
@@ -445,7 +465,10 @@
 						</article>
 
 						<article>
-							<div class="project-carousel"><span>[ Project photos coming soon ]</span></div>
+							<div class="project-carousel">
+								<img data-image-base="tableau 1" src="" alt="Student Performance Analytics Tableau dashboard 1">
+								<img data-image-base="tableau 2" src="" alt="Student Performance Analytics Tableau dashboard 2">
+							</div>
 							<h3>Student Performance Analytics</h3>
 							<span class="project-date">April 2026</span>
 							<p>Analyzed academic performance data from 6,607 students across 20 variables to identify factors influencing academic outcomes and translated findings into an interactive dashboard.</p>
@@ -453,10 +476,15 @@
 						</article>
 
 						<article>
-							<div class="project-carousel"><span>[ Project photos coming soon ]</span></div>
-							<h3>FH Moms x Wadhwani Foundation | Mom Upskilling</h3>
-							<p>Created social media content to support a mom upskilling campaign in collaboration with FH Moms and the Wadhwani Foundation.</p>
-							<div class="output-box"><span class="output-title">The Output</span><p class="output-desc">Social media posts.</p></div>
+							<div class="project-carousel">
+								<img data-image-base="Copy of FHMoms Pubmats" src="" alt="FH Moms campaign social media post 1">
+								<img data-image-base="Copy of FHMoms Pubmats (1)" src="" alt="FH Moms campaign social media post 2">
+								<img data-image-base="Copy of FHMoms Pubmats (2)" src="" alt="FH Moms campaign social media post 3">
+							</div>
+							<h3>FH Moms x Wadhwani Foundation | Mom Upskilling Campaign</h3>
+							<span class="project-date">July 2025</span>
+							<p>Created an approachable social media campaign that promoted career upskilling opportunities for Filipino mothers. The content translated the program’s benefits into clear, encouraging messages tailored to the FH Moms community.</p>
+							<div class="output-box"><span class="output-title">The Output</span><p class="output-desc">A three-post social media campaign designed to raise awareness, encourage engagement, and connect mothers with accessible upskilling opportunities.</p></div>
 						</article>
 					</div>
 				</section>
