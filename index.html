@@ -4,16 +4,16 @@
 		<title>Anya Sinha | Whimsical Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Typography: Newsreader for Headers, Inter for Body Text, Dark Grey Text */
+			/* Typography: Cormorant Garamond for Headers (matching provided image style), Inter for Body Text */
 			*, body, input, select, textarea {
 				font-family: 'Inter', sans-serif !important;
 				color: #2b2b2b !important;
 			}
 			h1, h2, h3, h4, h5, h6, .major h2, a.logo strong, .college-door h3, .typing-container {
-				font-family: 'Newsreader', serif !important;
+				font-family: 'Cormorant Garamond', serif !important;
 				color: #000000 !important;
 				font-weight: 700 !important;
 			}
@@ -28,9 +28,10 @@
 				background-size: cover;
 			}
 
-			/* Remove the navy blue accent line at the top */
+			/* Change the top wrapper line to black */
 			#wrapper::before {
-				display: none !important;
+				background: #000000 !important;
+				display: block !important;
 			}
 
 			section {
@@ -109,7 +110,7 @@
 			}
 			
 			.college-door h3 {
-				font-size: 1.3em;
+				font-size: 1.4em;
 				margin-bottom: 0.2em;
 			}
 			.edu-degree {
@@ -233,31 +234,32 @@
 				transform: translateX(4px);
 			}
 			.interest-card h3 {
-				font-size: 1.15em;
+				font-size: 1.25em;
 				margin-bottom: 0;
 				color: #1a1a1a;
 				text-decoration: underline;
 			}
 
-			/* Timeline */
+			/* Timeline with Simple Black Square Markers */
 			.timeline {
 				position: relative;
 				margin: 40px 0 20px 20px;
 				padding-left: 30px;
-				border-left: 3px solid #1a1a1a;
+				border-left: none; /* Removed navy blue line underneath / alongside timeline */
 			}
 			.experience-item {
 				position: relative;
 				margin-bottom: 3.5em;
 			}
 			.experience-item::before {
-				content: '✨';
+				content: '';
 				position: absolute;
-				left: -43px;
-				top: 0px;
-				font-size: 1.1em;
-				background: #ffffff;
-				border-radius: 50%;
+				left: -39px;
+				top: 6px;
+				width: 10px;
+				height: 10px;
+				background: #1a1a1a;
+				border-radius: 0;
 			}
 			.experience-header {
 				display: flex;
@@ -300,16 +302,21 @@
 				display: block;
 			}
 
-			/* Monochrome Buttons */
+			/* Solid Black Buttons with Centered White Text */
 			input[type="submit"], input[type="reset"], input[type="button"], button, .button {
-				background-color: transparent !important;
+				background-color: #1a1a1a !important;
 				border: 2px solid #1a1a1a !important;
-				color: #1a1a1a !important;
+				color: #ffffff !important;
 				font-weight: 700 !important;
 				border-radius: 4px !important;
+				text-align: center !important;
+				display: inline-flex !important;
+				justify-content: center !important;
+				align-items: center !important;
 			}
 			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
-				background-color: #1a1a1a !important;
+				background-color: #333333 !important;
+				border-color: #333333 !important;
 				color: #ffffff !important;
 			}
 			.button.primary {
@@ -389,9 +396,8 @@
 							<!-- Education Section -->
 								<section id="education">
 									<header class="major">
-										<h2>Educational Thresholds</h2>
+										<h2>Education</h2>
 									</header>
-									<p style="font-style: italic; font-weight: 600;">Step through the double arches of my academic journey...</p>
 									
 									<div class="doors-container">
 										<div class="college-door" id="door-aim">
@@ -433,16 +439,16 @@
 									
 									<div class="interests-grid">
 										<a href="visual-storytelling.html" class="interest-card">
-											<h3>Visual Storytelling →</h3>
+											<h3>Visual Storytelling</h3>
 										</a>
 										<a href="global-diplomacy.html" class="interest-card">
-											<h3>Global Diplomacy →</h3>
+											<h3>Global Diplomacy</h3>
 										</a>
 										<a href="language-culture.html" class="interest-card">
-											<h3>Language & Culture →</h3>
+											<h3>Language & Culture</h3>
 										</a>
 										<a href="data-engineering.html" class="interest-card">
-											<h3>Data Engineering →</h3>
+											<h3>Data Engineering</h3>
 										</a>
 									</div>
 								</section>
