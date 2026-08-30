@@ -11,6 +11,42 @@
 			*, body, h1, h2, h3, h4, h5, h6, p, a, span, input, select, textarea, .button {
 				font-family: 'Poppins', sans-serif !important;
 			}
+			/* Custom Interactive Scroll Animations & Styling */
+			section {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+			}
+			section.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			.resume-box {
+				text-align: center;
+				margin: 50px 0;
+				padding: 30px;
+				background: rgba(29, 53, 87, 0.05);
+				border-radius: 8px;
+				border: 2px dashed #1d3557;
+			}
+			.button.huge {
+				font-size: 1.25em !important;
+				padding: 15px 40px !important;
+			}
+			.experience-item {
+				margin-bottom: 2.5em;
+			}
+			.experience-item h3 {
+				color: #1d3557;
+				margin-bottom: 0.2em;
+			}
+			.project-date {
+				font-size: 0.85em;
+				color: #1d3557;
+				font-weight: 600;
+				margin-bottom: 0.5em;
+				display: block;
+			}
 			/* Modern Navy Theme Overrides */
 			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
 				background-color: #1d3557 !important;
@@ -21,38 +57,25 @@
 			.button.primary {
 				background-color: #1d3557 !important;
 			}
-			.resume-box {
-				border-color: #1d3557 !important;
-				background: rgba(29, 53, 87, 0.05) !important;
+			/* Hero Header Flex Box for Status Tag */
+			.hero-title-wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				gap: 15px;
+			}
+			.status-badge {
+				background: #1d3557;
+				color: #ffffff;
+				padding: 6px 14px;
+				border-radius: 20px;
+				font-size: 0.8em;
+				font-weight: 500;
+				letter-spacing: 0.5px;
+				box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 			}
 		</style>
-	</head><head>
-		<title>Anya Sinha | Marketing Analytics Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			/* Force Poppins Font across every element */
-			*, body, h1, h2, h3, h4, h5, h6, p, a, span, input, select, textarea, .button {
-				font-family: 'Poppins', sans-serif !important;
-			}
-			/* Modern Navy Theme Overrides */
-			input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
-				background-color: #1d3557 !important;
-			}
-			a.logo strong, .experience-item h3, .project-date {
-				color: #1d3557 !important;
-			}
-			.button.primary {
-				background-color: #1d3557 !important;
-			}
-			.resume-box {
-				border-color: #1d3557 !important;
-				background: rgba(29, 53, 87, 0.05) !important;
-			}
-		</style>
-	</head>
 	</head>
 	<body class="is-preload">
 
@@ -75,12 +98,15 @@
 								<section id="banner" class="visible">
 									<div class="content">
 										<header>
-											<h1>Hi, I’m Anya!<br /></h1>
-											<p>Currently a Data Cleaning Intern at MacroAsia</p>
+											<div class="hero-title-wrapper">
+												<h1>Hi, I’m Anya!</h1>
+												<span class="status-badge">Data Cleaning Intern @ MacroAsia</span>
+											</div>
+											<p>Where Marketing Meets Metrics</p>
 										</header>
-										<p>I am a junior pursuing a double degree in Data Science & Business Administration at the Asian Institute of Management, with a concentration in Management Information Systems at the University of Houston. I bridge the gap between numbers and consumer behavior to build impactful, data-driven digital marketing campaigns.</p>
 										<ul class="actions">
-											<li><a href="#education" class="button big">Learn More</a></li>
+											<li><a href="#experience" class="button big primary">View Work</a></li>
+											<li><a href="mailto:anyasinha18@gmail.com" class="button big">Get in Touch</a></li>
 										</ul>
 									</div>
 									<span class="image object">
