@@ -40,13 +40,13 @@
 				padding: 15px 40px !important;
 			}
 			
-			/* 3D Interactive Dual-Door Educational Showcase */
+			/* 3D Double Doors Educational Showcase (Opening Outward / Away From Center) */
 			.doors-container {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				gap: 30px;
 				margin-top: 30px;
-				perspective: 1200px;
+				perspective: 1500px;
 			}
 			@media screen and (max-width: 768px) {
 				.doors-container {
@@ -56,26 +56,45 @@
 			.college-door {
 				background: #ffffff;
 				padding: 35px 30px;
-				border-radius: 12px;
+				border-radius: 6px;
 				box-shadow: 0 10px 30px rgba(29, 53, 87, 0.08);
-				border: 1px solid #e2e8f0;
+				border: 2px solid #1d3557;
 				position: relative;
 				transform-style: preserve-3d;
-				transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+				transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
 			}
-			/* Door Opening Animation Triggered on Scroll */
+			/* Left door opens to the left (counter-clockwise / positive rotateY) */
 			.college-door.open-left {
-				transform: rotateY(-18deg) translateY(-8px);
-				box-shadow: -20px 20px 40px rgba(29, 53, 87, 0.15);
-				border-color: #1d3557;
+				transform-origin: left center;
+				transform: rotateY(22deg) translateY(-5px);
+				box-shadow: -25px 20px 40px rgba(29, 53, 87, 0.18);
 			}
+			/* Right door opens to the right (clockwise / negative rotateY) */
 			.college-door.open-right {
-				transform: rotateY(18deg) translateY(-8px);
-				box-shadow: 20px 20px 40px rgba(29, 53, 87, 0.15);
-				border-color: #1d3557;
+				transform-origin: right center;
+				transform: rotateY(-22deg) translateY(-5px);
+				box-shadow: 25px 20px 40px rgba(29, 53, 87, 0.18);
+			}
+			/* Simulated Door Handles */
+			.college-door::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				width: 8px;
+				height: 45px;
+				background: #1d3557;
+				border-radius: 4px;
+				transform: translateY(-50%);
+				transition: transform 1s ease;
+			}
+			#door-aim::after {
+				right: 12px;
+			}
+			#door-uh::after {
+				left: 12px;
 			}
 			.college-door h3 {
 				color: #1d3557 !important;
@@ -117,6 +136,64 @@
 				background: radial-gradient(circle at 50% 0%, rgba(29, 53, 87, 0.04) 0%, transparent 70%);
 				padding: 40px 20px;
 				border-radius: 16px;
+			}
+
+			/* Scrollable Image Carousel / Options for Projects */
+			.project-carousel {
+				width: 100%;
+				height: 180px;
+				background: #f8f9fa;
+				border: 2px dashed #cbd5e1;
+				border-radius: 6px;
+				overflow-x: auto;
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				padding: 10px;
+				margin-bottom: 15px;
+				scroll-snap-type: x mandatory;
+			}
+			.project-carousel img {
+				height: 100%;
+				object-fit: cover;
+				border-radius: 4px;
+				scroll-snap-align: center;
+				flex-shrink: 0;
+			}
+			.carousel-placeholder {
+				min-width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #64748b;
+				font-size: 0.85em;
+				font-weight: 500;
+				scroll-snap-align: center;
+			}
+
+			/* The Output Box Design */
+			.output-box {
+				background: rgba(29, 53, 87, 0.06);
+				border-left: 4px solid #1d3557;
+				padding: 12px 15px;
+				border-radius: 0 6px 6px 0;
+				margin: 15px 0;
+			}
+			.output-title {
+				font-size: 0.8em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-weight: 700;
+				color: #1d3557 !important;
+				margin-bottom: 3px;
+				display: block;
+			}
+			.output-desc {
+				font-size: 0.9em;
+				margin-bottom: 0 !important;
+				color: #2c3e50 !important;
+				font-weight: 500;
 			}
 
 			/* Modern Timeline Design for Experience */
@@ -220,23 +297,19 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
+				<div id="main">
 						<div class="inner">
 
-							<!-- Header -->
-								<header id="header">
+							<header id="header">
 									<a href="index.html" class="logo"><strong>Anya Sinha</strong> | Portfolio</a>
 									<ul class="icons">
 										<li><a href="https://www.linkedin.com/in/ananya-sinha-992536299/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 									</ul>
 								</header>
 
-							<!-- Banner -->
-								<section id="banner" class="visible">
+							<section id="banner" class="visible">
 									<div class="content" style="width: 100%;">
 										<header>
 											<div class="hero-title-wrapper">
@@ -254,8 +327,7 @@
 									</div>
 								</section>
 
-							<!-- Education Section (3D Dual-Door College Showcase) -->
-								<section id="education">
+							<section id="education">
 									<header class="major">
 										<h2>Educational Background</h2>
 									</header>
@@ -291,8 +363,7 @@
 									</div>
 								</section>
 
-							<!-- Experience & Leadership Section (Luminous Light Beam Glow Transition) -->
-								<section id="experience">
+							<section id="experience">
 									<header class="major">
 										<h2>Experience & Leadership</h2>
 									</header>
@@ -388,49 +459,71 @@
 									</div>
 								</section>
 
-							<!-- Projects Section -->
-								<section>
+							<section>
 									<header class="major">
 										<h2>Projects</h2>
 									</header>
 									<div class="posts">
 										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="H2GO Project" /></a>
+											<div class="project-carousel">
+												<div class="carousel-placeholder">[ Scrollable Project Images / Slides ]</div>
+											</div>
 											<h3 style="color: #1d3557;">H2GO | Product & Marketing Strategy</h3>
 											<span class="project-date">July 2026</span>
 											<p>Developed a marketing pitch for a multipurpose water bottle carrier concept for college students and young professionals, using secondary market research to identify consumer needs and shape product positioning.</p>
+											<div class="output-box">
+												<span class="output-title">The Output</span>
+												<p class="output-desc">A comprehensive presentation pitch detailing market validation, consumer personas, and product positioning strategy.</p>
+											</div>
 											<ul class="actions">
 												<li><a href="#" class="button">View Details</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="Kanin Na Project" /></a>
+											<div class="project-carousel">
+												<div class="carousel-placeholder">[ Scrollable Project Images / Slides ]</div>
+											</div>
 											<h3 style="color: #1d3557;">Kanin Na | Rice Yield Anomaly Forecasting</h3>
 											<span class="project-date">May 2026</span>
 											<p>Developed a Machine Learning Model to forecast rice yield changes across 3 Philippine provinces, analyzing historical weather and agricultural data. Generated forecasts to help identify potential shortfalls and support agricultural planning.</p>
+											<div class="output-box">
+												<span class="output-title">The Output</span>
+												<p class="output-desc">A polished machine learning presentation outlining predictive modeling results, data pipeline mechanics, and agricultural impact forecasts.</p>
+											</div>
 											<ul class="actions">
 												<li><a href="#" class="button">View Code</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="Student Performance Analytics" /></a>
+											<div class="project-carousel">
+												<div class="carousel-placeholder">[ Scrollable Project Images / Slides ]</div>
+											</div>
 											<h3 style="color: #1d3557;">Student Performance Analytics</h3>
 											<span class="project-date">April 2026</span>
-											<p>Analyzed academic performance data from 6,607 students across 20 variables to identify factors influencing academic outcomes and translated findings into an interactive Tableau dashboard.</p>
+											<p>Analyzed academic performance data from 6,607 students across 20 variables to identify factors influencing academic outcomes and translated findings into an interactive dashboard.</p>
+											<div class="output-box">
+												<span class="output-title">The Output</span>
+												<p class="output-desc">An interactive Tableau dashboard featuring multi-variable filtering, demographic correlation charts, and key student performance metrics.</p>
+											</div>
 											<ul class="actions">
 												<li><a href="#" class="button">View Dashboard</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="Coming Soon" /></a>
+											<div class="project-carousel">
+												<div class="carousel-placeholder">[ Scrollable Project Images / Slides ]</div>
+											</div>
 											<h3 style="color: #1d3557;">Coming Soon!</h3>
 											<p>More exciting data-driven marketing and analytics projects are currently in progress. Stay tuned for updates!</p>
+											<div class="output-box">
+												<span class="output-title">The Output</span>
+												<p class="output-desc">Upcoming data model and actionable analytical framework.</p>
+											</div>
 										</article>
 									</div>
 								</section>
 
-							<!-- Prominent Resume Download Button at the Bottom -->
-								<div class="resume-box">
+							<div class="resume-box">
 									<h3 style="color: #1d3557;">Ready to see my full professional background?</h3>
 									<p>Download my resume to explore my complete technical toolkit and journey.</p>
 									<ul class="actions stacked">
@@ -441,12 +534,10 @@
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
+				<div id="sidebar">
 						<div class="inner">
 
-							<!-- Menu -->
-								<nav id="menu">
+							<nav id="menu">
 									<header class="major">
 										<h2>Menu</h2>
 									</header>
@@ -456,8 +547,7 @@
 									</ul>
 								</nav>
 
-							<!-- Section -->
-								<section>
+							<section>
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
@@ -468,8 +558,7 @@
 									</ul>
 								</section>
 
-							<!-- Footer -->
-								<footer id="footer">
+							<footer id="footer">
 									<p class="copyright">&copy; Anya Sinha. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 								</footer>
 
@@ -478,14 +567,13 @@
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				// Interactive Scroll Animations & Door Opening / Light Glow Effects
+				// Interactive Scroll Animations & Outward-Opening Door / Light Glow Effects
 				document.addEventListener("DOMContentLoaded", function () {
 					const sections = document.querySelectorAll("section");
 					const doorAim = document.getElementById("door-aim");
@@ -497,7 +585,7 @@
 							if (entry.isIntersecting) {
 								entry.target.classList.add("visible");
 								
-								// Trigger dual door swing when education section enters view
+								// Trigger dual doors to swing open outward when education section enters view
 								if (entry.target.id === "education") {
 									setTimeout(() => {
 										doorAim.classList.add("open-left");
