@@ -40,18 +40,18 @@
 				padding: 15px 40px !important;
 			}
 			
-			/* Modern Timeline Design for Experience */
+			/* Modern Timeline Design for Experience & Education */
 			.timeline {
 				position: relative;
 				margin: 40px 0 20px 20px;
 				padding-left: 30px;
 				border-left: 3px solid #1d3557;
 			}
-			.experience-item {
+			.experience-item, .education-item {
 				position: relative;
 				margin-bottom: 3.5em;
 			}
-			.experience-item::before {
+			.experience-item::before, .education-item::before {
 				content: '';
 				position: absolute;
 				left: -37px;
@@ -63,7 +63,7 @@
 				border: 3px solid #ffffff;
 				box-shadow: 0 0 0 2px #1d3557;
 			}
-			.experience-header {
+			.experience-header, .education-header {
 				display: flex;
 				justify-content: space-between;
 				align-items: flex-start;
@@ -71,7 +71,7 @@
 				gap: 10px;
 				margin-bottom: 0.6em;
 			}
-			.experience-item h3 {
+			.experience-item h3, .education-item h3 {
 				color: #1d3557 !important;
 				margin-bottom: 0;
 				font-weight: 600;
@@ -83,6 +83,24 @@
 				background: rgba(29, 53, 87, 0.08);
 				padding: 4px 10px;
 				border-radius: 4px;
+			}
+			.edu-logo-box {
+				margin-top: 15px;
+				max-width: 200px;
+				height: 100px;
+				background: #ffffff;
+				border: 2px dashed #cbd5e1;
+				border-radius: 6px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 10px;
+				overflow: hidden;
+			}
+			.edu-logo-box img {
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: contain;
 			}
 			.exp-image-box {
 				margin-top: 15px;
@@ -175,26 +193,35 @@
 									</div>
 								</section>
 
-							<!-- Education Section -->
+							<!-- Education Section (Transcontinental Double Degree Showcase) -->
 								<section id="education">
 									<header class="major">
 										<h2>Educational Background</h2>
 									</header>
-									<div class="features">
-										<article>
-											<span class="icon solid fa-graduation-cap"></span>
-											<div class="content">
-												<h3 style="color: #1d3557;">Asian Institute of Management</h3>
-												<p>Junior (3rd Year) pursuing a double degree in Data Science & Business Administration. Focusing on quantitative methods, business strategy, and analytical problem-solving.</p>
+									<p style="font-weight: 500; margin-bottom: 20px; font-style: italic;">Bridging Manila and Houston: A Transcontinental Double Degree Journey in Data Science & Business Systems</p>
+									
+									<div class="timeline">
+										<div class="education-item">
+											<div class="education-header">
+												<h3>Asian Institute of Management (AIM)</h3>
+												<span class="exp-date">Junior (3rd Year)</span>
 											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-laptop-code"></span>
-											<div class="content">
-												<h3 style="color: #1d3557;">University of Houston</h3>
-												<p>Concentrating in Management Information Systems. Bridging technical database knowledge with enterprise systems and marketing operations.</p>
+											<p><strong>Bachelor of Science in Data Science</strong><br>Immersing myself in rigorous quantitative frameworks, advanced statistical modeling, and sharp data analytics. This powerhouse program trains me to decode complex market trends and translate raw data into winning business insights.</p>
+											<div class="edu-logo-box">
+												<img src="images/AIM-LOGO-New-min.png" alt="AIM Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='[ AIM Logo ]';" />
 											</div>
-										</article>
+										</div>
+
+										<div class="education-item">
+											<div class="education-header">
+												<h3>University of Houston (UH)</h3>
+												<span class="exp-date">Double Degree Track</span>
+											</div>
+											<p><strong>Bachelor of Business Administration (BBA) in Management Information Systems (MIS)</strong><br>Building the critical bridge between technical database architectures and enterprise systems. Here, I master how information systems interact with business operations to optimize modern digital strategies.</p>
+											<div class="edu-logo-box">
+												<img src="images/uh'.png" alt="UH Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='[ UH Logo ]';" />
+											</div>
+										</div>
 									</div>
 								</section>
 
