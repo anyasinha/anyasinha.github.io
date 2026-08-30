@@ -40,42 +40,46 @@
 				padding: 15px 40px !important;
 			}
 			
-			/* Side-by-Side Double Degree Creative Layout */
-			.dual-edu-grid {
+			/* 3D Interactive Dual-Door Educational Showcase */
+			.doors-container {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				gap: 30px;
 				margin-top: 30px;
+				perspective: 1200px;
 			}
 			@media screen and (max-width: 768px) {
-				.dual-edu-grid {
+				.doors-container {
 					grid-template-columns: 1fr;
 				}
 			}
-			.edu-card {
+			.college-door {
 				background: #ffffff;
-				padding: 30px;
-				border-radius: 10px;
-				box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+				padding: 35px 30px;
+				border-radius: 12px;
+				box-shadow: 0 10px 30px rgba(29, 53, 87, 0.08);
 				border: 1px solid #e2e8f0;
 				position: relative;
-				overflow: hidden;
+				transform-style: preserve-3d;
+				transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
 			}
-			.edu-card::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 5px;
-				background: #1d3557;
+			/* Door Opening Animation Triggered on Scroll */
+			.college-door.open-left {
+				transform: rotateY(-18deg) translateY(-8px);
+				box-shadow: -20px 20px 40px rgba(29, 53, 87, 0.15);
+				border-color: #1d3557;
 			}
-			.edu-card h3 {
+			.college-door.open-right {
+				transform: rotateY(18deg) translateY(-8px);
+				box-shadow: 20px 20px 40px rgba(29, 53, 87, 0.15);
+				border-color: #1d3557;
+			}
+			.college-door h3 {
 				color: #1d3557 !important;
-				font-size: 1.2em;
+				font-size: 1.25em;
 				margin-bottom: 0.2em;
 				font-weight: 600;
 			}
@@ -86,7 +90,7 @@
 				margin-bottom: 1em;
 			}
 			.edu-logo-box {
-				margin-top: 20px;
+				margin-top: 25px;
 				width: 100%;
 				height: 90px;
 				background: #f8f9fa;
@@ -101,6 +105,18 @@
 				max-width: 100%;
 				max-height: 100%;
 				object-fit: contain;
+			}
+
+			/* Luminous Light Beam Glow Transitioning into Experience Section */
+			#experience {
+				position: relative;
+				transition: all 1.2s ease;
+			}
+			#experience.illuminated {
+				box-shadow: 0 -15px 50px rgba(29, 53, 87, 0.18);
+				background: radial-gradient(circle at 50% 0%, rgba(29, 53, 87, 0.04) 0%, transparent 70%);
+				padding: 40px 20px;
+				border-radius: 16px;
 			}
 
 			/* Modern Timeline Design for Experience */
@@ -238,14 +254,14 @@
 									</div>
 								</section>
 
-							<!-- Education Section (Side-by-Side Double Degree Showcase) -->
+							<!-- Education Section (3D Dual-Door College Showcase) -->
 								<section id="education">
 									<header class="major">
 										<h2>Educational Background</h2>
 									</header>
 									
-									<div class="dual-edu-grid">
-										<div class="edu-card">
+									<div class="doors-container">
+										<div class="college-door" id="door-aim">
 											<div>
 												<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
 													<h3>Asian Institute of Management</h3>
@@ -259,7 +275,7 @@
 											</div>
 										</div>
 
-										<div class="edu-card">
+										<div class="college-door" id="door-uh">
 											<div>
 												<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
 													<h3>University of Houston</h3>
@@ -275,7 +291,7 @@
 									</div>
 								</section>
 
-							<!-- Experience & Leadership Section (Timeline Layout) -->
+							<!-- Experience & Leadership Section (Luminous Light Beam Glow Transition) -->
 								<section id="experience">
 									<header class="major">
 										<h2>Experience & Leadership</h2>
@@ -469,16 +485,35 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				// Interactive Scroll Animation Trigger
+				// Interactive Scroll Animations & Door Opening / Light Glow Effects
 				document.addEventListener("DOMContentLoaded", function () {
 					const sections = document.querySelectorAll("section");
+					const doorAim = document.getElementById("door-aim");
+					const doorUh = document.getElementById("door-uh");
+					const experienceSection = document.getElementById("experience");
+
 					const observer = new IntersectionObserver((entries) => {
 						entries.forEach(entry => {
 							if (entry.isIntersecting) {
 								entry.target.classList.add("visible");
+								
+								// Trigger dual door swing when education section enters view
+								if (entry.target.id === "education") {
+									setTimeout(() => {
+										doorAim.classList.add("open-left");
+										doorUh.classList.add("open-right");
+									}, 300);
+								}
+								
+								// Trigger luminous beam glow as user scrolls into experience section
+								if (entry.target.id === "experience") {
+									setTimeout(() => {
+										experienceSection.classList.add("illuminated");
+									}, 400);
+								}
 							}
 						});
-					}, { threshold: 0.1 });
+					}, { threshold: 0.15 });
 
 					sections.forEach(section => {
 						observer.observe(section);
