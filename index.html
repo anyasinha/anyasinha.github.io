@@ -28,6 +28,11 @@
 				background-size: cover;
 			}
 
+			/* Remove the navy blue accent line at the top */
+			#wrapper::before {
+				display: none !important;
+			}
+
 			section {
 				opacity: 0;
 				transform: translateY(30px);
@@ -44,7 +49,7 @@
 				padding: 40px 20px;
 				background: rgba(255, 255, 255, 0.7);
 				border-radius: 12px;
-				border: 2px dashed #333333;
+				border: none;
 			}
 			.button.huge {
 				font-size: 1.25em !important;
@@ -66,7 +71,7 @@
 				50% { border-color: #000000; }
 			}
 
-			/* Whimsical Fairy Door Educational Showcase */
+			/* Thin Square Educational Showcase */
 			.doors-container {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
@@ -82,7 +87,7 @@
 			.college-door {
 				background: #ffffff;
 				padding: 40px 30px;
-				border-radius: 160px 160px 12px 12px;
+				border-radius: 8px;
 				box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
 				border: 3px solid #1a1a1a;
 				position: relative;
@@ -102,15 +107,6 @@
 				transform: rotateY(-28deg) translateY(-10px);
 				box-shadow: 35px 25px 50px rgba(0, 0, 0, 0.15);
 			}
-			.college-door::after {
-				content: '✧';
-				position: absolute;
-				top: 52%;
-				font-size: 1.5em;
-				color: #1a1a1a;
-			}
-			#door-aim::after { right: 20px; }
-			#door-uh::after { left: 20px; }
 			
 			.college-door h3 {
 				font-size: 1.3em;
@@ -124,10 +120,10 @@
 			.edu-logo-box {
 				margin-top: 25px;
 				width: 100%;
-				height: 90px;
-				background: #f8f9fa;
-				border: 2px dashed #666666;
-				border-radius: 8px;
+				height: 120px;
+				background: transparent;
+				border: none;
+				border-radius: 0;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -177,7 +173,7 @@
 				width: 100%;
 				height: 180px;
 				background: #ffffff;
-				border: 2px dashed #666666;
+				border: none;
 				border-radius: 6px;
 				overflow-x: auto;
 				display: flex;
@@ -217,7 +213,7 @@
 				font-weight: 500;
 			}
 
-			/* Interests / Vibe Cards */
+			/* Clickable Interests Links */
 			.interests-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -225,20 +221,22 @@
 				margin-top: 30px;
 			}
 			.interest-card {
-				background: #ffffff;
-				border: 2px solid #1a1a1a;
-				padding: 25px 20px;
-				border-radius: 12px;
-				text-align: center;
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				background: transparent;
+				border: none;
+				padding: 10px 0;
+				text-align: left;
+				transition: transform 0.2s ease;
+				display: block;
+				text-decoration: none !important;
 			}
 			.interest-card:hover {
-				transform: translateY(-6px);
-				box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+				transform: translateX(4px);
 			}
 			.interest-card h3 {
-				font-size: 1.1em;
-				margin-bottom: 8px;
+				font-size: 1.15em;
+				margin-bottom: 0;
+				color: #1a1a1a;
+				text-decoration: underline;
 			}
 
 			/* Timeline */
@@ -281,7 +279,7 @@
 				max-width: 400px;
 				height: 160px;
 				background: #ffffff;
-				border: 2px dashed #666666;
+				border: none;
 				border-radius: 6px;
 				display: flex;
 				align-items: center;
@@ -388,7 +386,7 @@
 									</div>
 								</section>
 
-							<!-- Education Section (Whimsical Fairy Doors Opening to Experience) -->
+							<!-- Education Section -->
 								<section id="education">
 									<header class="major">
 										<h2>Educational Thresholds</h2>
@@ -434,26 +432,22 @@
 									<p style="font-weight: 600; margin-bottom: 10px;">A quick peek into what fuels my curiosity, creativity, and daily drive:</p>
 									
 									<div class="interests-grid">
-										<div class="interest-card">
-											<h3>🎨 Visual Storytelling</h3>
-											<p>Blending graphic design and branding aesthetics to ensure data insights are communicated with absolute clarity and flair.</p>
-										</div>
-										<div class="interest-card">
-											<h3>🌐 Global Diplomacy</h3>
-											<p>Active involvement in Model UN and international discussions, championing collaboration across cultural lines.</p>
-										</div>
-										<div class="interest-card">
-											<h3>📚 Language & Culture</h3>
-											<p>Passionate about linguistic milestones and community advocacy, driven by experiences like my time with Duolingo & Youthify.</p>
-										</div>
-										<div class="interest-card">
-											<h3>⚙️ Data Engineering</h3>
-											<p>Constantly exploring data pipelines, governance models, and automation tools to make information instantly accessible.</p>
-										</div>
+										<a href="visual-storytelling.html" class="interest-card">
+											<h3>Visual Storytelling →</h3>
+										</a>
+										<a href="global-diplomacy.html" class="interest-card">
+											<h3>Global Diplomacy →</h3>
+										</a>
+										<a href="language-culture.html" class="interest-card">
+											<h3>Language & Culture →</h3>
+										</a>
+										<a href="data-engineering.html" class="interest-card">
+											<h3>Data Engineering →</h3>
+										</a>
 									</div>
 								</section>
 
-							<!-- Experience & Leadership Section (Illuminated by Fairy Light Beam Glow) -->
+							<!-- Experience & Leadership Section -->
 								<section id="experience">
 									<header class="major">
 										<h2>Experience & Leadership</h2>
@@ -569,9 +563,6 @@
 												<span class="output-title">The Output</span>
 												<p class="output-desc">A presentation pitch detailing market validation, consumer personas, and product positioning strategy.</p>
 											</div>
-											<ul class="actions">
-												<li><a href="#" class="button">View Details</a></li>
-											</ul>
 										</article>
 										<article>
 											<div class="project-carousel">
@@ -584,9 +575,6 @@
 												<span class="output-title">The Output</span>
 												<p class="output-desc">A presentation based on machine learning outlining predictive modeling results, data pipeline mechanics, and agricultural impact forecasts.</p>
 											</div>
-											<ul class="actions">
-												<li><a href="#" class="button">View Code</a></li>
-											</ul>
 										</article>
 										<article>
 											<div class="project-carousel">
@@ -599,9 +587,6 @@
 												<span class="output-title">The Output</span>
 												<p class="output-desc">A Tableau dashboard featuring multi-variable filtering, demographic correlation charts, and key student performance metrics.</p>
 											</div>
-											<ul class="actions">
-												<li><a href="#" class="button">View Dashboard</a></li>
-											</ul>
 										</article>
 										<article>
 											<div class="project-carousel">
@@ -617,7 +602,7 @@
 									</div>
 								</section>
 
-							<!-- Prominent Resume Download Button at the Bottom -->
+							<!-- Resume Download Section -->
 								<div class="resume-box">
 									<h3>Ready to see my full professional background?</h3>
 									<p>Download my resume to explore my complete technical toolkit and journey.</p>
@@ -705,7 +690,7 @@
 					}
 					setTimeout(typeWriter, 400);
 
-					// Whimsical Scroll Triggers for Fairy Doors & Luminous Light Glow
+					// Whimsical Scroll Triggers for Education Cards & Luminous Light Glow
 					const sections = document.querySelectorAll("section");
 					const doorAim = document.getElementById("door-aim");
 					const doorUh = document.getElementById("door-uh");
@@ -716,7 +701,6 @@
 							if (entry.isIntersecting) {
 								entry.target.classList.add("visible");
 								
-								// Swing fairy doors open outward when education section enters view
 								if (entry.target.id === "education") {
 									setTimeout(() => {
 										doorAim.classList.add("open-left");
@@ -724,7 +708,6 @@
 									}, 350);
 								}
 								
-								// Light beam glow effect as you scroll into experience
 								if (entry.target.id === "experience") {
 									setTimeout(() => {
 										experienceSection.classList.add("illuminated");
