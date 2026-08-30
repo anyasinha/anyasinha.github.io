@@ -7,18 +7,37 @@
 		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Typography: Cormorant Garamond for Headers (matching provided image style), Inter for Body Text */
+			/* Typography: Cormorant Garamond for Headers (one size bigger), Inter for Body Text */
 			*, body, input, select, textarea {
 				font-family: 'Inter', sans-serif !important;
-				color: #2b2b2b !important;
+				color: #000000 !important;
 			}
-			h1, h2, h3, h4, h5, h6, .major h2, a.logo strong, .college-door h3, .typing-container {
+			h1, .typing-container {
 				font-family: 'Cormorant Garamond', serif !important;
 				color: #000000 !important;
 				font-weight: 700 !important;
+				font-size: 3em !important;
+			}
+			h2, .major h2 {
+				font-family: 'Cormorant Garamond', serif !important;
+				color: #000000 !important;
+				font-weight: 700 !important;
+				font-size: 2.3em !important;
+			}
+			h3, .college-door h3 {
+				font-family: 'Cormorant Garamond', serif !important;
+				color: #000000 !important;
+				font-weight: 700 !important;
+				font-size: 1.6em !important;
+			}
+			h4, h5, h6, a.logo strong {
+				font-family: 'Cormorant Garamond', serif !important;
+				color: #000000 !important;
+				font-weight: 700 !important;
+				font-size: 1.3em !important;
 			}
 			p, span, a, li {
-				color: #333333 !important;
+				color: #000000 !important;
 				line-height: 1.8 !important;
 			}
 			
@@ -28,7 +47,7 @@
 				background-size: cover;
 			}
 
-			/* Change the top wrapper line to black */
+			/* Change top wrapper line to black */
 			#wrapper::before {
 				background: #000000 !important;
 				display: block !important;
@@ -63,7 +82,7 @@
 				border-right: 3px solid #000000;
 				white-space: nowrap;
 				animation: blink-caret 0.75s step-end infinite;
-				font-size: 2.3em;
+				font-size: 2.8em;
 				font-weight: 700;
 				margin-bottom: 5px;
 			}
@@ -90,7 +109,7 @@
 				padding: 40px 30px;
 				border-radius: 8px;
 				box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-				border: 3px solid #1a1a1a;
+				border: 3px solid #000000;
 				position: relative;
 				transform-style: preserve-3d;
 				transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.8s ease;
@@ -109,14 +128,11 @@
 				box-shadow: 35px 25px 50px rgba(0, 0, 0, 0.15);
 			}
 			
-			.college-door h3 {
-				font-size: 1.4em;
-				margin-bottom: 0.2em;
-			}
 			.edu-degree {
 				font-weight: 700;
-				font-size: 0.95em;
+				font-size: 1.05em;
 				margin-bottom: 1em;
+				color: #000000 !important;
 			}
 			.edu-logo-box {
 				margin-top: 25px;
@@ -142,31 +158,15 @@
 				transition: all 1.4s ease;
 			}
 			#experience.illuminated {
-				box-shadow: 0 -20px 60px rgba(255, 215, 0, 0.15);
-				background: radial-gradient(circle at 50% 0%, rgba(255, 230, 150, 0.25) 0%, rgba(255, 255, 255, 0.05) 60%, transparent 80%);
+				box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.15);
+				background: radial-gradient(circle at 50% 0%, rgba(200, 200, 200, 0.25) 0%, rgba(255, 255, 255, 0.05) 60%, transparent 80%);
 				padding: 50px 25px;
 				border-radius: 20px;
 			}
 
-			/* Floating Music Player Widget */
-			.music-widget {
-				position: fixed;
-				bottom: 25px;
-				right: 25px;
-				background: #ffffff;
-				border: 2px solid #1a1a1a;
-				padding: 10px 18px;
-				border-radius: 30px;
-				box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-				z-index: 9999;
-				display: flex;
-				align-items: center;
-				gap: 10px;
-				cursor: pointer;
-				transition: transform 0.2s ease;
-			}
-			.music-widget:hover {
-				transform: scale(1.05);
+			/* Remove line underneath Projects heading */
+			#projects-header::after {
+				display: none !important;
 			}
 
 			/* Scrollable Project Image Carousels */
@@ -195,23 +195,25 @@
 			/* The Output Box */
 			.output-box {
 				background: rgba(0, 0, 0, 0.04);
-				border-left: 4px solid #1a1a1a;
+				border-left: 4px solid #000000;
 				padding: 12px 15px;
 				border-radius: 0 6px 6px 0;
 				margin: 15px 0;
 			}
 			.output-title {
-				font-size: 0.8em;
+				font-size: 0.85em;
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				font-weight: 800;
 				margin-bottom: 3px;
 				display: block;
+				color: #000000 !important;
 			}
 			.output-desc {
-				font-size: 0.9em;
+				font-size: 0.95em;
 				margin-bottom: 0 !important;
 				font-weight: 500;
+				color: #000000 !important;
 			}
 
 			/* Clickable Interests Links */
@@ -234,9 +236,9 @@
 				transform: translateX(4px);
 			}
 			.interest-card h3 {
-				font-size: 1.25em;
+				font-size: 1.4em;
 				margin-bottom: 0;
-				color: #1a1a1a;
+				color: #000000 !important;
 				text-decoration: underline;
 			}
 
@@ -245,7 +247,7 @@
 				position: relative;
 				margin: 40px 0 20px 20px;
 				padding-left: 30px;
-				border-left: none; /* Removed navy blue line underneath / alongside timeline */
+				border-left: none;
 			}
 			.experience-item {
 				position: relative;
@@ -258,7 +260,7 @@
 				top: 6px;
 				width: 10px;
 				height: 10px;
-				background: #1a1a1a;
+				background: #000000;
 				border-radius: 0;
 			}
 			.experience-header {
@@ -270,11 +272,12 @@
 				margin-bottom: 0.6em;
 			}
 			.exp-date {
-				font-size: 0.85em;
+				font-size: 0.9em;
 				font-weight: 700;
 				background: rgba(0, 0, 0, 0.06);
 				padding: 4px 10px;
 				border-radius: 4px;
+				color: #000000 !important;
 			}
 			.exp-image-box {
 				margin-top: 15px;
@@ -286,7 +289,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				font-size: 0.85em;
+				font-size: 0.9em;
 				font-weight: 600;
 				overflow: hidden;
 			}
@@ -296,16 +299,17 @@
 				object-fit: cover;
 			}
 			.project-date {
-				font-size: 0.85em;
+				font-size: 0.9em;
 				font-weight: 700;
 				margin-bottom: 0.5em;
 				display: block;
+				color: #000000 !important;
 			}
 
 			/* Solid Black Buttons with Centered White Text */
 			input[type="submit"], input[type="reset"], input[type="button"], button, .button {
-				background-color: #1a1a1a !important;
-				border: 2px solid #1a1a1a !important;
+				background-color: #000000 !important;
+				border: 2px solid #000000 !important;
 				color: #ffffff !important;
 				font-weight: 700 !important;
 				border-radius: 4px !important;
@@ -320,7 +324,7 @@
 				color: #ffffff !important;
 			}
 			.button.primary {
-				background-color: #1a1a1a !important;
+				background-color: #000000 !important;
 				color: #ffffff !important;
 			}
 			a.logo strong {
@@ -336,11 +340,11 @@
 				margin-top: -10px;
 			}
 			.status-badge {
-				background: #1a1a1a;
+				background: #000000;
 				color: #ffffff !important;
 				padding: 10px 18px;
 				border-radius: 20px;
-				font-size: 0.9em;
+				font-size: 0.95em;
 				font-weight: 600;
 				letter-spacing: 0.5px;
 				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -350,40 +354,31 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Whimsical Floating Music Player -->
 		<audio id="bg-music" loop>
 			<source src="assets/whimsical-theme.mp3" type="audio/mpeg">
 		</audio>
-		<div class="music-widget" onclick="toggleMusic()">
-			<span id="music-icon">🎵</span>
-			<span id="music-text" style="font-size: 0.85em; font-weight: 700;">Play Whimsical Tune</span>
-		</div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
+				<div id="main">
 						<div class="inner">
 
-							<!-- Header -->
-								<header id="header">
+							<header id="header">
 									<a href="index.html" class="logo"><strong>Anya Sinha</strong> | Portfolio</a>
 									<ul class="icons">
 										<li><a href="https://www.linkedin.com/in/ananya-sinha-992536299/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 									</ul>
 								</header>
 
-							<!-- Banner -->
-								<section id="banner" class="visible">
+							<section id="banner" class="visible">
 									<div class="content" style="width: 100%;">
 										<header>
 											<div class="hero-title-wrapper">
 												<div>
 													<div class="typing-container" id="typing-text"></div>
-													<p style="font-size: 1.35em; font-weight: 700; margin-top: 5px;">Where Marketing Meets Metrics</p>
+													<p style="font-size: 1.45em; font-weight: 700; margin-top: 5px;">Where Marketing Meets Metrics</p>
 												</div>
-												<span class="status-badge">Data Cleaning Intern @ MacroAsia</span>
+												<span class="status-badge">Currently a Data Cleaning Intern @ MacroAsia</span>
 											</div>
 										</header>
 										<ul class="actions" style="margin-top: 25px;">
@@ -393,8 +388,7 @@
 									</div>
 								</section>
 
-							<!-- Education Section -->
-								<section id="education">
+							<section id="education">
 									<header class="major">
 										<h2>Education</h2>
 									</header>
@@ -430,8 +424,7 @@
 									</div>
 								</section>
 
-							<!-- Interests Section -->
-								<section id="interests">
+							<section id="interests">
 									<header class="major">
 										<h2>Beyond the Metrics</h2>
 									</header>
@@ -453,8 +446,7 @@
 									</div>
 								</section>
 
-							<!-- Experience & Leadership Section -->
-								<section id="experience">
+							<section id="experience">
 									<header class="major">
 										<h2>Experience & Leadership</h2>
 									</header>
@@ -550,9 +542,8 @@
 									</div>
 								</section>
 
-							<!-- Projects Section -->
-								<section>
-									<header class="major">
+							<section>
+									<header class="major" id="projects-header">
 										<h2>Projects</h2>
 									</header>
 									<div class="posts">
@@ -572,7 +563,7 @@
 										</article>
 										<article>
 											<div class="project-carousel">
-												<span style="padding: 0 20px; color: #666; font-size: 0.85em; font-weight: 600;">[ Coming Soon Slides ]</span>
+												<span style="padding: 0 20px; color: #000; font-size: 0.9em; font-weight: 600;">[ Coming Soon Slides ]</span>
 											</div>
 											<h3>Kanin Na | Rice Yield Anomaly Forecasting</h3>
 											<span class="project-date">May 2026</span>
@@ -584,7 +575,7 @@
 										</article>
 										<article>
 											<div class="project-carousel">
-												<span style="padding: 0 20px; color: #666; font-size: 0.85em; font-weight: 600;">[ Coming Soon Slides ]</span>
+												<span style="padding: 0 20px; color: #000; font-size: 0.9em; font-weight: 600;">[ Coming Soon Slides ]</span>
 											</div>
 											<h3>Student Performance Analytics</h3>
 											<span class="project-date">April 2026</span>
@@ -596,7 +587,7 @@
 										</article>
 										<article>
 											<div class="project-carousel">
-												<span style="padding: 0 20px; color: #666; font-size: 0.85em; font-weight: 600;">[ Coming Soon Slides ]</span>
+												<span style="padding: 0 20px; color: #000; font-size: 0.9em; font-weight: 600;">[ Coming Soon Slides ]</span>
 											</div>
 											<h3>Coming Soon!</h3>
 											<p>More exciting data-driven marketing and analytics projects are currently in progress. Stay tuned for updates!</p>
@@ -608,8 +599,7 @@
 									</div>
 								</section>
 
-							<!-- Resume Download Section -->
-								<div class="resume-box">
+							<div class="resume-box">
 									<h3>Ready to see my full professional background?</h3>
 									<p>Download my resume to explore my complete technical toolkit and journey.</p>
 									<ul class="actions stacked">
@@ -620,12 +610,10 @@
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
+				<div id="sidebar">
 						<div class="inner">
 
-							<!-- Menu -->
-								<nav id="menu">
+							<nav id="menu">
 									<header class="major">
 										<h2>Menu</h2>
 									</header>
@@ -635,8 +623,7 @@
 									</ul>
 								</nav>
 
-							<!-- Section -->
-								<section>
+							<section>
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
@@ -647,8 +634,7 @@
 									</ul>
 								</section>
 
-							<!-- Footer -->
-								<footer id="footer">
+							<footer id="footer">
 									<p class="copyright">&copy; Anya Sinha. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 								</footer>
 
@@ -657,32 +643,29 @@
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				// Audio Toggle Functionality
-				function toggleMusic() {
-					const music = document.getElementById("bg-music");
-					const musicText = document.getElementById("music-text");
-					const musicIcon = document.getElementById("music-icon");
-					
-					if (music.paused) {
-						music.play();
-						musicText.innerText = "Pause Tune";
-						musicIcon.innerText = "🎶";
-					} else {
-						music.pause();
-						musicText.innerText = "Play Whimsical Tune";
-						musicIcon.innerText = "🎵";
-					}
-				}
-
-				// Typing Animation Script for "Hi, I'm Anya!"
+				// Autoplay Audio on Scroll/Interaction
 				document.addEventListener("DOMContentLoaded", function () {
+					const music = document.getElementById("bg-music");
+					
+					function playAudio() {
+						if (music.paused) {
+							music.play().catch(error => {
+								console.log("Autoplay blocked until user interaction:", error);
+							});
+						}
+					}
+
+					window.addEventListener("scroll", playAudio, { once: true });
+					window.addEventListener("click", playAudio, { once: true });
+					window.addEventListener("keydown", playAudio, { once: true });
+
+					// Typing Animation Script for "Hi, I'm Anya!"
 					const textElement = document.getElementById("typing-text");
 					const phrase = "Hi, I’m Anya!";
 					let index = 0;
