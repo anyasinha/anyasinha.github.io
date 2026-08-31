@@ -1,3 +1,6 @@
+Here is the complete, updated code for your **`index.html`** file:
+
+```html
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -126,14 +129,22 @@
 		}
 
 		.college-door {
-			background: transparent;
-			border: none;
-			border-radius: 0;
-			box-shadow: none;
-			padding: 10px 0;
+			background: rgba(255, 255, 255, 0.6);
+			border: 1px solid #000;
+			border-radius: 8px;
+			padding: 25px;
 			opacity: 0;
 			transform: translateY(26px);
-			transition: none;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+			text-decoration: none !important;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.college-door:hover {
+			transform: translateY(-4px) !important;
+			box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 		}
 
 		.college-door.revealed { animation: education-reveal 0.9s ease-out forwards; }
@@ -447,21 +458,31 @@
 				</section>
 
 				<section id="education">
-	<header class="major">
-		<h2>Education &amp; Academic Portals</h2>
-		<p class="education-note">Pursuing a double degree across global institutions</p>
-	</header>
+					<header class="major">
+						<h2>Education</h2>
+						<p class="education-note">Pursuing a double degree</p>
+					</header>
 
-	<a href="doorportal.html" class="certs-box" style="margin-top: 0; text-align: left; padding: 30px;">
-		<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-			<div>
-				<h3 style="margin-bottom: 5px;">Enter College Door Portal &rarr;</h3>
-				<p>Explore detailed academic journeys, coursework, and institution profiles for Asian Institute of Management &amp; University of Houston.</p>
-			</div>
-			<span class="button primary">Explore Portal</span>
-		</div>
-	</a>
-</section>
+					<div class="doors-container">
+						<a href="doorportal.html#aim" class="college-door" id="door-aim">
+							<div>
+								<h3>Asian Institute of Management</h3>
+								<p class="edu-degree">Bachelor of Science in Data Science</p>
+								<p>Immersing myself in rigorous quantitative frameworks, advanced statistical modeling, and sharp data analytics to decode complex market trends.</p>
+							</div>
+							<div class="edu-logo-box"><img src="images/AIM-LOGO-New-min.png" alt="AIM Logo"></div>
+						</a>
+
+						<a href="doorportal.html#uh" class="college-door" id="door-uh">
+							<div>
+								<h3>University of Houston</h3>
+								<p class="edu-degree">BBA in Management Information Systems (MIS)</p>
+								<p>Building the critical bridge between technical database architectures and enterprise systems to optimize modern business strategies.</p>
+							</div>
+							<div class="edu-logo-box"><img src="images/uh'.png" alt="UH Logo"></div>
+						</a>
+					</div>
+				</section>
 
 				<section id="experience">
 					<header class="major"><h2>Experience &amp; Leadership</h2></header>
@@ -597,15 +618,15 @@
 		<div id="sidebar">
 			<div class="inner">
 				<nav id="menu">
-	<header class="major"><h2>Menu</h2></header>
-	<ul>
-		<li><a href="index.html">Homepage</a></li>
-		<li><a href="doorportal.html">Education Portal</a></li>
-		<li><a href="creatives-portfolio.html">Creatives Portfolio</a></li>
-		<li><a href="certifications.html">Certifications</a></li>
-		<li><a href="resume.pdf" target="_blank">Download Resume</a></li>
-	</ul>
-</nav>
+					<header class="major"><h2>Menu</h2></header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="doorportal.html">Education Portal</a></li>
+						<li><a href="creatives-portfolio.html">Creatives Portfolio</a></li>
+						<li><a href="certifications.html">Certifications</a></li>
+						<li><a href="resume.pdf" target="_blank">Download Resume</a></li>
+					</ul>
+				</nav>
 
 				<footer id="footer"><p class="copyright">&copy; Anya Sinha. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p></footer>
 			</div>
@@ -726,3 +747,5 @@
 	</script>
 </body>
 </html>
+
+```
