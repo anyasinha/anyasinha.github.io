@@ -4,7 +4,7 @@
 	<title>Anya Sinha | Portfolio</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
 
 	<style>
@@ -47,11 +47,18 @@
 			color: #000000 !important;
 		}
 
+		/* --- Fix: remove any lingering navy/colored boxes anywhere inside the sidebar (icons, contact list, etc.) --- */
 		#sidebar *:not(.toggle):not(.toggle *) {
 			background: none !important;
 			background-color: transparent !important;
 			background-image: none !important;
 			box-shadow: none !important;
+		}
+
+		#sidebar,
+		#sidebar > .inner,
+		#sidebar > .inner > section {
+			background: #ffffff !important;
 		}
 
 		section {
@@ -102,173 +109,155 @@
 			text-align: right;
 		}
 
-		/* --- FIXED DOOR PORTAL STYLES --- */
-		#education {
-			display: block !important;
-			visibility: visible !important;
-		}
-
+		/* --- Fix: center the "Education / Pursuing a double degree" header --- */
 		#education header.major {
 			text-align: center;
 		}
 
-		.stage {
-			position: relative !important;
-			width: 100% !important;
-			max-width: 640px !important;
-			margin: 0 auto !important;
-			padding: 10px 20px 30px !important;
-			display: block !important;
-			box-sizing: border-box !important;
+		.education-note {
+			margin-top: -1.4em;
+			font-size: 1.05em;
+			font-weight: 400 !important;
+			letter-spacing: 0.03em;
+			opacity: 0;
+			transform: translateY(10px);
+			text-align: center;
 		}
 
+		#education.visible .education-note {
+			animation: education-note-reveal 0.8s ease-out 0.25s forwards;
+		}
+
+		@keyframes education-note-reveal {
+			from { opacity: 0; transform: translateY(10px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+
+		/* --- Education doors: click either door to enter education.html --- */
 		.archway {
-			position: relative !important;
-			width: 100% !important;
-			max-width: 480px !important;
-			margin: 0 auto !important;
-			height: 340px !important;
-			border-radius: 200px 200px 14px 14px !important;
-			background: linear-gradient(180deg, #f7c9e0 0%, #e8a0c8 100%) !important;
-			padding: 14px !important;
-			box-shadow: 0 30px 60px rgba(150, 60, 120, 0.28) !important;
-			overflow: hidden !important;
-			box-sizing: border-box !important;
+			position: relative;
+			width: 100%;
+			max-width: 480px;
+			margin: 40px auto 0;
+			height: 300px;
+			border-radius: 180px 180px 14px 14px;
+			background: linear-gradient(180deg, #f7c9e0 0%, #e8a0c8 100%);
+			padding: 14px;
+			box-shadow: 0 24px 50px rgba(150, 60, 120, 0.22);
 		}
 
 		.glow {
-			position: absolute !important;
-			top: 14px !important;
-			left: 14px !important;
-			right: 14px !important;
-			bottom: 14px !important;
-			border-radius: 190px 190px 6px 6px !important;
-			background: radial-gradient(ellipse at 50% 30%, #fff3fa 0%, #ffd3ec 35%, #eaa8d6 70%, transparent 100%) !important;
+			position: absolute;
+			inset: 14px;
+			border-radius: 170px 170px 6px 6px;
+			background: radial-gradient(ellipse at 50% 30%, #fff3fa 0%, #ffd3ec 35%, #eaa8d6 70%, transparent 100%);
 			opacity: 0;
-			transition: opacity 1.1s ease !important;
-			z-index: 1 !important;
-			pointer-events: none !important;
+			transition: opacity 1s ease;
+			z-index: 1;
+			pointer-events: none;
 		}
 
-		.archway.open .glow { opacity: 0.9 !important; }
+		.archway.open .glow { opacity: 0.9; }
 
 		.doors {
-			position: absolute !important;
-			top: 14px !important;
-			left: 14px !important;
-			right: 14px !important;
-			bottom: 14px !important;
-			border-radius: 190px 190px 6px 6px !important;
-			overflow: hidden !important;
-			display: flex !important;
-			perspective: 900px !important;
-			z-index: 5 !important;
+			position: absolute;
+			inset: 14px;
+			border-radius: 170px 170px 6px 6px;
+			overflow: hidden;
+			display: flex;
+			perspective: 900px;
+			z-index: 2;
 		}
 
 		.door {
-			position: relative !important;
-			width: 50% !important;
-			height: 100% !important;
-			background: linear-gradient(180deg, #f0a8c6 0%, #d97fae 100%) !important;
-			transition: transform 1.3s cubic-bezier(0.6, -0.1, 0.3, 1) !important;
-			transform-style: preserve-3d !important;
-			cursor: pointer !important;
-			pointer-events: auto !important;
+			position: relative;
+			width: 50%;
+			height: 100%;
+			background: linear-gradient(180deg, #f0a8c6 0%, #d97fae 100%);
+			transition: transform 1.2s cubic-bezier(0.6, -0.1, 0.3, 1);
+			transform-style: preserve-3d;
+			cursor: pointer;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			padding-bottom: 24px;
 		}
 
 		.door::before {
-			content: '' !important;
-			position: absolute !important;
-			top: 18px !important;
-			left: 18px !important;
-			right: 18px !important;
-			bottom: 18px !important;
+			content: '';
+			position: absolute;
+			inset: 18px;
 			border: 2px solid rgba(255, 255, 255, 0.4) !important;
-			border-radius: 4px !important;
+			border-radius: 4px;
 		}
 
-		.door-left { transform-origin: left center !important; border-right: 1px solid rgba(150, 60, 110, 0.3) !important; }
-		.door-right { transform-origin: right center !important; border-left: 1px solid rgba(150, 60, 110, 0.3) !important; }
+		.door-label {
+			position: relative;
+			z-index: 1;
+			font-family: 'Cormorant Garamond', serif !important;
+			font-weight: 700 !important;
+			font-size: 1.2em !important;
+			color: #fff !important;
+			letter-spacing: 0.05em;
+		}
 
-		.door-left.opened { transform: rotateY(-112deg) !important; }
-		.door-right.opened { transform: rotateY(112deg) !important; }
+		.door-left { transform-origin: left center; border-right: 1px solid rgba(150, 60, 110, 0.3); }
+		.door-right { transform-origin: right center; border-left: 1px solid rgba(150, 60, 110, 0.3); }
+
+		.door-left.opened { transform: rotateY(-112deg); }
+		.door-right.opened { transform: rotateY(112deg); }
 
 		.knob {
-			position: absolute !important;
-			top: 50% !important;
-			width: 10px !important;
-			height: 10px !important;
-			border-radius: 50% !important;
-			background: #fff3fa !important;
-			box-shadow: 0 0 6px #fff3fa !important;
-			transform: translateY(-50%) !important;
+			position: absolute;
+			top: 50%;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #fff3fa;
+			box-shadow: 0 0 6px #fff3fa;
+			transform: translateY(-50%);
 		}
 
-		.door-left .knob { right: 14px !important; }
-		.door-right .knob { left: 14px !important; }
-
-		.scene {
-			position: absolute !important;
-			top: 14px !important;
-			left: 14px !important;
-			right: 14px !important;
-			bottom: 14px !important;
-			border-radius: 190px 190px 6px 6px !important;
-			background: radial-gradient(ellipse at 50% 20%, #fff8fb 0%, #ffe3f2 40%, #f2bede 100%) !important;
-			display: flex !important;
-			align-items: center !important;
-			justify-content: center !important;
-			text-align: center !important;
-			padding: 30px !important;
-			z-index: 0 !important;
-		}
-
-		.scene p {
-			font-family: 'Cormorant Garamond', serif !important;
-			font-weight: 600 !important;
-			font-size: 1.3em !important;
-			color: #7a3f66 !important;
-			margin: 0 !important;
-			max-width: 280px !important;
-		}
+		.door-left .knob { right: 14px; }
+		.door-right .knob { left: 14px; }
 
 		.butterfly {
-			position: absolute !important;
-			width: 22px !important;
-			height: 18px !important;
-			z-index: 6 !important;
-			animation: fly 9s ease-in-out infinite !important;
+			position: absolute;
+			width: 20px;
+			height: 16px;
+			z-index: 3;
+			animation: fly 9s ease-in-out infinite;
 			opacity: 0;
-			pointer-events: none !important;
+			pointer-events: none;
 		}
 
 		.butterfly .wing {
-			position: absolute !important;
-			top: 0 !important;
-			width: 11px !important;
-			height: 16px !important;
-			border-radius: 60% 60% 60% 5% !important;
-			animation: flap 0.35s ease-in-out infinite alternate !important;
+			position: absolute;
+			top: 0;
+			width: 10px;
+			height: 14px;
+			border-radius: 60% 60% 60% 5%;
+			animation: flap 0.35s ease-in-out infinite alternate;
 		}
 
 		.butterfly .wing.left {
-			left: 0 !important;
-			transform-origin: right center !important;
-			background: linear-gradient(135deg, #ffb6d9, #d874ae) !important;
+			left: 0;
+			transform-origin: right center;
+			background: linear-gradient(135deg, #ffb6d9, #d874ae);
 		}
 
 		.butterfly .wing.right {
-			right: 0 !important;
-			border-radius: 60% 60% 5% 60% !important;
-			transform-origin: left center !important;
-			background: linear-gradient(225deg, #f0a0d0, #c862a0) !important;
+			right: 0;
+			border-radius: 60% 60% 5% 60%;
+			transform-origin: left center;
+			background: linear-gradient(225deg, #f0a0d0, #c862a0);
 		}
 
-		.butterfly.b2 .wing.left { background: linear-gradient(135deg, #e6b8ff, #b878e0) !important; }
-		.butterfly.b2 .wing.right { background: linear-gradient(225deg, #dca8f5, #a866d4) !important; }
+		.butterfly.b2 .wing.left { background: linear-gradient(135deg, #e6b8ff, #b878e0); }
+		.butterfly.b2 .wing.right { background: linear-gradient(225deg, #dca8f5, #a866d4); }
 
-		.butterfly.b3 .wing.left { background: linear-gradient(135deg, #fff0b8, #f5c96e) !important; }
-		.butterfly.b3 .wing.right { background: linear-gradient(225deg, #ffe6a0, #eeb85a) !important; }
+		.butterfly.b3 .wing.left { background: linear-gradient(135deg, #fff0b8, #f5c96e); }
+		.butterfly.b3 .wing.right { background: linear-gradient(225deg, #ffe6a0, #eeb85a); }
 
 		@keyframes flap {
 			from { transform: scaleX(1); }
@@ -278,22 +267,29 @@
 		@keyframes fly {
 			0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
 			10% { opacity: 1; }
-			30% { transform: translate(60px, -40px) rotate(8deg); }
-			50% { transform: translate(20px, -90px) rotate(-6deg); }
-			70% { transform: translate(-50px, -60px) rotate(10deg); }
+			30% { transform: translate(50px, -35px) rotate(8deg); }
+			50% { transform: translate(15px, -75px) rotate(-6deg); }
+			70% { transform: translate(-40px, -50px) rotate(10deg); }
 			90% { opacity: 1; }
-			100% { opacity: 0; transform: translate(-20px, -130px) rotate(-4deg); }
+			100% { opacity: 0; transform: translate(-15px, -110px) rotate(-4deg); }
 		}
 
-		.hint {
-			text-align: center !important;
-			margin-top: 26px !important;
-			color: #8a5a80 !important;
-			font-size: 0.85em !important;
-			letter-spacing: 0.03em !important;
+		.door-hint {
+			text-align: center;
+			margin-top: 20px;
+			font-size: 0.9em !important;
+			font-weight: 400 !important;
+			letter-spacing: 0.02em;
+			opacity: 0.75;
 		}
 
-		/* --- REST OF STYLES --- */
+		#experience.illuminated {
+			background: transparent;
+			border-radius: 0;
+			box-shadow: none;
+			padding: 0;
+		}
+
 		.timeline {
 			position: relative;
 			margin: 40px 0 20px 20px;
@@ -351,6 +347,7 @@
 			text-align: center;
 		}
 
+		/* --- Fix: center the "Beyond the Metrics" header --- */
 		#interests header.major {
 			text-align: center;
 		}
@@ -425,9 +422,18 @@
 
 		.output-desc { margin-bottom: 0 !important; font-size: 0.95em; font-weight: 500; }
 
-		.posts article { text-align: center; }
-		.posts .project-carousel { justify-content: center; }
-		.posts .output-box { text-align: center; }
+		/* --- Fix: center the Projects section --- */
+		.posts article {
+			text-align: center;
+		}
+
+		.posts .project-carousel {
+			justify-content: center;
+		}
+
+		.posts .output-box {
+			text-align: center;
+		}
 
 		.resume-box {
 			margin: 60px 0 30px;
@@ -452,6 +458,7 @@
 		.certs-box h3 { margin-bottom: 10px; }
 		.certs-box p { margin-bottom: 0; }
 
+		/* --- Fix: remove the line/divider that was showing under the certifications teaser --- */
 		#certs-teaser,
 		#certs-teaser *,
 		#certs-teaser::before,
@@ -536,39 +543,35 @@
 					</div>
 				</section>
 
-				<section id="education" class="visible">
+				<section id="education">
 					<header class="major">
 						<h2>Education</h2>
-						<p style="text-align: center; margin-top: -10px; margin-bottom: 25px; color: #8a5a80;">Pursuing a double degree</p>
+						<p class="education-note">Pursuing a double degree</p>
 					</header>
 
-					<div class="stage">
-						<div class="archway" id="archway">
-							<div class="scene">
-								<p>Two schools, one story &mdash; welcome to the next chapter.</p>
+					<div class="archway" id="archway">
+						<div class="doors">
+							<div class="door door-left" id="doorLeft">
+								<div class="knob"></div>
+								<span class="door-label">AIM</span>
 							</div>
-							<div class="glow"></div>
-							<div class="doors">
-								<div class="door door-left" id="doorLeft">
-									<div class="knob"></div>
-								</div>
-								<div class="door door-right" id="doorRight">
-									<div class="knob"></div>
-								</div>
-							</div>
-							<div class="butterfly" style="left: 15%; top: 55%; animation-delay: 0.5s;">
-								<div class="wing left"></div><div class="wing right"></div>
-							</div>
-							<div class="butterfly b2" style="left: 75%; top: 60%; animation-delay: 3s;">
-								<div class="wing left"></div><div class="wing right"></div>
-							</div>
-							<div class="butterfly b3" style="left: 45%; top: 70%; animation-delay: 5.5s;">
-								<div class="wing left"></div><div class="wing right"></div>
+							<div class="door door-right" id="doorRight">
+								<div class="knob"></div>
+								<span class="door-label">UH</span>
 							</div>
 						</div>
-
-						<p class="hint">tap either door to step inside</p>
+						<div class="glow"></div>
+						<div class="butterfly" style="left: 15%; top: 55%; animation-delay: 0.5s;">
+							<div class="wing left"></div><div class="wing right"></div>
+						</div>
+						<div class="butterfly b2" style="left: 75%; top: 60%; animation-delay: 3s;">
+							<div class="wing left"></div><div class="wing right"></div>
+						</div>
+						<div class="butterfly b3" style="left: 45%; top: 70%; animation-delay: 5.5s;">
+							<div class="wing left"></div><div class="wing right"></div>
+						</div>
 					</div>
+					<p class="door-hint">click a door to step into my education</p>
 				</section>
 
 				<section id="experience">
@@ -732,7 +735,6 @@
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
-			// Hero Typing Animation
 			const heroText = document.getElementById("typing-text");
 			const metricsText = document.getElementById("metrics-text");
 			const heroPhrase = "Hi, I'm Anya!";
@@ -758,22 +760,8 @@
 
 			setTimeout(typeHero, 400);
 
-			// Door opening interaction
-			const doorLeft = document.getElementById('doorLeft');
-			const doorRight = document.getElementById('doorRight');
-			const archway = document.getElementById('archway');
-
-			function openDoors() {
-				if (doorLeft) doorLeft.classList.add('opened');
-				if (doorRight) doorRight.classList.add('opened');
-				if (archway) archway.classList.add('open');
-			}
-
-			if (doorLeft) doorLeft.addEventListener('click', openDoors);
-			if (doorRight) doorRight.addEventListener('click', openDoors);
-
-			// Scroll visibility observer
 			const sections = document.querySelectorAll("section");
+
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach(entry => {
 					if (entry.isIntersecting) {
@@ -784,8 +772,27 @@
 
 			sections.forEach(section => observer.observe(section));
 
-			// Image loader fallback
+			// Education doors: play the opening animation, then head to the Education page
+			const doorLeft = document.getElementById("doorLeft");
+			const doorRight = document.getElementById("doorRight");
+			const archway = document.getElementById("archway");
+
+			function openEducationDoors() {
+				doorLeft.classList.add("opened");
+				doorRight.classList.add("opened");
+				archway.classList.add("open");
+				setTimeout(() => {
+					window.location.href = "education.html";
+				}, 900);
+			}
+
+			if (doorLeft && doorRight) {
+				doorLeft.addEventListener("click", openEducationDoors);
+				doorRight.addEventListener("click", openEducationDoors);
+			}
+
 			const extensions = [".png", ".jpg", ".jpeg", ".webp"];
+
 			document.querySelectorAll("img[data-image-base]").forEach(image => {
 				const name = image.dataset.imageBase;
 				let extensionIndex = 0;
@@ -795,6 +802,7 @@
 						image.style.display = "none";
 						return;
 					}
+
 					image.src = "images/" + encodeURIComponent(name) + extensions[extensionIndex];
 				}
 
@@ -806,7 +814,6 @@
 				loadImage();
 			});
 
-			// Modal Viewer
 			const modal = document.getElementById("image-modal");
 			const modalPhoto = document.getElementById("image-modal-photo");
 			const closeModal = document.getElementById("image-modal-close");
@@ -826,12 +833,11 @@
 				modalPhoto.src = "";
 			}
 
-			if (closeModal) closeModal.addEventListener("click", hideModal);
-			if (modal) {
-				modal.addEventListener("click", function (event) {
-					if (event.target === modal) hideModal();
-				});
-			}
+			closeModal.addEventListener("click", hideModal);
+
+			modal.addEventListener("click", function (event) {
+				if (event.target === modal) hideModal();
+			});
 
 			document.addEventListener("keydown", function (event) {
 				if (event.key === "Escape") hideModal();

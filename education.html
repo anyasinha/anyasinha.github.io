@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Education | Anya Sinha</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<style>
+		*, body, p, li, a { font-family: 'Inter', sans-serif !important; color: #000 !important; }
+		h1, h2, h3 { font-family: 'Cormorant Garamond', serif !important; font-weight: 700 !important; }
+		p, li { line-height: 1.8 !important; }
+
+		body {
+			background: linear-gradient(160deg, #ffd9ec 0%, #ffc2dd 22%, #f3b6e8 45%, #d9b8f0 68%, #eaf5ff 88%, #fff 100%);
+		}
+
+		.page-wrap {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 80px 30px 100px;
+		}
+
+		.back-link {
+			display: inline-block;
+			margin-bottom: 40px;
+			font-weight: 600;
+			text-decoration: none !important;
+			border-bottom: 2px solid #000;
+		}
+
+		h1 { font-size: 2.8em; margin-bottom: 0.1em; text-align: center; }
+		.page-intro { font-size: 1.2em; font-weight: 400 !important; margin-bottom: 3em; text-align: center; color: #6b3a5e !important; }
+
+		.schools {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 40px;
+		}
+
+		@media screen and (max-width: 768px) {
+			.schools { grid-template-columns: 1fr; }
+		}
+
+		.school-card {
+			background: rgba(255, 255, 255, 0.72);
+			border-radius: 14px;
+			padding: 34px 28px;
+			text-align: center;
+		}
+
+		.school-logo-box {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100px;
+			margin-bottom: 22px;
+		}
+
+		.school-logo-box img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
+
+		#uh-logo { mix-blend-mode: multiply; }
+
+		.school-card h2 { font-size: 1.5em; margin-bottom: 6px; }
+		.school-card .degree { font-weight: 700; font-size: 1.05em; margin-bottom: 14px; }
+		.school-card p.blurb { font-weight: 400 !important; }
+
+		.together-note {
+			margin-top: 3em;
+			padding: 26px 30px;
+			border-radius: 12px;
+			background: rgba(255, 255, 255, 0.55);
+			text-align: center;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<div class="page-wrap">
+		<a href="index.html" class="back-link">&larr; Back to Home</a>
+
+		<h1>Education</h1>
+		<p class="page-intro">Pursuing a double degree across two schools, two continents, and two very different ways of thinking.</p>
+
+		<div class="schools">
+			<div class="school-card" id="aim-card">
+				<div class="school-logo-box"><img src="images/AIM-LOGO-New-min.png" alt="Asian Institute of Management logo" id="aim-logo"></div>
+				<h2>Asian Institute of Management</h2>
+				<p class="degree">Bachelor of Science in Data Science</p>
+				<p class="blurb">Immersing myself in rigorous quantitative frameworks, advanced statistical modeling, and sharp data analytics to decode complex market trends.</p>
+			</div>
+
+			<div class="school-card" id="uh-card">
+				<div class="school-logo-box"><img src="images/uh'.png" alt="University of Houston logo" id="uh-logo"></div>
+				<h2>University of Houston</h2>
+				<p class="degree">BBA in Management Information Systems (MIS)</p>
+				<p class="blurb">Building the critical bridge between technical database architectures and enterprise systems to optimize modern business strategies.</p>
+			</div>
+		</div>
+
+		<div class="together-note">Two degrees, one throughline: turning raw information into decisions that actually help people.</div>
+	</div>
+</body>
+</html>
