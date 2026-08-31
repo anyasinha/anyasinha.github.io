@@ -47,16 +47,18 @@
 			color: #000000 !important;
 		}
 
-		/* --- Fix: remove the navy icon boxes inside "Get in touch" (and anywhere else in the sidebar) --- */
-		#sidebar .icon,
-		#sidebar .icon:before,
-		#sidebar ul.contact li,
-		#sidebar ul.contact li:before,
-		#sidebar ul.contact a {
-			background: transparent !important;
+		/* --- Fix: remove any lingering navy/colored boxes anywhere inside the sidebar (icons, contact list, etc.) --- */
+		#sidebar *:not(.toggle):not(.toggle *) {
+			background: none !important;
 			background-color: transparent !important;
+			background-image: none !important;
 			box-shadow: none !important;
-			color: #000000 !important;
+		}
+
+		#sidebar,
+		#sidebar > .inner,
+		#sidebar > .inner > section {
+			background: #ffffff !important;
 		}
 
 		section {
@@ -105,6 +107,11 @@
 			font-size: 0.95em;
 			font-weight: 600;
 			text-align: right;
+		}
+
+		/* --- Fix: center the "Education / Pursuing a double degree" header --- */
+		#education header.major {
+			text-align: center;
 		}
 
 		.doors-container {
@@ -576,6 +583,7 @@
 					<ul>
 						<li><a href="index.html">Homepage</a></li>
 						<li><a href="creatives-portfolio.html">Creatives Portfolio</a></li>
+						<li><a href="certifications.html">Certifications</a></li>
 						<li><a href="resume.pdf" target="_blank">Download Resume</a></li>
 					</ul>
 				</nav>
