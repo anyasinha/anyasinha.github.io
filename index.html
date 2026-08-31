@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -45,6 +44,18 @@
 		#menu ul a:hover,
 		a,
 		a:hover {
+			color: #000000 !important;
+		}
+
+		/* --- Fix: remove the navy icon boxes inside "Get in touch" (and anywhere else in the sidebar) --- */
+		#sidebar .icon,
+		#sidebar .icon:before,
+		#sidebar ul.contact li,
+		#sidebar ul.contact li:before,
+		#sidebar ul.contact a {
+			background: transparent !important;
+			background-color: transparent !important;
+			box-shadow: none !important;
 			color: #000000 !important;
 		}
 
@@ -159,6 +170,11 @@
 		.edu-logo-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
 		#door-uh .edu-logo-box img { background: transparent !important; mix-blend-mode: multiply; }
 
+		/* --- Fix: align the University of Houston text block to the right --- */
+		#door-uh > div:first-of-type {
+			text-align: right;
+		}
+
 		#experience.illuminated {
 			background: transparent;
 			border-radius: 0;
@@ -220,6 +236,11 @@
 
 		.interests-intro {
 			font-weight: 400 !important;
+			text-align: center;
+		}
+
+		/* --- Fix: center the "Beyond the Metrics" header --- */
+		#interests header.major {
 			text-align: center;
 		}
 
@@ -497,7 +518,7 @@
 							</div>
 							<h3>FH Moms x Wadhwani Foundation | Mom Upskilling Campaign</h3>
 							<span class="project-date">July 2025</span>
-							<p>Created an approachable social media campaign that promoted career upskilling opportunities for Filipino mothers. The content translated the program’s benefits into clear, encouraging messages tailored to the FH Moms community.</p>
+							<p>Created an approachable social media campaign that promoted career upskilling opportunities for Filipino mothers. The content translated the program's benefits into clear, encouraging messages tailored to the FH Moms community.</p>
 							<div class="output-box"><span class="output-title">The Output</span><p class="output-desc">A three-post social media campaign designed to raise awareness, encourage engagement, and connect mothers with accessible upskilling opportunities.</p></div>
 						</article>
 					</div>
@@ -562,7 +583,7 @@
 		document.addEventListener("DOMContentLoaded", function () {
 			const heroText = document.getElementById("typing-text");
 			const metricsText = document.getElementById("metrics-text");
-			const heroPhrase = "Hi, I’m Anya!";
+			const heroPhrase = "Hi, I'm Anya!";
 			const metricsPhrase = "Where Marketing Meets Metrics";
 			let heroIndex = 0;
 			let metricsIndex = 0;
@@ -661,4 +682,3 @@
 	</script>
 </body>
 </html>
-```
