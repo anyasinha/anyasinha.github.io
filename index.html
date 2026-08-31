@@ -325,6 +325,19 @@
 
 		.output-desc { margin-bottom: 0 !important; font-size: 0.95em; font-weight: 500; }
 
+		/* --- Fix: center the Projects section --- */
+		.posts article {
+			text-align: center;
+		}
+
+		.posts .project-carousel {
+			justify-content: center;
+		}
+
+		.posts .output-box {
+			text-align: center;
+		}
+
 		.resume-box {
 			margin: 60px 0 30px;
 			padding: 40px 20px;
@@ -350,15 +363,16 @@
 
 		/* --- Fix: remove the line/divider that was showing under the certifications teaser --- */
 		#certs-teaser,
-		#certs-teaser * {
-			border: none !important;
-			outline: none !important;
-			box-shadow: none !important;
-		}
-
+		#certs-teaser *,
 		#certs-teaser::before,
-		#certs-teaser::after {
-			display: none !important;
+		#certs-teaser::after,
+		#certs-teaser *::before,
+		#certs-teaser *::after {
+			border: none !important;
+			border-width: 0 !important;
+			box-shadow: none !important;
+			outline: none !important;
+			background-image: none !important;
 			content: none !important;
 		}
 
@@ -601,15 +615,6 @@
 						<li><a href="resume.pdf" target="_blank">Download Resume</a></li>
 					</ul>
 				</nav>
-
-				<section>
-					<header class="major"><h2>Get in touch</h2></header>
-					<p>Feel free to reach out for collaboration, opportunities, or networking.</p>
-					<ul class="contact">
-						<li class="icon solid fa-envelope"><a href="mailto:anyasinha18@gmail.com">anyasinha18@gmail.com</a></li>
-						<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/ananya-sinha-992536299/" target="_blank">LinkedIn Profile</a></li>
-					</ul>
-				</section>
 
 				<footer id="footer"><p class="copyright">&copy; Anya Sinha. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p></footer>
 			</div>
