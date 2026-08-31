@@ -1,25 +1,82 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+
 	<title>Education | Anya Sinha</title>
+
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/main.css">
+
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1, user-scalable=no"
+	>
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+		rel="stylesheet"
+	>
+
+	<link
+		rel="stylesheet"
+		href="assets/css/main.css"
+	>
 
 	<style>
-		*, body, p, li, a { font-family: 'Inter', sans-serif !important; color: #000 !important; }
-		h1, h2, h3 { font-family: 'Cormorant Garamond', serif !important; font-weight: 700 !important; }
-		p, li { line-height: 1.8 !important; }
+
+		*,
+		body,
+		p,
+		li,
+		a,
+		span,
+		summary,
+		td,
+		th {
+			font-family: 'Inter', sans-serif !important;
+			color: #000 !important;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4 {
+			font-family: 'Cormorant Garamond', serif !important;
+			font-weight: 700 !important;
+			color: #000 !important;
+		}
+
+		p,
+		li {
+			line-height: 1.8 !important;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
 
 		body {
-			background: linear-gradient(160deg, #ffd9ec 0%, #ffc2dd 22%, #f3b6e8 45%, #d9b8f0 68%, #eaf5ff 88%, #fff 100%);
+			margin: 0;
+			min-height: 100vh;
+
+			background: linear-gradient(
+				160deg,
+				#ffd9ec 0%,
+				#ffc2dd 22%,
+				#f3b6e8 45%,
+				#d9b8f0 68%,
+				#eaf5ff 88%,
+				#fff 100%
+			);
+
+			background-attachment: fixed;
 		}
 
 		.page-wrap {
-			max-width: 900px;
+			width: 100%;
+			max-width: 1100px;
 			margin: 0 auto;
 			padding: 80px 30px 100px;
+			box-sizing: border-box;
 		}
 
 		.back-link {
@@ -27,11 +84,23 @@
 			margin-bottom: 40px;
 			font-weight: 600;
 			text-decoration: none !important;
-			border-bottom: 2px solid #000;
+			border-bottom: 2px solid #000 !important;
 		}
 
-		h1 { font-size: 2.8em; margin-bottom: 0.1em; text-align: center; }
-		.page-intro { font-size: 1.2em; font-weight: 400 !important; margin-bottom: 3em; text-align: center; color: #6b3a5e !important; }
+		h1 {
+			font-size: 3em;
+			margin-bottom: 0.1em;
+			text-align: center;
+		}
+
+		.page-intro {
+			max-width: 750px;
+			margin: 0 auto 3em;
+			font-size: 1.15em;
+			font-weight: 400 !important;
+			text-align: center;
+			color: #6b3a5e !important;
+		}
 
 		.schools {
 			display: grid;
@@ -39,15 +108,12 @@
 			gap: 40px;
 		}
 
-		@media screen and (max-width: 768px) {
-			.schools { grid-template-columns: 1fr; }
-		}
-
 		.school-card {
 			background: rgba(255, 255, 255, 0.72);
 			border-radius: 14px;
 			padding: 34px 28px;
 			text-align: center;
+			box-shadow: 0 18px 40px rgba(105, 52, 105, 0.08);
 		}
 
 		.school-logo-box {
@@ -64,11 +130,46 @@
 			object-fit: contain;
 		}
 
-		#uh-logo { mix-blend-mode: multiply; }
+		#uh-logo {
+			mix-blend-mode: multiply;
+		}
 
-		.school-card h2 { font-size: 1.5em; margin-bottom: 6px; }
-		.school-card .degree { font-weight: 700; font-size: 1.05em; margin-bottom: 14px; }
-		.school-card p.blurb { font-weight: 400 !important; }
+		.school-card h2 {
+			font-size: 1.7em;
+			margin-bottom: 6px;
+		}
+
+		.school-card .degree {
+			font-weight: 700;
+			font-size: 1.05em;
+			margin-bottom: 14px;
+		}
+
+		.school-card p.blurb {
+			font-weight: 400 !important;
+			margin-bottom: 0;
+		}
+
+		.school-jump {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 20px;
+			padding: 9px 18px;
+			border: 2px solid #000 !important;
+			border-radius: 30px;
+			background: transparent;
+			font-size: 0.9em;
+			font-weight: 700;
+			text-decoration: none !important;
+			transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+		}
+
+		.school-jump:hover {
+			background: #000;
+			color: #fff !important;
+			transform: translateY(-2px);
+		}
 
 		.together-note {
 			margin-top: 3em;
@@ -78,32 +179,698 @@
 			text-align: center;
 			font-style: italic;
 		}
+
+		.coursework {
+			margin-top: 85px;
+		}
+
+		.coursework-main-title {
+			font-size: 2.7em;
+			text-align: center;
+			margin-bottom: 0.2em;
+		}
+
+		.coursework-intro {
+			text-align: center;
+			max-width: 650px;
+			margin: 0 auto 50px;
+			color: #6b3a5e !important;
+		}
+
+		.school-course-section {
+			margin-bottom: 70px;
+			scroll-margin-top: 25px;
+		}
+
+		.school-course-heading {
+			display: flex;
+			align-items: center;
+			gap: 18px;
+			margin-bottom: 28px;
+			padding-bottom: 16px;
+			border-bottom: 2px solid rgba(0, 0, 0, 0.16);
+		}
+
+		.school-course-heading img {
+			width: 68px;
+			height: 68px;
+			object-fit: contain;
+		}
+
+		.school-course-heading-text h2 {
+			font-size: 2.2em;
+			margin: 0;
+		}
+
+		.school-course-heading-text p {
+			margin: 3px 0 0;
+			font-weight: 600;
+			color: #6b3a5e !important;
+		}
+
+		details.academic-year {
+			margin-bottom: 18px;
+			background: rgba(255, 255, 255, 0.72);
+			border-radius: 14px;
+			overflow: hidden;
+			box-shadow: 0 10px 30px rgba(105, 52, 105, 0.07);
+		}
+
+		details.academic-year summary {
+			position: relative;
+			padding: 22px 55px 22px 25px;
+			cursor: pointer;
+			font-family: 'Cormorant Garamond', serif !important;
+			font-size: 1.5em;
+			font-weight: 700;
+			list-style: none;
+			user-select: none;
+		}
+
+		details.academic-year summary::-webkit-details-marker {
+			display: none;
+		}
+
+		details.academic-year summary::after {
+			content: "+";
+			position: absolute;
+			right: 24px;
+			top: 50%;
+			transform: translateY(-50%);
+			font-family: 'Inter', sans-serif !important;
+			font-size: 1.25em;
+			font-weight: 400;
+		}
+
+		details.academic-year[open] summary::after {
+			content: "−";
+		}
+
+		.year-content {
+			padding: 0 25px 28px;
+		}
+
+		.term {
+			margin-top: 28px;
+		}
+
+		.term:first-child {
+			margin-top: 8px;
+		}
+
+		.term-title {
+			display: inline-block;
+			margin-bottom: 12px;
+			font-family: 'Inter', sans-serif !important;
+			font-size: 0.82em;
+			font-weight: 800;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+
+		.course-table-wrap {
+			width: 100%;
+			overflow-x: auto;
+		}
+
+		.course-table {
+			width: 100%;
+			border-collapse: collapse;
+			background: rgba(255, 255, 255, 0.3);
+		}
+
+		.course-table th,
+		.course-table td {
+			padding: 12px 14px;
+			text-align: left;
+			vertical-align: top;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		}
+
+		.course-table th {
+			font-size: 0.78em;
+			font-weight: 800;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+		}
+
+		.course-table td {
+			font-size: 0.92em;
+		}
+
+		.course-code {
+			width: 130px;
+			font-weight: 700;
+			white-space: nowrap;
+		}
+
+		.course-units {
+			width: 70px;
+			text-align: center !important;
+			font-weight: 700;
+		}
+
+		.total-box {
+			margin-top: 28px;
+			padding: 18px 22px;
+			border-radius: 10px;
+			background: rgba(255, 255, 255, 0.55);
+			text-align: center;
+			font-weight: 700;
+		}
+
+		@media screen and (max-width: 768px) {
+
+			.page-wrap {
+				padding: 55px 18px 80px;
+			}
+
+			h1 {
+				font-size: 2.5em;
+			}
+
+			.schools {
+				grid-template-columns: 1fr;
+				gap: 24px;
+			}
+
+			.coursework {
+				margin-top: 60px;
+			}
+
+			.coursework-main-title {
+				font-size: 2.3em;
+			}
+
+			.school-course-heading {
+				align-items: flex-start;
+			}
+
+			.school-course-heading img {
+				width: 55px;
+				height: 55px;
+			}
+
+			.school-course-heading-text h2 {
+				font-size: 1.75em;
+			}
+
+			details.academic-year summary {
+				font-size: 1.3em;
+				padding: 20px 48px 20px 20px;
+			}
+
+			.year-content {
+				padding: 0 16px 24px;
+			}
+
+			.course-table th,
+			.course-table td {
+				padding: 10px;
+			}
+
+			.course-table {
+				min-width: 520px;
+			}
+		}
+
 	</style>
+
 </head>
+
 <body>
+
 	<div class="page-wrap">
-		<a href="index.html" class="back-link">&larr; Back to Home</a>
+
+		<a href="index.html" class="back-link">
+			&larr; Back to Home
+		</a>
 
 		<h1>Education</h1>
-		<p class="page-intro">Pursuing a double degree across two schools, two continents, and two very different ways of thinking.</p>
+
+		<p class="page-intro">
+			Pursuing a double degree across two schools, two continents,
+			and two very different ways of thinking.
+		</p>
 
 		<div class="schools">
+
 			<div class="school-card" id="aim-card">
-				<div class="school-logo-box"><img src="images/AIM-LOGO-New-min.png" alt="Asian Institute of Management logo" id="aim-logo"></div>
+
+				<div class="school-logo-box">
+					<img
+						src="images/AIM-LOGO-New-min.png"
+						alt="Asian Institute of Management logo"
+						id="aim-logo"
+					>
+				</div>
+
 				<h2>Asian Institute of Management</h2>
-				<p class="degree">Bachelor of Science in Data Science</p>
-				<p class="blurb">Immersing myself in rigorous quantitative frameworks, advanced statistical modeling, and sharp data analytics to decode complex market trends.</p>
+
+				<p class="degree">
+					Bachelor of Science in Data Science
+				</p>
+
+				<p class="blurb">
+					Immersing myself in rigorous quantitative frameworks,
+					advanced statistical modeling, and sharp data analytics
+					to decode complex market trends.
+				</p>
+
+				<a href="#aim-courses" class="school-jump">
+					View AIM Courses
+				</a>
+
 			</div>
 
 			<div class="school-card" id="uh-card">
-				<div class="school-logo-box"><img src="images/uh'.png" alt="University of Houston logo" id="uh-logo"></div>
+
+				<div class="school-logo-box">
+					<img
+						src="images/uh'.png"
+						alt="University of Houston logo"
+						id="uh-logo"
+					>
+				</div>
+
 				<h2>University of Houston</h2>
-				<p class="degree">BBA in Management Information Systems (MIS)</p>
-				<p class="blurb">Building the critical bridge between technical database architectures and enterprise systems to optimize modern business strategies.</p>
+
+				<p class="degree">
+					BBA in Management Information Systems (MIS)
+				</p>
+
+				<p class="blurb">
+					Building the critical bridge between technical database
+					architectures and enterprise systems to optimize modern
+					business strategies.
+				</p>
+
+				<a href="#uh-courses" class="school-jump">
+					View UH Courses
+				</a>
+
 			</div>
+
 		</div>
 
-		<div class="together-note">Two degrees, one throughline: turning raw information into decisions that actually help people.</div>
+		<div class="together-note">
+			Two degrees, one throughline: turning raw information into
+			decisions that actually help people.
+		</div>
+
+		<div class="coursework">
+
+			<h2 class="coursework-main-title">
+				My Coursework
+			</h2>
+
+			<p class="coursework-intro">
+				Courses across Data Science, Business, Computing,
+				Analytics, and Management Information Systems.
+			</p>
+
+			<section class="school-course-section" id="aim-courses">
+
+				<div class="school-course-heading">
+
+					<img
+						src="images/AIM-LOGO-New-min.png"
+						alt="Asian Institute of Management logo"
+					>
+
+					<div class="school-course-heading-text">
+						<h2>Asian Institute of Management</h2>
+						<p>98 units</p>
+					</div>
+
+				</div>
+
+				<details class="academic-year" open>
+
+					<summary>
+						Year 1 · AY 2024–2025
+					</summary>
+
+					<div class="year-content">
+
+						<div class="term">
+							<span class="term-title">Fall</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">BCIS 1305</td><td>Business Computer Applications</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">BUSI 1301</td><td>Business Principles</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MATH 1324</td><td>Finite Mathematics with Applications</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">CALCUL 1301</td><td>Calculus</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">PROG 1301</td><td>General Introduction to Programming</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="term">
+							<span class="term-title">Spring</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">BUSI 2305</td><td>Business Statistics</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">ACCT 2301</td><td>Principles of Financial Accounting</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">ECON 2302</td><td>Principles of Microeconomics</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">PATH-FIT 1</td><td>Movement Competency Training</td><td class="course-units">2</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="term">
+							<span class="term-title">Summer</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">PHYS 2325</td><td>University Physics I: Classical Mechanics (Lecture)</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">PROG 2301</td><td>Data Structures and Algorithms</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">PATH-FIT 2</td><td>Fitness Training</td><td class="course-units">2</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</details>
+
+				<details class="academic-year">
+
+					<summary>
+						Year 2 · AY 2025–2026
+					</summary>
+
+					<div class="year-content">
+
+						<div class="term">
+							<span class="term-title">Fall</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">ECON 2301</td><td>Principles of Macroeconomics</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">ACCT 2302</td><td>Principles of Managerial Accounting</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">WCL 2351</td><td>World Cultures Through Literature and the Arts</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">PATH-FIT 3</td><td>Dance</td><td class="course-units">2</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="term">
+							<span class="term-title">Spring</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">PHYS 2326</td><td>University Physics II: Thermodynamics, Electromagnetism and Optics</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">DVS 2301</td><td>Data Visualization &amp; Storytelling</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">DMW 2301</td><td>Data Mining and Wrangling</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">ML 2301</td><td>Machine Learning I</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">PATH-FIT 4</td><td>Sports</td><td class="course-units">2</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="term">
+							<span class="term-title">Summer</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">RIZAL</td><td>Rizal Life and Works</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MARK 3336</td><td>Introduction to Marketing</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MANA 3335</td><td>Introduction to Organizational Behavior and Management</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</details>
+
+				<details class="academic-year">
+
+					<summary>
+						Year 3 · AY 2026–2027
+					</summary>
+
+					<div class="year-content">
+
+						<div class="term">
+							<span class="term-title">Fall</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">BDCC 3301</td><td>Big Data and Cloud Computing</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">INTB 3355</td><td>Global Environment of Business</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MARK 3337</td><td>Professional Selling</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">ML 3301</td><td>Machine Learning II</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">DSWI 1</td><td>Data Science Work Immersion 1</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="term">
+							<span class="term-title">Spring</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">COMMS 3322</td><td>Pitching and Scientific Writing</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">ML 3302</td><td>Machine Learning III</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">FINA 3332</td><td>Principles of Financial Management</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">BUSI 4350</td><td>Business Law and Ethics</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">DSWI 2</td><td>Data Science Work Immersion 2</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</details>
+
+			</section>
+
+			<section class="school-course-section" id="uh-courses">
+
+				<div class="school-course-heading">
+
+					<img
+						src="images/uh'.png"
+						alt="University of Houston logo"
+						style="mix-blend-mode: multiply;"
+					>
+
+					<div class="school-course-heading-text">
+						<h2>University of Houston</h2>
+						<p>51 units</p>
+					</div>
+
+				</div>
+
+				<details class="academic-year" open>
+
+					<summary>
+						Year 1 · AY 2024–2025
+					</summary>
+
+					<div class="year-content">
+
+						<div class="term">
+							<span class="term-title">Spring</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">ENGL 1301</td><td>First Year Writing I</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">HIST 1302</td><td>The United States Since 1877</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</details>
+
+				<details class="academic-year">
+
+					<summary>
+						Year 2 · AY 2025–2026
+					</summary>
+
+					<div class="year-content">
+
+						<div class="term">
+							<span class="term-title">Fall</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">HIST 1301</td><td>United States to 1877</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">ENGL 1302</td><td>First Year Writing II</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="term">
+							<span class="term-title">Spring</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">GOVT 2305</td><td>US Government: Congress, President and Courts</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</details>
+
+				<details class="academic-year">
+
+					<summary>
+						Year 3 · AY 2026–2027
+					</summary>
+
+					<div class="year-content">
+
+						<div class="term">
+							<span class="term-title">Fall</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">MIS 3360</td><td>Systems Analysis and Design</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="term">
+							<span class="term-title">Spring</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">MIS 3370</td><td>Information Systems Development Tools</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</details>
+
+				<details class="academic-year">
+
+					<summary>
+						Year 4 · AY 2027–2028
+					</summary>
+
+					<div class="year-content">
+
+						<div class="term">
+							<span class="term-title">Fall</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">GOVT 2306</td><td>US and Texas Constitution and Politics</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MIS 3371</td><td>Transaction Processing Systems I</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MIS 3376</td><td>Business Applications of Database Management I</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">BUSI 3302</td><td>Connecting Bauer to Business</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MIS AE 1</td><td>MIS 3000–4000-Level Course</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="term">
+							<span class="term-title">Spring</span>
+
+							<div class="course-table-wrap">
+								<table class="course-table">
+									<thead>
+										<tr><th>Code</th><th>Course</th><th>Units</th></tr>
+									</thead>
+									<tbody>
+										<tr><td class="course-code">SCM 3301</td><td>Supply Chain Management Fundamentals</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">ARTS 1304</td><td>Art History II (15th Century to Present)</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MIS 4374</td><td>Information Technology Project Management</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MIS 4378</td><td>Administration of Computer-Based Management Information Systems</td><td class="course-units">3</td></tr>
+										<tr><td class="course-code">MIS AE 2</td><td>MIS 3000–4000-Level Course</td><td class="course-units">3</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</details>
+
+			</section>
+
+			<div class="total-box">
+				149 total curriculum units shown · NSTP 1 and NSTP 2 excluded
+			</div>
+
+		</div>
+
 	</div>
+
 </body>
 </html>
