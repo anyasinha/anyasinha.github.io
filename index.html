@@ -351,6 +351,23 @@
 			background: #000;
 		}
 
+		/* --- Whole experience block is now a clickable link to its own page --- */
+		.experience-link {
+			display: block;
+			text-decoration: none !important;
+			color: #000 !important;
+			transition: transform 0.2s ease, opacity 0.2s ease;
+		}
+
+		.experience-link:hover {
+			transform: translateX(6px);
+			opacity: 0.85;
+		}
+
+		.experience-link:hover .experience-header h3 {
+			text-decoration: underline;
+		}
+
 		.experience-header {
 			display: flex;
 			justify-content: space-between;
@@ -369,20 +386,6 @@
 			font-weight: 700;
 			white-space: nowrap;
 		}
-
-		.exp-image-box {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			max-width: 400px;
-			height: 160px;
-			margin-top: 15px;
-			overflow: hidden;
-			border-radius: 6px;
-			background: #fff;
-		}
-
-		.exp-image-box img { width: 100%; height: 100%; object-fit: cover; }
 
 		.interests-intro {
 			font-weight: 400 !important;
@@ -624,51 +627,59 @@
 					<header class="major"><h2>Experience &amp; Leadership</h2></header>
 					<div class="timeline">
 						<div class="experience-item">
-							<div class="experience-header"><h3>Data Cleaning Intern | MacroAsia Corporation</h3><span class="exp-date">Aug 2026 - Present</span></div>
-							<p>Diving headfirst into dynamic supply chain operations! I love scrubbing vendor and material records to prep everything seamlessly for SAP migration. Tracking down duplicates and standardizing datasets with advanced Excel brings me so much joy because clean data truly powers brilliant business decisions!</p>
-							<div class="exp-image-box"><img src="images/macroasia1.png" alt="MacroAsia"></div>
+							<a href="macroasia.html" class="experience-link">
+								<div class="experience-header"><h3>Data Cleaning Intern | MacroAsia Corporation</h3><span class="exp-date">Aug 2026 - Present</span></div>
+								<p>Diving headfirst into dynamic supply chain operations! I love scrubbing vendor and material records to prep everything seamlessly for SAP migration. Tracking down duplicates and standardizing datasets with advanced Excel brings me so much joy because clean data truly powers brilliant business decisions!</p>
+							</a>
 						</div>
 
 						<div class="experience-item">
-							<div class="experience-header"><h3>President &amp; Former Graphic Designer | AIM Explorer</h3><span class="exp-date">Jan 2025 - Present</span></div>
-							<p>Steering our energetic marketing community with full creative passion! From spearheading exciting rebranding campaigns and setting vibrant visual identities as a designer to now leading our core team, I love turning fresh student stories into magnetic marketing gold that celebrates undergraduate life at AIM!</p>
-							<div class="exp-image-box"><img src="images/aim-explorer.jpg" alt="AIM Explorer"></div>
+							<a href="aim-explorer.html" class="experience-link">
+								<div class="experience-header"><h3>President &amp; Former Graphic Designer | AIM Explorer</h3><span class="exp-date">Jan 2025 - Present</span></div>
+								<p>Steering our energetic marketing community with full creative passion! From spearheading exciting rebranding campaigns and setting vibrant visual identities as a designer to now leading our core team, I love turning fresh student stories into magnetic marketing gold that celebrates undergraduate life at AIM!</p>
+							</a>
 						</div>
 
 						<div class="experience-item">
-							<div class="experience-header"><h3>Undersecretary General of Internal Affairs | AIM Model UN</h3><span class="exp-date">Aug 2025 - Present</span></div>
-							<p>Orchestrating high-energy global discussions and dynamic training sessions with a smile! It is such a rewarding adventure helping delegates sharpen their public speaking, negotiation, and diplomatic flair while keeping all our internal operations running like clockwork.</p>
-							<div class="exp-image-box"><img src="images/aim-mun.jpg" alt="AIM MUN"></div>
+							<a href="aim-mun.html" class="experience-link">
+								<div class="experience-header"><h3>Undersecretary General of Internal Affairs | AIM Model UN</h3><span class="exp-date">Aug 2025 - Present</span></div>
+								<p>Orchestrating high-energy global discussions and dynamic training sessions with a smile! It is such a rewarding adventure helping delegates sharpen their public speaking, negotiation, and diplomatic flair while keeping all our internal operations running like clockwork.</p>
+							</a>
 						</div>
 
 						<div class="experience-item">
-							<div class="experience-header"><h3>Marketing Intern | Wadhwani Foundation</h3><span class="exp-date">Jun 2025 - Aug 2025</span></div>
-							<p>Kicked off my professional journey by championing empowering entrepreneurial initiatives! By analyzing the digital behaviors of modern moms, I helped launch hybrid outreach campaigns that successfully connected over 252K Filipinos with life-changing career upskilling paths.</p>
-							<div class="exp-image-box"><img src="images/wadhwani-exp.jpg" alt="Wadhwani Foundation"></div>
+							<a href="wadhwani.html" class="experience-link">
+								<div class="experience-header"><h3>Marketing Intern | Wadhwani Foundation</h3><span class="exp-date">Jun 2025 - Aug 2025</span></div>
+								<p>Kicked off my professional journey by championing empowering entrepreneurial initiatives! By analyzing the digital behaviors of modern moms, I helped launch hybrid outreach campaigns that successfully connected over 252K Filipinos with life-changing career upskilling paths.</p>
+							</a>
 						</div>
 
 						<div class="experience-item">
-							<div class="experience-header"><h3>Duolingo English Test Ambassador</h3><span class="exp-date">Nov 2025 - Jul 2026</span></div>
-							<p>Spreading contagious enthusiasm for global language learning! Crafting lively promotional content allowed me to connect with a thriving community of over 40K followers, cheering test-takers on as they crossed global communication milestones.</p>
-							<div class="exp-image-box"><img src="images/duolingo-exp.jpg" alt="Duolingo"></div>
+							<a href="duolingo.html" class="experience-link">
+								<div class="experience-header"><h3>Duolingo English Test Ambassador</h3><span class="exp-date">Nov 2025 - Jul 2026</span></div>
+								<p>Spreading contagious enthusiasm for global language learning! Crafting lively promotional content allowed me to connect with a thriving community of over 40K followers, cheering test-takers on as they crossed global communication milestones.</p>
+							</a>
 						</div>
 
 						<div class="experience-item">
-							<div class="experience-header"><h3>Scholar &amp; Community Leader | DataCamp x Data Engineering Pilipinas</h3><span class="exp-date">Jun 2025 - Present</span></div>
-							<p>Supercharging my data engineering and data governance toolkit with pure excitement! Beyond winning a merit-based scholarship, I loved leading community initiatives that made data literacy fun and accessible for aspiring tech learners everywhere.</p>
-							<div class="exp-image-box"><img src="images/dep-exp.jpg" alt="Data Engineering Pilipinas"></div>
+							<a href="data-engineering-pilipinas.html" class="experience-link">
+								<div class="experience-header"><h3>Scholar &amp; Community Leader | DataCamp x Data Engineering Pilipinas</h3><span class="exp-date">Jun 2025 - Present</span></div>
+								<p>Supercharging my data engineering and data governance toolkit with pure excitement! Beyond winning a merit-based scholarship, I loved leading community initiatives that made data literacy fun and accessible for aspiring tech learners everywhere.</p>
+							</a>
 						</div>
 
 						<div class="experience-item">
-							<div class="experience-header"><h3>Head of Content &amp; Content Writer | Youthify</h3><span class="exp-date">Aug 2022 - Mar 2024</span></div>
-							<p>Grew from a passionate mental health writer into the Content Head, guiding a brilliant editorial team! I loved crafting deeply empathetic stories that fostered safe, supportive digital communities around psychological well-being.</p>
-							<div class="exp-image-box"><img src="images/youthify-exp.jpg" alt="Youthify"></div>
+							<a href="youthify.html" class="experience-link">
+								<div class="experience-header"><h3>Head of Content &amp; Content Writer | Youthify</h3><span class="exp-date">Aug 2022 - Mar 2024</span></div>
+								<p>Grew from a passionate mental health writer into the Content Head, guiding a brilliant editorial team! I loved crafting deeply empathetic stories that fostered safe, supportive digital communities around psychological well-being.</p>
+							</a>
 						</div>
 
 						<div class="experience-item">
-							<div class="experience-header"><h3>Alumni &amp; Scholar | Girls Who Code</h3><span class="exp-date">Jun 2023 - Sep 2023</span></div>
-							<p>Immersed myself in an incredible sisterhood of code! From building game projects in partnership with the London Stock Exchange Group to mastering Web Development, Cybersecurity, and Data Science tracks, this community ignited my lifelong love for creative tech problem-solving.</p>
-							<div class="exp-image-box"><img src="images/gwc-exp.jpg" alt="Girls Who Code"></div>
+							<a href="girls-who-code.html" class="experience-link">
+								<div class="experience-header"><h3>Alumni &amp; Scholar | Girls Who Code</h3><span class="exp-date">Jun 2023 - Sep 2023</span></div>
+								<p>Immersed myself in an incredible sisterhood of code! From building game projects in partnership with the London Stock Exchange Group to mastering Web Development, Cybersecurity, and Data Science tracks, this community ignited my lifelong love for creative tech problem-solving.</p>
+							</a>
 						</div>
 					</div>
 				</section>
