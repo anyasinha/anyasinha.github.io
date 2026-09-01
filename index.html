@@ -266,8 +266,8 @@
 
 		.butterfly {
 			position: absolute;
-			width: 20px;
-			height: 16px;
+			width: 16px;
+			height: 13px;
 			z-index: 3;
 			animation: fly 9s ease-in-out infinite;
 			opacity: 0;
@@ -277,8 +277,8 @@
 		.butterfly .wing {
 			position: absolute;
 			top: 0;
-			width: 10px;
-			height: 14px;
+			width: 8px;
+			height: 11px;
 			border-radius: 60% 60% 60% 5%;
 			animation: flap 0.35s ease-in-out infinite alternate;
 		}
@@ -334,38 +334,51 @@
 
 		.timeline {
 			position: relative;
-			margin: 40px 0 20px 20px;
-			padding-left: 30px;
-			border-left: 2px solid #000;
+			margin: 42px 0 20px 18px;
+			padding-left: 42px;
 		}
 
-		.experience-item { position: relative; margin-bottom: 3.5em; }
-
-		.experience-item::before {
+		.timeline::before {
 			content: '';
 			position: absolute;
-			left: -36px;
-			top: 7px;
-			width: 10px;
-			height: 10px;
-			background: #000;
+			left: 11px;
+			top: 2px;
+			bottom: 18px;
+			width: 3px;
+			border-radius: 999px;
+			background: linear-gradient(
+				to bottom,
+				rgba(216, 127, 174, 0.15) 0%,
+				rgba(216, 127, 174, 0.75) 18%,
+				rgba(184, 120, 224, 0.72) 52%,
+				rgba(245, 201, 110, 0.55) 78%,
+				rgba(216, 127, 174, 0.12) 100%
+			);
+			box-shadow: 0 0 14px rgba(216, 127, 174, 0.18);
 		}
 
-		/* --- Whole experience block is now a clickable link to its own page --- */
-		.experience-link {
-			display: block;
-			text-decoration: none !important;
-			color: #000 !important;
-			transition: transform 0.2s ease, opacity 0.2s ease;
+		.experience-item {
+			position: relative;
+			margin-bottom: 3.5em;
 		}
 
-		.experience-link:hover {
-			transform: translateX(6px);
-			opacity: 0.85;
-		}
-
-		.experience-link:hover .experience-header h3 {
-			text-decoration: underline;
+		.experience-item::before {
+			content: '✦';
+			position: absolute;
+			left: -41px;
+			top: -1px;
+			width: 24px;
+			height: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			background: rgba(255,255,255,0.92);
+			border: 1px solid rgba(216, 127, 174, 0.38);
+			box-shadow: 0 4px 12px rgba(216, 127, 174, 0.14);
+			font-size: 0.72em;
+			color: #c46b9d !important;
+			z-index: 2;
 		}
 
 		.experience-header {
@@ -385,6 +398,87 @@
 			font-size: 0.9em;
 			font-weight: 700;
 			white-space: nowrap;
+		}
+
+		.exp-image-box {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 400px;
+			height: 160px;
+			margin-top: 15px;
+			overflow: hidden;
+			border-radius: 6px;
+			background: #fff;
+		}
+
+		.exp-image-box img { width: 100%; height: 100%; object-fit: cover; }
+
+
+		#interests {
+			position: relative;
+			overflow: visible;
+		}
+
+		.interests-butterflies {
+			position: absolute;
+			inset: -28px 0 auto 0;
+			height: 150px;
+			pointer-events: none;
+			z-index: 0;
+		}
+
+		.interests-butterfly {
+			position: absolute;
+			width: 18px;
+			height: 14px;
+			opacity: 0.78;
+			animation: interests-float 7s ease-in-out infinite;
+		}
+
+		.interests-butterfly .wing {
+			position: absolute;
+			top: 0;
+			width: 9px;
+			height: 13px;
+			border-radius: 65% 65% 65% 8%;
+			animation: interests-flap 0.45s ease-in-out infinite alternate;
+		}
+
+		.interests-butterfly .wing.left {
+			left: 0;
+			transform-origin: right center;
+			background: linear-gradient(135deg, #f8b4d8, #d47caf);
+		}
+
+		.interests-butterfly .wing.right {
+			right: 0;
+			transform-origin: left center;
+			border-radius: 65% 65% 8% 65%;
+			background: linear-gradient(225deg, #e8c4ff, #b985df);
+		}
+
+		.interests-butterfly.gold .wing.left {
+			background: linear-gradient(135deg, #ffeab0, #efc060);
+		}
+
+		.interests-butterfly.gold .wing.right {
+			background: linear-gradient(225deg, #fff0c3, #e8b553);
+		}
+
+		@keyframes interests-flap {
+			from { transform: scaleX(1); }
+			to { transform: scaleX(0.4); }
+		}
+
+		@keyframes interests-float {
+			0%, 100% { transform: translateY(0) rotate(-3deg); }
+			50% { transform: translateY(-12px) rotate(5deg); }
+		}
+
+		#interests > *:not(.interests-butterflies) {
+			position: relative;
+			z-index: 1;
 		}
 
 		.interests-intro {
@@ -627,59 +721,51 @@
 					<header class="major"><h2>Experience &amp; Leadership</h2></header>
 					<div class="timeline">
 						<div class="experience-item">
-							<a href="macroasia.html" class="experience-link">
-								<div class="experience-header"><h3>Data Cleaning Intern | MacroAsia Corporation</h3><span class="exp-date">Aug 2026 - Present</span></div>
-								<p>Diving headfirst into dynamic supply chain operations! I love scrubbing vendor and material records to prep everything seamlessly for SAP migration. Tracking down duplicates and standardizing datasets with advanced Excel brings me so much joy because clean data truly powers brilliant business decisions!</p>
-							</a>
+							<div class="experience-header"><h3>Data Cleaning Intern | MacroAsia Corporation</h3><span class="exp-date">Aug 2026 - Present</span></div>
+							<p>Diving headfirst into dynamic supply chain operations! I love scrubbing vendor and material records to prep everything seamlessly for SAP migration. Tracking down duplicates and standardizing datasets with advanced Excel brings me so much joy because clean data truly powers brilliant business decisions!</p>
+							<div class="exp-image-box"><img src="images/macroasia1.png" alt="MacroAsia"></div>
 						</div>
 
 						<div class="experience-item">
-							<a href="aim-explorer.html" class="experience-link">
-								<div class="experience-header"><h3>President &amp; Former Graphic Designer | AIM Explorer</h3><span class="exp-date">Jan 2025 - Present</span></div>
-								<p>Steering our energetic marketing community with full creative passion! From spearheading exciting rebranding campaigns and setting vibrant visual identities as a designer to now leading our core team, I love turning fresh student stories into magnetic marketing gold that celebrates undergraduate life at AIM!</p>
-							</a>
+							<div class="experience-header"><h3>President &amp; Former Graphic Designer | AIM Explorer</h3><span class="exp-date">Jan 2025 - Present</span></div>
+							<p>Steering our energetic marketing community with full creative passion! From spearheading exciting rebranding campaigns and setting vibrant visual identities as a designer to now leading our core team, I love turning fresh student stories into magnetic marketing gold that celebrates undergraduate life at AIM!</p>
+							<div class="exp-image-box"><img src="images/aim-explorer.jpg" alt="AIM Explorer"></div>
 						</div>
 
 						<div class="experience-item">
-							<a href="aim-mun.html" class="experience-link">
-								<div class="experience-header"><h3>Undersecretary General of Internal Affairs | AIM Model UN</h3><span class="exp-date">Aug 2025 - Present</span></div>
-								<p>Orchestrating high-energy global discussions and dynamic training sessions with a smile! It is such a rewarding adventure helping delegates sharpen their public speaking, negotiation, and diplomatic flair while keeping all our internal operations running like clockwork.</p>
-							</a>
+							<div class="experience-header"><h3>Undersecretary General of Internal Affairs | AIM Model UN</h3><span class="exp-date">Aug 2025 - Present</span></div>
+							<p>Orchestrating high-energy global discussions and dynamic training sessions with a smile! It is such a rewarding adventure helping delegates sharpen their public speaking, negotiation, and diplomatic flair while keeping all our internal operations running like clockwork.</p>
+							<div class="exp-image-box"><img src="images/aim-mun.jpg" alt="AIM MUN"></div>
 						</div>
 
 						<div class="experience-item">
-							<a href="wadhwani.html" class="experience-link">
-								<div class="experience-header"><h3>Marketing Intern | Wadhwani Foundation</h3><span class="exp-date">Jun 2025 - Aug 2025</span></div>
-								<p>Kicked off my professional journey by championing empowering entrepreneurial initiatives! By analyzing the digital behaviors of modern moms, I helped launch hybrid outreach campaigns that successfully connected over 252K Filipinos with life-changing career upskilling paths.</p>
-							</a>
+							<div class="experience-header"><h3>Marketing Intern | Wadhwani Foundation</h3><span class="exp-date">Jun 2025 - Aug 2025</span></div>
+							<p>Kicked off my professional journey by championing empowering entrepreneurial initiatives! By analyzing the digital behaviors of modern moms, I helped launch hybrid outreach campaigns that successfully connected over 252K Filipinos with life-changing career upskilling paths.</p>
+							<div class="exp-image-box"><img src="images/wadhwani-exp.jpg" alt="Wadhwani Foundation"></div>
 						</div>
 
 						<div class="experience-item">
-							<a href="duolingo.html" class="experience-link">
-								<div class="experience-header"><h3>Duolingo English Test Ambassador</h3><span class="exp-date">Nov 2025 - Jul 2026</span></div>
-								<p>Spreading contagious enthusiasm for global language learning! Crafting lively promotional content allowed me to connect with a thriving community of over 40K followers, cheering test-takers on as they crossed global communication milestones.</p>
-							</a>
+							<div class="experience-header"><h3>Duolingo English Test Ambassador</h3><span class="exp-date">Nov 2025 - Jul 2026</span></div>
+							<p>Spreading contagious enthusiasm for global language learning! Crafting lively promotional content allowed me to connect with a thriving community of over 40K followers, cheering test-takers on as they crossed global communication milestones.</p>
+							<div class="exp-image-box"><img src="images/duolingo-exp.jpg" alt="Duolingo"></div>
 						</div>
 
 						<div class="experience-item">
-							<a href="data-engineering-pilipinas.html" class="experience-link">
-								<div class="experience-header"><h3>Scholar &amp; Community Leader | DataCamp x Data Engineering Pilipinas</h3><span class="exp-date">Jun 2025 - Present</span></div>
-								<p>Supercharging my data engineering and data governance toolkit with pure excitement! Beyond winning a merit-based scholarship, I loved leading community initiatives that made data literacy fun and accessible for aspiring tech learners everywhere.</p>
-							</a>
+							<div class="experience-header"><h3>Scholar &amp; Community Leader | DataCamp x Data Engineering Pilipinas</h3><span class="exp-date">Jun 2025 - Present</span></div>
+							<p>Supercharging my data engineering and data governance toolkit with pure excitement! Beyond winning a merit-based scholarship, I loved leading community initiatives that made data literacy fun and accessible for aspiring tech learners everywhere.</p>
+							<div class="exp-image-box"><img src="images/dep-exp.jpg" alt="Data Engineering Pilipinas"></div>
 						</div>
 
 						<div class="experience-item">
-							<a href="youthify.html" class="experience-link">
-								<div class="experience-header"><h3>Head of Content &amp; Content Writer | Youthify</h3><span class="exp-date">Aug 2022 - Mar 2024</span></div>
-								<p>Grew from a passionate mental health writer into the Content Head, guiding a brilliant editorial team! I loved crafting deeply empathetic stories that fostered safe, supportive digital communities around psychological well-being.</p>
-							</a>
+							<div class="experience-header"><h3>Head of Content &amp; Content Writer | Youthify</h3><span class="exp-date">Aug 2022 - Mar 2024</span></div>
+							<p>Grew from a passionate mental health writer into the Content Head, guiding a brilliant editorial team! I loved crafting deeply empathetic stories that fostered safe, supportive digital communities around psychological well-being.</p>
+							<div class="exp-image-box"><img src="images/youthify-exp.jpg" alt="Youthify"></div>
 						</div>
 
 						<div class="experience-item">
-							<a href="girls-who-code.html" class="experience-link">
-								<div class="experience-header"><h3>Alumni &amp; Scholar | Girls Who Code</h3><span class="exp-date">Jun 2023 - Sep 2023</span></div>
-								<p>Immersed myself in an incredible sisterhood of code! From building game projects in partnership with the London Stock Exchange Group to mastering Web Development, Cybersecurity, and Data Science tracks, this community ignited my lifelong love for creative tech problem-solving.</p>
-							</a>
+							<div class="experience-header"><h3>Alumni &amp; Scholar | Girls Who Code</h3><span class="exp-date">Jun 2023 - Sep 2023</span></div>
+							<p>Immersed myself in an incredible sisterhood of code! From building game projects in partnership with the London Stock Exchange Group to mastering Web Development, Cybersecurity, and Data Science tracks, this community ignited my lifelong love for creative tech problem-solving.</p>
+							<div class="exp-image-box"><img src="images/gwc-exp.jpg" alt="Girls Who Code"></div>
 						</div>
 					</div>
 				</section>
@@ -744,6 +830,21 @@
 				</section>
 
 				<section id="interests">
+					<div class="interests-butterflies" aria-hidden="true">
+						<div class="interests-butterfly" style="left: 8%; top: 38px; animation-delay: 0s;">
+							<div class="wing left"></div><div class="wing right"></div>
+						</div>
+						<div class="interests-butterfly gold" style="left: 27%; top: 12px; animation-delay: 1.5s;">
+							<div class="wing left"></div><div class="wing right"></div>
+						</div>
+						<div class="interests-butterfly" style="right: 28%; top: 20px; animation-delay: 2.4s;">
+							<div class="wing left"></div><div class="wing right"></div>
+						</div>
+						<div class="interests-butterfly" style="right: 8%; top: 52px; animation-delay: 0.8s;">
+							<div class="wing left"></div><div class="wing right"></div>
+						</div>
+					</div>
+
 					<header class="major"><h2>Beyond the Metrics</h2></header>
 					<p class="interests-intro">A quick peek into what fuels my curiosity, creativity, and daily drive:</p>
 					<div class="interests-grid">
