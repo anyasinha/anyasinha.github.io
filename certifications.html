@@ -5,16 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
 
 	<style>
-
-		/* =========================================================
-		   GENERAL
-		   ========================================================= */
-
 		*,
 		body,
 		p,
@@ -42,7 +36,6 @@
 		body {
 			margin: 0;
 			min-height: 100vh;
-
 			background: linear-gradient(
 				to bottom,
 				#f6e7ff 0%,
@@ -60,11 +53,6 @@
 			padding: 80px 30px 100px;
 		}
 
-
-		/* =========================================================
-		   TOP LINKS
-		   ========================================================= */
-
 		.top-links {
 			display: flex;
 			flex-wrap: wrap;
@@ -78,11 +66,6 @@
 			text-decoration: none !important;
 			border-bottom: 2px solid #000 !important;
 		}
-
-
-		/* =========================================================
-		   PAGE HEADER
-		   ========================================================= */
 
 		.page-header {
 			text-align: center;
@@ -103,10 +86,7 @@
 			color: #5f5264 !important;
 		}
 
-
-		/* =========================================================
-		   COMPANY HUB
-		   ========================================================= */
+		/* COMPANY HUB */
 
 		.cert-grid {
 			display: grid;
@@ -116,89 +96,61 @@
 
 		.cert-card {
 			position: relative;
-
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-
 			gap: 17px;
-
 			min-height: 190px;
-
 			padding: 28px 18px;
-
 			border: 0 !important;
 			border-radius: 16px;
-
 			background: rgba(255, 255, 255, 0.75);
-
-			box-shadow:
-				0 13px 34px rgba(73, 54, 90, 0.08);
-
+			box-shadow: 0 13px 34px rgba(73, 54, 90, 0.08);
 			text-align: center;
-
 			text-decoration: none !important;
-
-			transition:
-				transform 0.2s ease,
-				box-shadow 0.2s ease;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
 		}
 
 		.cert-card:hover {
 			transform: translateY(-5px);
-
-			box-shadow:
-				0 18px 38px rgba(73, 54, 90, 0.14);
+			box-shadow: 0 18px 38px rgba(73, 54, 90, 0.14);
 		}
 
 		.logo-frame {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-
 			width: 100%;
 			height: 82px;
 		}
 
 		.logo-frame img {
 			display: block;
-
 			max-width: 125px;
 			max-height: 68px;
-
 			width: auto;
 			height: auto;
-
 			object-fit: contain;
 		}
 
 		.cert-name {
 			font-family: 'Cormorant Garamond', serif !important;
-
 			font-size: 1.45em;
 			font-weight: 700;
-
 			line-height: 1.2 !important;
 		}
 
 		.cert-hint {
 			font-size: 0.76em;
 			font-weight: 600;
-
 			letter-spacing: 0.06em;
-
 			text-transform: uppercase;
-
 			opacity: 0.55;
-
 			line-height: 1.4 !important;
 		}
 
-
-		/* =========================================================
-		   COMPANY VIEW
-		   ========================================================= */
+		/* COMPANY-SPECIFIC VIEW */
 
 		.company-view {
 			display: none;
@@ -212,9 +164,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-
 			text-align: center;
-
 			margin: 10px 0 44px;
 		}
 
@@ -222,17 +172,14 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-
 			width: 180px;
 			height: 110px;
-
 			margin-bottom: 20px;
 		}
 
 		.company-logo-large img {
 			max-width: 170px;
 			max-height: 92px;
-
 			object-fit: contain;
 		}
 
@@ -242,21 +189,13 @@
 
 		.company-subtitle {
 			max-width: 650px;
-
 			margin: 0;
-
 			color: #5f5264 !important;
 		}
-
-
-		/* =========================================================
-		   COMPANY NAV
-		   ========================================================= */
 
 		.company-nav {
 			display: flex;
 			justify-content: center;
-
 			margin-bottom: 35px;
 		}
 
@@ -264,281 +203,69 @@
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
-
 			padding: 10px 20px;
-
 			border: 2px solid #000 !important;
 			border-radius: 30px;
-
 			background: transparent;
-
 			font-weight: 700;
-
 			text-decoration: none !important;
-
-			transition:
-				background 0.2s ease,
-				color 0.2s ease;
+			transition: background 0.2s ease, color 0.2s ease;
 		}
 
 		.all-companies-button:hover {
 			background: #000;
-
 			color: #fff !important;
 		}
 
-
-		/* =========================================================
-		   CERTIFICATE GRID
-		   ========================================================= */
-
 		.certificate-list {
 			display: grid;
-
-			grid-template-columns:
-				repeat(2, minmax(0, 1fr));
-
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: 22px;
 		}
-
-
-		/* =========================================================
-		   NORMAL CERTIFICATION CARDS
-		   ========================================================= */
 
 		.certificate-item {
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
-
-			min-height: 175px;
-
-			padding: 27px;
-
+			justify-content: center;
+			min-height: 150px;
+			padding: 28px;
 			border-radius: 14px;
-
-			background:
-				rgba(255, 255, 255, 0.76);
-
-			box-shadow:
-				0 10px 28px rgba(73, 54, 90, 0.07);
-
-			text-decoration: none !important;
-
-			transition:
-				transform 0.2s ease,
-				box-shadow 0.2s ease;
-		}
-
-		.certificate-item:hover {
-			transform: translateY(-5px);
-
-			box-shadow:
-				0 16px 34px rgba(73, 54, 90, 0.13);
-		}
-
-		.certificate-info {
-			padding: 2px 4px 5px;
+			background: rgba(255, 255, 255, 0.72);
+			box-shadow: 0 10px 28px rgba(73, 54, 90, 0.07);
 		}
 
 		.certificate-item h3 {
-			margin: 0 0 14px;
-
-			font-size: 1.6em;
-
-			line-height: 1.2 !important;
+			margin: 0 0 8px;
+			font-size: 1.5em;
 		}
 
 		.certificate-item p {
 			margin: 0;
-
 			line-height: 1.65 !important;
-
 			color: #5f5264 !important;
-
-			font-size: 0.9em;
-
-			font-weight: 600;
 		}
-
-		.certificate-credential {
-			margin-top: 15px !important;
-
-			font-size: 0.76em !important;
-
-			text-transform: uppercase;
-
-			letter-spacing: 0.06em;
-
-			opacity: 0.55;
-		}
-
-
-		/* =========================================================
-		   CANVA WORLD TOUR FEATURE
-		   ========================================================= */
-
-		.event-feature {
-			grid-column: 1 / -1;
-
-			padding: 30px;
-
-			border-radius: 18px;
-
-			background:
-				rgba(255, 255, 255, 0.9);
-
-			box-shadow:
-				0 18px 45px rgba(73, 54, 90, 0.12);
-
-			margin-bottom: 4px;
-		}
-
-		.event-label {
-			display: inline-block;
-
-			margin-bottom: 12px;
-
-			font-size: 0.72em;
-
-			font-weight: 700;
-
-			letter-spacing: 0.12em;
-
-			text-transform: uppercase;
-
-			opacity: 0.5;
-		}
-
-		.event-feature h2 {
-			margin: 0 0 12px;
-
-			font-size: 2.25em;
-
-			line-height: 1.15 !important;
-		}
-
-		.event-description {
-			max-width: 760px;
-
-			margin: 0 0 25px;
-
-			color: #5f5264 !important;
-
-			font-size: 0.95em;
-
-			line-height: 1.75 !important;
-		}
-
-
-		/* =========================================================
-		   EVENT IMAGE GALLERY
-		   ========================================================= */
-
-		.event-gallery {
-			display: grid;
-
-			grid-template-columns:
-				1.2fr 1fr 1fr;
-
-			gap: 14px;
-
-			width: 100%;
-		}
-
-		.event-photo {
-			width: 100%;
-
-			height: 300px;
-
-			object-fit: cover;
-
-			border-radius: 11px;
-
-			display: block;
-		}
-
-		.event-photo:first-child {
-			height: 300px;
-		}
-
-
-		/* =========================================================
-		   EVENT FOOTER
-		   ========================================================= */
-
-		.event-footer {
-			display: flex;
-
-			align-items: center;
-
-			gap: 10px;
-
-			margin-top: 20px;
-
-			font-size: 0.78em;
-
-			font-weight: 700;
-
-			letter-spacing: 0.07em;
-
-			text-transform: uppercase;
-
-			opacity: 0.55;
-		}
-
-
-		/* =========================================================
-		   EMPTY STATE
-		   ========================================================= */
 
 		.empty-certificates {
 			grid-column: 1 / -1;
-
 			padding: 34px 28px;
-
 			border-radius: 14px;
-
-			background:
-				rgba(255, 255, 255, 0.62);
-
+			background: rgba(255, 255, 255, 0.62);
 			text-align: center;
 		}
 
 		.empty-certificates p {
 			margin: 0;
-
 			line-height: 1.7 !important;
-
 			color: #5f5264 !important;
 		}
 
-
-		/* =========================================================
-		   RESPONSIVE
-		   ========================================================= */
-
 		@media screen and (max-width: 900px) {
-
 			.cert-grid {
-				grid-template-columns:
-					repeat(2, minmax(0, 1fr));
+				grid-template-columns: repeat(2, minmax(0, 1fr));
 			}
-
-			.event-gallery {
-				grid-template-columns: 1fr 1fr;
-			}
-
-			.event-photo:first-child {
-				grid-column: 1 / -1;
-				height: 340px;
-			}
-
 		}
 
-
 		@media screen and (max-width: 650px) {
-
 			.page-wrap {
 				padding: 55px 18px 80px;
 			}
@@ -555,1207 +282,519 @@
 			.cert-card {
 				min-height: 165px;
 			}
+		}
 
-			.event-feature {
-				padding: 22px;
-			}
+		.certificate-image {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 150px;
+			margin-bottom: 22px;
+			overflow: hidden;
+			border-radius: 10px;
+			background: rgba(255, 255, 255, 0.65);
+		}
 
-			.event-feature h2 {
-				font-size: 1.9em;
-			}
+		.certificate-image img {
+			display: block;
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+			object-fit: contain;
+		}
 
-			.event-gallery {
-				grid-template-columns: 1fr;
-			}
+		.certificate-info {
+			padding: 2px 4px 5px;
+		}
 
-			.event-photo,
-			.event-photo:first-child {
-				height: auto;
-				max-height: none;
-			}
+		.certificate-credential {
+			margin-top: 15px !important;
+			font-size: 0.76em !important;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			opacity: 0.55;
+		}
 
+		.event-feature {
+			grid-column: 1 / -1;
+			padding: 30px;
+			border-radius: 18px;
+			background: rgba(255, 255, 255, 0.9);
+			box-shadow: 0 18px 45px rgba(73, 54, 90, 0.12);
+			margin-bottom: 4px;
+		}
+
+		.event-label {
+			display: inline-block;
+			margin-bottom: 12px;
+			font-size: 0.72em;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			opacity: 0.5;
+		}
+
+		.event-feature h2 {
+			margin: 0 0 12px;
+			font-size: 2.25em;
+			line-height: 1.15 !important;
+		}
+
+		.event-description {
+			max-width: 760px;
+			margin: 0 0 25px;
+			color: #5f5264 !important;
+			font-size: 0.95em;
+			line-height: 1.75 !important;
+		}
+
+		.event-gallery {
+			display: grid;
+			grid-template-columns: 1.2fr 1fr 1fr;
+			gap: 14px;
+			width: 100%;
+		}
+
+		.event-photo {
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+			border-radius: 11px;
+			display: block;
+		}
+
+		.event-footer {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin-top: 20px;
+			font-size: 0.78em;
+			font-weight: 700;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+			opacity: 0.55;
 		}
 
 	</style>
 </head>
 
-
 <body>
 
 	<div class="page-wrap">
 
-
-		<!-- =====================================================
-		     TOP LINKS
-		     ===================================================== -->
-
 		<div class="top-links">
-
-			<a
-				href="index.html"
-				class="back-link"
-			>
-				&larr; Back to Home
-			</a>
-
-			<a
-				href="education.html"
-				class="back-link"
-			>
-				Education
-			</a>
-
+			<a href="index.html" class="back-link">&larr; Back to Home</a>
+			<a href="education.html" class="back-link">Education</a>
 		</div>
 
-
-
-		<!-- =====================================================
-		     COMPANY HUB
-		     ===================================================== -->
-
+		<!-- MAIN COMPANY HUB -->
 		<div id="company-hub">
 
 			<header class="page-header">
-
 				<h1>My Certifications</h1>
-
 				<p class="page-intro">
-					Explore my certifications by provider. Click a company logo to open its certification page.
+					Explore my certifications! Click a company logo to open its certification page.
 				</p>
-
 			</header>
-
-
 
 			<div class="cert-grid">
 
-
-				<!-- LINKEDIN -->
-
-				<a
-					class="cert-card"
-					href="certifications.html?company=linkedin"
-				>
-
+				<a class="cert-card" href="certifications.html?company=linkedin">
 					<div class="logo-frame">
-
 						<img
 							src="https://cdn.simpleicons.org/linkedin"
 							alt="LinkedIn logo"
-
-							onerror="
-								this.onerror=null;
-								this.src='https://www.google.com/s2/favicons?domain=linkedin.com&sz=128';
-							"
+							onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=linkedin.com&sz=128';"
 						>
-
 					</div>
-
-					<span class="cert-name">
-						LinkedIn
-					</span>
-
-					<span class="cert-hint">
-						View certificates
-					</span>
-
+					<span class="cert-name">LinkedIn</span>
+					<span class="cert-hint">View certificates</span>
 				</a>
 
-
-
-				<!-- DATACAMP -->
-
-				<a
-					class="cert-card"
-					href="certifications.html?company=datacamp"
-				>
-
+				<a class="cert-card" href="certifications.html?company=datacamp">
 					<div class="logo-frame">
-
 						<img
 							src="https://cdn.simpleicons.org/datacamp"
 							alt="DataCamp logo"
-
-							onerror="
-								this.onerror=null;
-								this.src='https://www.google.com/s2/favicons?domain=datacamp.com&sz=128';
-							"
+							onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=datacamp.com&sz=128';"
 						>
-
 					</div>
-
-					<span class="cert-name">
-						DataCamp
-					</span>
-
-					<span class="cert-hint">
-						View certificates
-					</span>
-
+					<span class="cert-name">DataCamp</span>
+					<span class="cert-hint">View certificates</span>
 				</a>
 
-
-
-				<!-- PINTEREST -->
-
-				<a
-					class="cert-card"
-					href="certifications.html?company=pinterest"
-				>
-
+				<a class="cert-card" href="certifications.html?company=pinterest">
 					<div class="logo-frame">
-
 						<img
 							src="https://cdn.simpleicons.org/pinterest"
 							alt="Pinterest logo"
-
-							onerror="
-								this.onerror=null;
-								this.src='https://www.google.com/s2/favicons?domain=pinterest.com&sz=128';
-							"
+							onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=pinterest.com&sz=128';"
 						>
-
 					</div>
-
-					<span class="cert-name">
-						Pinterest
-					</span>
-
-					<span class="cert-hint">
-						View certificates
-					</span>
-
+					<span class="cert-name">Pinterest</span>
+					<span class="cert-hint">View certificates</span>
 				</a>
 
-
-
-				<!-- CANVA -->
-
-				<a
-					class="cert-card"
-					href="certifications.html?company=canva"
-				>
-
+				<a class="cert-card" href="certifications.html?company=canva">
 					<div class="logo-frame">
-
 						<img
 							src="https://cdn.simpleicons.org/canva"
 							alt="Canva logo"
-
-							onerror="
-								this.onerror=null;
-								this.src='https://www.google.com/s2/favicons?domain=canva.com&sz=128';
-							"
+							onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=canva.com&sz=128';"
 						>
-
 					</div>
-
-					<span class="cert-name">
-						Canva
-					</span>
-
-					<span class="cert-hint">
-						View certificates
-					</span>
-
+					<span class="cert-name">Canva</span>
+					<span class="cert-hint">View certificates</span>
 				</a>
 
-
-
-				<!-- MICROSOFT -->
-
-				<a
-					class="cert-card"
-					href="certifications.html?company=microsoft"
-				>
-
+				<a class="cert-card" href="certifications.html?company=microsoft">
 					<div class="logo-frame">
-
 						<img
 							src="https://cdn.simpleicons.org/microsoft"
 							alt="Microsoft logo"
-
-							onerror="
-								this.onerror=null;
-								this.src='https://www.google.com/s2/favicons?domain=microsoft.com&sz=128';
-							"
+							onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=microsoft.com&sz=128';"
 						>
-
 					</div>
-
-					<span class="cert-name">
-						Microsoft
-					</span>
-
-					<span class="cert-hint">
-						View certificates
-					</span>
-
+					<span class="cert-name">Microsoft</span>
+					<span class="cert-hint">View certificates</span>
 				</a>
 
-
-
-				<!-- IIBA -->
-
-				<a
-					class="cert-card"
-					href="certifications.html?company=iiba"
-				>
-
+				<a class="cert-card" href="certifications.html?company=iiba">
 					<div class="logo-frame">
-
 						<img
 							src="https://cdn.simpleicons.org/iiba"
 							alt="IIBA logo"
-
-							onerror="
-								this.onerror=null;
-								this.src='https://www.google.com/s2/favicons?domain=iiba.org&sz=128';
-							"
+							onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=iiba.org&sz=128';"
 						>
-
 					</div>
-
-					<span class="cert-name">
-						IIBA
-					</span>
-
-					<span class="cert-hint">
-						View certificates
-					</span>
-
+					<span class="cert-name">IIBA</span>
+					<span class="cert-hint">View certificates</span>
 				</a>
 
-
-
-				<!-- ZSCALER -->
-
-				<a
-					class="cert-card"
-					href="certifications.html?company=zscaler"
-				>
-
+				<a class="cert-card" href="certifications.html?company=zscaler">
 					<div class="logo-frame">
-
 						<img
 							src="https://cdn.simpleicons.org/zscaler"
 							alt="Zscaler logo"
-
-							onerror="
-								this.onerror=null;
-								this.src='https://www.google.com/s2/favicons?domain=zscaler.com&sz=128';
-							"
+							onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=zscaler.com&sz=128';"
 						>
-
 					</div>
-
-					<span class="cert-name">
-						Zscaler
-					</span>
-
-					<span class="cert-hint">
-						View certificates
-					</span>
-
+					<span class="cert-name">Zscaler</span>
+					<span class="cert-hint">View certificates</span>
 				</a>
 
-
-
-				<!-- CISCO -->
-
-				<a
-					class="cert-card"
-					href="certifications.html?company=cisco"
-				>
-
+				<a class="cert-card" href="certifications.html?company=cisco">
 					<div class="logo-frame">
-
 						<img
 							src="https://cdn.simpleicons.org/cisco"
 							alt="Cisco logo"
-
-							onerror="
-								this.onerror=null;
-								this.src='https://www.google.com/s2/favicons?domain=cisco.com&sz=128';
-							"
+							onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=cisco.com&sz=128';"
 						>
-
 					</div>
-
-					<span class="cert-name">
-						Cisco
-					</span>
-
-					<span class="cert-hint">
-						View certificates
-					</span>
-
+					<span class="cert-name">Cisco</span>
+					<span class="cert-hint">View certificates</span>
 				</a>
 
 			</div>
-
 		</div>
 
-
-
-		<!-- =====================================================
-		     COMPANY SPECIFIC VIEW
-		     ===================================================== -->
-
-		<div
-			class="company-view"
-			id="company-view"
-		>
-
+		<!-- SAME HTML FILE BECOMES THE COMPANY CERTIFICATE PAGE -->
+		<div class="company-view" id="company-view">
 
 			<div class="company-nav">
-
-				<a
-					href="certifications.html"
-					class="all-companies-button"
-				>
+				<a href="certifications.html" class="all-companies-button">
 					&larr; All Certification Providers
 				</a>
-
 			</div>
 
-
-
 			<div class="company-header">
-
-
 				<div class="company-logo-large">
-
-					<img
-						id="company-logo"
-						src=""
-						alt=""
-					>
-
+					<img id="company-logo" src="" alt="">
 				</div>
-
 
 				<h1 id="company-title"></h1>
 
-
-				<p
-					class="company-subtitle"
-					id="company-subtitle"
-				>
+				<p class="company-subtitle" id="company-subtitle">
 					My certificates from this provider.
 				</p>
-
 			</div>
 
-
-
-			<div
-				class="certificate-list"
-				id="certificate-list"
-			></div>
+			<div class="certificate-list" id="certificate-list"></div>
 
 		</div>
 
 	</div>
 
-
-
 	<script>
-
-		document.addEventListener(
-			"DOMContentLoaded",
-			function () {
-
-
-				/* =================================================
-				   CERTIFICATION DATABASE
-				   ================================================= */
-
-				const companies = {
-
-
-					/* =============================================
-					   LINKEDIN
-					   ============================================= */
-
-					linkedin: {
-
-						name: "LinkedIn",
-
-						logo:
-							"https://cdn.simpleicons.org/linkedin",
-
-						fallback:
-							"https://www.google.com/s2/favicons?domain=linkedin.com&sz=128",
-
-						certificates: []
-
-					},
-
-
-
-					/* =============================================
-					   DATACAMP
-					   ============================================= */
-
-					datacamp: {
-
-						name: "DataCamp",
-
-						logo:
-							"https://cdn.simpleicons.org/datacamp",
-
-						fallback:
-							"https://www.google.com/s2/favicons?domain=datacamp.com&sz=128",
-
-						certificates: []
-
-					},
-
-
-
-					/* =============================================
-					   PINTEREST
-					   ============================================= */
-
-					pinterest: {
-
-						name: "Pinterest",
-
-						logo:
-							"https://cdn.simpleicons.org/pinterest",
-
-						fallback:
-							"https://www.google.com/s2/favicons?domain=pinterest.com&sz=128",
-
-						certificates: [
-
-							{
-								title:
-									"Pinterest Performance Essentials",
-
-								image:
-									"images/certifications/Pinterest Performance Essentials.png",
-
-								link:
-									"https://www.credly.com/badges/29103d23-584c-4ea5-9eb3-87b5f359e81d/linked_in_profile"
-							},
-
-							{
-								title:
-									"Pinterest Shopping Essentials",
-
-								image:
-									"images/certifications/Pinterest Shopping Essentials.png",
-
-								link:
-									"https://www.credly.com/badges/fdc568c6-41ef-40a9-9d76-7ee0e8fd546f/linked_in_profile"
-							},
-
-							{
-								title:
-									"Pinterest Advertising Essentials",
-
-								image:
-									"images/certifications/Pinterest Advertising Essentials.png",
-
-								link:
-									"https://www.credly.com/badges/01e26a67-d90d-47fe-839a-1277198b1625/linked_in_profile"
-							},
-
-							{
-								title:
-									"Pinterest Media Buyer Certification",
-
-								image:
-									"images/certifications/Pinterest Media Buying.png",
-
-								link:
-									"https://www.credly.com/badges/74c1f719-e10f-459c-a64b-848a464a30f9/linked_in_profile"
-							}
-
-						]
-
-					},
-
-
-
-					/* =============================================
-					   CANVA
-					   ============================================= */
-
-					canva: {
-
-						name: "Canva",
-
-						logo:
-							"https://cdn.simpleicons.org/canva",
-
-						fallback:
-							"https://www.google.com/s2/favicons?domain=canva.com&sz=128",
-
-						certificates: [
-
-
-							/* =====================================
-							   CANVA WORLD TOUR
-							   IN-PERSON EVENT
-							   ===================================== */
-
-							{
-								title:
-									"Work Smarter with Canva: Essentials for Enterprise",
-
-								event: true,
-
-								description:
-									"I attended Canva World Tour in person, an immersive event focused on Canva's enterprise tools, creative workflows, and ways to work smarter and create at scale.",
-
-								images: [
-
-									"images/certifications/enterprise.png",
-
-									"images/certifications/enterprise 1.jpg",
-
-									"images/certifications/enterprise2.png"
-
-								]
-
-							},
-
-
-
-							/* =====================================
-							   CANVA CERTIFICATIONS
-							   ===================================== */
-
-							{
-								title:
-									"Scale Creative Campaigns",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/2452f0b9-4a9f-438f-a4ab-c19d46e54ef6"
-							},
-
-
-							{
-								title:
-									"Meet Canva's Visual Suite",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/0578bf07-e49a-4b1e-9afb-f81f3c3eacf5"
-							},
-
-
-							{
-								title:
-									"Create Scroll Stopping Content",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/b4fca5c6-4f04-47f0-bff1-7485c4a5106c"
-							},
-
-
-							{
-								title:
-									"Canva Essentials",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/a6ee5360-4eac-4b45-bb9c-039901038bac"
-							},
-
-
-							{
-								title:
-									"AI in the Classroom",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/b7d016f9-87d9-4cad-be65-0ce81458bde9"
-							},
-
-
-							{
-								title:
-									"Teacher Essentials",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/47bdf85e-da7a-4e49-9fab-53f87cd33e0e"
-							},
-
-
-							{
-								title:
-									"The Field Guide to Human-Centered Design",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/a1db820b-51d2-4df4-9f8f-a401e8129a5c"
-							},
-
-
-							{
-								title:
-									"Canva for Work",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/04186e95-27d4-4b8f-a5fd-d8c30f2836b0"
-							},
-
-
-							{
-								title:
-									"Graphic Design Essentials",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/5491ceb2-baab-451d-a18a-9967ab34a754"
-							},
-
-
-							{
-								title:
-									"Marketing with Canva",
-
-								link:
-									"https://www.canva.com/design-school/certification-award/364450fe-851f-4ed4-aae2-97d06f2a0110"
-							}
-
-						]
-
-					},
-
-
-
-					/* =============================================
-					   MICROSOFT
-					   ============================================= */
-
-					microsoft: {
-
-						name: "Microsoft",
-
-						logo:
-							"https://cdn.simpleicons.org/microsoft",
-
-						fallback:
-							"https://www.google.com/s2/favicons?domain=microsoft.com&sz=128",
-
-						certificates: []
-
-					},
-
-
-
-					/* =============================================
-					   IIBA
-					   ============================================= */
-
-					iiba: {
-
-						name: "IIBA",
-
-						logo:
-							"https://cdn.simpleicons.org/iiba",
-
-						fallback:
-							"https://www.google.com/s2/favicons?domain=iiba.org&sz=128",
-
-						certificates: []
-
-					},
-
-
-
-					/* =============================================
-					   ZSCALER
-					   ============================================= */
-
-					zscaler: {
-
-						name: "Zscaler",
-
-						logo:
-							"https://cdn.simpleicons.org/zscaler",
-
-						fallback:
-							"https://www.google.com/s2/favicons?domain=zscaler.com&sz=128",
-
-						certificates: []
-
-					},
-
-
-
-					/* =============================================
-					   CISCO
-					   ============================================= */
-
-					cisco: {
-
-						name: "Cisco",
-
-						logo:
-							"https://cdn.simpleicons.org/cisco",
-
-						fallback:
-							"https://www.google.com/s2/favicons?domain=cisco.com&sz=128",
-
-						certificates: []
-
-					}
-
-				};
-
-
-
-				/* =================================================
-				   GET COMPANY FROM URL
-				   ================================================= */
-
-				const params =
-					new URLSearchParams(
-						window.location.search
-					);
-
-				const companyKey =
-					params.get("company");
-
-
-
-				/* =================================================
-				   NO COMPANY SELECTED
-				   ================================================= */
-
-				if (
-					!companyKey ||
-					!companies[companyKey]
-				) {
-
+		document.addEventListener("DOMContentLoaded", function () {
+
+			const companies = {
+
+				linkedin: {
+					name: "LinkedIn",
+					logo: "https://cdn.simpleicons.org/linkedin",
+					fallback: "https://www.google.com/s2/favicons?domain=linkedin.com&sz=128",
+					certificates: [
+						{
+							title: "Career Essentials in Data Analysis",
+							link: "https://www.linkedin.com/learning/certificates/d30a9e14cac66d4d6e3eddc7adb606d807aad05eded4e595ef302868f11cea9e?u=122677226"
+						},
+						{
+							title: "Learning Data Analytics Part 2: Extending and Applying Core Knowledge",
+							link: "https://www.linkedin.com/learning/certificates/bd2f2c72cdd6f8c52ef7d9b090208ad2c72780f7662e6bd7a70a238a0f2e84c3?u=122677226"
+						},
+						{
+							title: "Learning Data Analytics: 1 Foundations",
+							link: "https://www.linkedin.com/learning/certificates/e5e1c138d2477b7fa7d0feb460c5f5b7269520d00181ac57ea00fb5f8322ea8f?u=122677226"
+						},
+						{
+							title: "Introduction to Career Skills in Data Analytics",
+							link: "https://www.linkedin.com/learning/certificates/e1922be465b26a76a6531a591d570b8eb4ae7e4fc7bd49b23fc8bd3cee91f944?trk=share_certificate"
+						},
+						{
+							title: "Marketing Foundations",
+							link: "https://www.linkedin.com/learning/certificates/fc17840deff1dedba88eedaa5d3bcd79350f84d6e4cb39f5e7e2f1a605c53468?u=122677226"
+						}
+					]
+				},
+
+				datacamp: {
+					name: "DataCamp",
+					logo: "https://cdn.simpleicons.org/datacamp",
+					fallback: "https://www.google.com/s2/favicons?domain=datacamp.com&sz=128",
+					certificates: []
+				},
+
+				pinterest: {
+					name: "Pinterest",
+					logo: "https://cdn.simpleicons.org/pinterest",
+					fallback: "https://www.google.com/s2/favicons?domain=pinterest.com&sz=128",
+					certificates: [
+						{
+							title: "Pinterest Performance Essentials",
+							image: "images/certifications/Pinterest Performance Essentials.png",
+							link: "https://www.credly.com/badges/29103d23-584c-4ea5-9eb3-87b5f359e81d/linked_in_profile"
+						},
+						{
+							title: "Pinterest Shopping Essentials",
+							image: "images/certifications/Pinterest Shopping Essentials.png",
+							link: "https://www.credly.com/badges/fdc568c6-41ef-40a9-9d76-7ee0e8fd546f/linked_in_profile"
+						},
+						{
+							title: "Pinterest Advertising Essentials",
+							image: "images/certifications/Pinterest Advertising Essentials.png",
+							link: "https://www.credly.com/badges/01e26a67-d90d-47fe-839a-1277198b1625/linked_in_profile"
+						},
+						{
+							title: "Pinterest Media Buyer Certification",
+							image: "images/certifications/Pinterest Media Buying.png",
+							link: "https://www.credly.com/badges/74c1f719-e10f-459c-a64b-848a464a30f9/linked_in_profile"
+						}
+					]
+				},
+
+				canva: {
+					name: "Canva",
+					logo: "https://cdn.simpleicons.org/canva",
+					fallback: "https://www.google.com/s2/favicons?domain=canva.com&sz=128",
+					certificates: [
+						{
+							title: "Work Smarter with Canva: Essentials for Enterprise",
+							event: true,
+							description: "I attended Canva World Tour in person, an immersive event focused on Canva's enterprise tools, creative workflows, and ways to work smarter and create at scale.",
+							images: [
+								"images/certifications/enterprise.png",
+								"images/certifications/enterprise 1.jpg",
+								"images/certifications/enterprise2.png"
+							]
+						},
+						{ title: "Scale Creative Campaigns", link: "https://www.canva.com/design-school/certification-award/2452f0b9-4a9f-438f-a4ab-c19d46e54ef6" },
+						{ title: "Meet Canva's Visual Suite", link: "https://www.canva.com/design-school/certification-award/0578bf07-e49a-4b1e-9afb-f81f3c3eacf5" },
+						{ title: "Create Scroll Stopping Content", link: "https://www.canva.com/design-school/certification-award/b4fca5c6-4f04-47f0-bff1-7485c4a5106c" },
+						{ title: "Canva Essentials", link: "https://www.canva.com/design-school/certification-award/a6ee5360-4eac-4b45-bb9c-039901038bac" },
+						{ title: "AI in the Classroom", link: "https://www.canva.com/design-school/certification-award/b7d016f9-87d9-4cad-be65-0ce81458bde9" },
+						{ title: "Teacher Essentials", link: "https://www.canva.com/design-school/certification-award/47bdf85e-da7a-4e49-9fab-53f87cd33e0e" },
+						{ title: "The Field Guide to Human-Centered Design", link: "https://www.canva.com/design-school/certification-award/a1db820b-51d2-4df4-9f8f-a401e8129a5c" },
+						{ title: "Canva for Work", link: "https://www.canva.com/design-school/certification-award/04186e95-27d4-4b8f-a5fd-d8c30f2836b0" },
+						{ title: "Graphic Design Essentials", link: "https://www.canva.com/design-school/certification-award/5491ceb2-baab-451d-a18a-9967ab34a754" },
+						{ title: "Marketing with Canva", link: "https://www.canva.com/design-school/certification-award/364450fe-851f-4ed4-aae2-97d06f2a0110" }
+					]
+				},
+
+				microsoft: {
+					name: "Microsoft",
+					logo: "https://cdn.simpleicons.org/microsoft",
+					fallback: "https://www.google.com/s2/favicons?domain=microsoft.com&sz=128",
+					certificates: []
+				},
+
+				iiba: {
+					name: "IIBA",
+					logo: "https://cdn.simpleicons.org/iiba",
+					fallback: "https://www.google.com/s2/favicons?domain=iiba.org&sz=128",
+					certificates: [
+						{
+							title: "Data Analytics for Business Professionals",
+							link: "https://www.linkedin.com/learning/certificates/b503bb0abbaeea48e12fd31bf3856ebe28227b049b1b1ea6249e1018f516a67e?u=122677226"
+						}
+					]
+				},
+
+				zscaler: {
+					name: "Zscaler",
+					logo: "https://cdn.simpleicons.org/zscaler",
+					fallback: "https://www.google.com/s2/favicons?domain=zscaler.com&sz=128",
+					certificates: [
+						{
+							title: "Fundamentals of Cybersecurity (EDU-102)",
+							image: "images/certifications/zscaler.png",
+							link: "https://verify.skilljar.com/c/z3ix66jodveb"
+						}
+					]
+				},
+
+				cisco: {
+					name: "Cisco",
+					logo: "https://cdn.simpleicons.org/cisco",
+					fallback: "https://www.google.com/s2/favicons?domain=cisco.com&sz=128",
+					certificates: [
+						{
+							title: "Data Analytics Essentials",
+							image: "images/certifications/cisco.png",
+							link: "https://www.credly.com/badges/a378f525-a9d5-4212-8941-4019e8b17f5a/linked_in_profile"
+						}
+					]
+				}
+			};
+
+			const params = new URLSearchParams(window.location.search);
+			const companyKey = params.get("company");
+
+			if (!companyKey || !companies[companyKey]) return;
+
+			const company = companies[companyKey];
+			const hub = document.getElementById("company-hub");
+			const companyView = document.getElementById("company-view");
+			const logo = document.getElementById("company-logo");
+			const title = document.getElementById("company-title");
+			const subtitle = document.getElementById("company-subtitle");
+			const certificateList = document.getElementById("certificate-list");
+
+			hub.style.display = "none";
+			companyView.classList.add("is-visible");
+
+			document.title = company.name + " Certifications | Anya Sinha";
+
+			logo.src = company.logo;
+			logo.alt = company.name + " logo";
+			logo.onerror = function () {
+				this.onerror = null;
+				this.src = company.fallback;
+			};
+
+			title.textContent = company.name + " Certifications";
+			subtitle.textContent = "My certificates and completed learning credentials from " + company.name + ".";
+
+			if (!company.certificates.length) {
+				const empty = document.createElement("div");
+				empty.className = "empty-certificates";
+
+				const text = document.createElement("p");
+				text.textContent = "Certificate links for " + company.name + " can be added here.";
+
+				empty.appendChild(text);
+				certificateList.appendChild(empty);
+				return;
+			}
+
+			company.certificates.forEach(function (certificate) {
+
+				if (certificate.event) {
+					const eventCard = document.createElement("div");
+					eventCard.className = "event-feature";
+
+					const eventLabel = document.createElement("span");
+					eventLabel.className = "event-label";
+					eventLabel.textContent = "In-Person Event · Canva World Tour";
+					eventCard.appendChild(eventLabel);
+
+					const eventTitle = document.createElement("h2");
+					eventTitle.textContent = certificate.title;
+					eventCard.appendChild(eventTitle);
+
+					const eventDescription = document.createElement("p");
+					eventDescription.className = "event-description";
+					eventDescription.textContent = certificate.description;
+					eventCard.appendChild(eventDescription);
+
+					const gallery = document.createElement("div");
+					gallery.className = "event-gallery";
+
+					certificate.images.forEach(function (imagePath) {
+						const photo = document.createElement("img");
+						photo.className = "event-photo";
+						photo.src = imagePath;
+						photo.alt = "Canva World Tour event";
+						photo.onerror = function () {
+							this.style.display = "none";
+						};
+						gallery.appendChild(photo);
+					});
+
+					eventCard.appendChild(gallery);
+
+					const eventFooter = document.createElement("div");
+					eventFooter.className = "event-footer";
+					eventFooter.textContent = "Canva World Tour · Enterprise Essentials";
+					eventCard.appendChild(eventFooter);
+
+					certificateList.appendChild(eventCard);
 					return;
-
 				}
 
+				const item = document.createElement("a");
+				item.className = "certificate-item";
+				item.href = certificate.link;
+				item.target = "_blank";
+				item.rel = "noopener noreferrer";
 
+				if (certificate.image) {
+					const imageBox = document.createElement("div");
+					imageBox.className = "certificate-image";
 
-				const company =
-					companies[companyKey];
-
-
-
-				/* =================================================
-				   GET PAGE ELEMENTS
-				   ================================================= */
-
-				const hub =
-					document.getElementById(
-						"company-hub"
-					);
-
-				const companyView =
-					document.getElementById(
-						"company-view"
-					);
-
-				const logo =
-					document.getElementById(
-						"company-logo"
-					);
-
-				const title =
-					document.getElementById(
-						"company-title"
-					);
-
-				const subtitle =
-					document.getElementById(
-						"company-subtitle"
-					);
-
-				const certificateList =
-					document.getElementById(
-						"certificate-list"
-					);
-
-
-
-				/* =================================================
-				   SHOW COMPANY VIEW
-				   ================================================= */
-
-				hub.style.display =
-					"none";
-
-				companyView.classList.add(
-					"is-visible"
-				);
-
-
-
-				/* =================================================
-				   PAGE TITLE
-				   ================================================= */
-
-				document.title =
-					company.name
-					+ " Certifications | Anya Sinha";
-
-
-
-				/* =================================================
-				   COMPANY LOGO
-				   ================================================= */
-
-				logo.src =
-					company.logo;
-
-				logo.alt =
-					company.name
-					+ " logo";
-
-
-				logo.onerror =
-					function () {
-
-						this.onerror = null;
-
-						this.src =
-							company.fallback;
-
+					const certificateImage = document.createElement("img");
+					certificateImage.src = certificate.image;
+					certificateImage.alt = certificate.title + " certificate";
+					certificateImage.onerror = function () {
+						imageBox.style.display = "none";
 					};
 
-
-
-				/* =================================================
-				   COMPANY HEADER
-				   ================================================= */
-
-				title.textContent =
-					company.name
-					+ " Certifications";
-
-
-				subtitle.textContent =
-					"My certificates and completed learning credentials from "
-					+ company.name
-					+ ".";
-
-
-
-				/* =================================================
-				   EMPTY CERTIFICATION STATE
-				   ================================================= */
-
-				if (
-					!company.certificates.length
-				) {
-
-					const empty =
-						document.createElement(
-							"div"
-						);
-
-					empty.className =
-						"empty-certificates";
-
-
-					const text =
-						document.createElement(
-							"p"
-						);
-
-					text.textContent =
-						"Certificate links for "
-						+ company.name
-						+ " can be added here.";
-
-
-					empty.appendChild(text);
-
-					certificateList.appendChild(
-						empty
-					);
-
-					return;
-
+					imageBox.appendChild(certificateImage);
+					item.appendChild(imageBox);
 				}
 
-
-
-				/* =================================================
-				   CREATE CERTIFICATE CARDS
-				   ================================================= */
-
-				company.certificates.forEach(
-					function (certificate) {
-
-
-						/* =========================================
-						   SPECIAL EVENT FEATURE
-						   ========================================= */
-
-						if (certificate.event) {
-
-							const eventCard =
-								document.createElement(
-									"div"
-								);
-
-							eventCard.className =
-								"event-feature";
-
-
-							/* EVENT LABEL */
-
-							const eventLabel =
-								document.createElement(
-									"span"
-								);
-
-							eventLabel.className =
-								"event-label";
-
-							eventLabel.textContent =
-								"In-Person Event · Canva World Tour";
-
-
-							eventCard.appendChild(
-								eventLabel
-							);
-
-
-
-							/* EVENT TITLE */
-
-							const eventTitle =
-								document.createElement(
-									"h2"
-								);
-
-							eventTitle.textContent =
-								certificate.title;
-
-
-							eventCard.appendChild(
-								eventTitle
-							);
-
-
-
-							/* DESCRIPTION */
-
-							const eventDescription =
-								document.createElement(
-									"p"
-								);
-
-							eventDescription.className =
-								"event-description";
-
-							eventDescription.textContent =
-								certificate.description;
-
-
-							eventCard.appendChild(
-								eventDescription
-							);
-
-
-
-							/* IMAGE GALLERY */
-
-							const gallery =
-								document.createElement(
-									"div"
-								);
-
-							gallery.className =
-								"event-gallery";
-
-
-							certificate.images.forEach(
-								function (imagePath) {
-
-									const photo =
-										document.createElement(
-											"img"
-										);
-
-									photo.className =
-										"event-photo";
-
-									photo.src =
-										imagePath;
-
-									photo.alt =
-										"Canva World Tour event";
-
-
-									photo.onerror =
-										function () {
-
-											this.style.display =
-												"none";
-
-										};
-
-
-									gallery.appendChild(
-										photo
-									);
-
-								}
-							);
-
-
-							eventCard.appendChild(
-								gallery
-							);
-
-
-
-							/* EVENT FOOTER */
-
-							const eventFooter =
-								document.createElement(
-									"div"
-								);
-
-							eventFooter.className =
-								"event-footer";
-
-							eventFooter.textContent =
-								"Canva World Tour · Enterprise Essentials";
-
-
-							eventCard.appendChild(
-								eventFooter
-							);
-
-
-
-							/* ADD FEATURE TO GRID */
-
-							certificateList.appendChild(
-								eventCard
-							);
-
-
-							return;
-
-						}
-
-
-
-						/* =========================================
-						   NORMAL CERTIFICATION CARD
-						   ========================================= */
-
-						const item =
-							document.createElement(
-								"a"
-							);
-
-						item.className =
-							"certificate-item";
-
-
-						item.href =
-							certificate.link;
-
-
-						item.target =
-							"_blank";
-
-
-						item.rel =
-							"noopener noreferrer";
-
-
-
-						/* CERTIFICATE INFO */
-
-						const info =
-							document.createElement(
-								"div"
-							);
-
-						info.className =
-							"certificate-info";
-
-
-
-						/* TITLE */
-
-						const heading =
-							document.createElement(
-								"h3"
-							);
-
-						heading.textContent =
-							certificate.title;
-
-
-						info.appendChild(
-							heading
-						);
-
-
-
-						/* VIEW LABEL */
-
-						const label =
-							document.createElement(
-								"p"
-							);
-
-						label.textContent =
-							"View certificate →";
-
-
-						info.appendChild(
-							label
-						);
-
-
-
-						/* OFFICIAL CREDENTIAL */
-
-						const credential =
-							document.createElement(
-								"p"
-							);
-
-						credential.className =
-							"certificate-credential";
-
-						credential.textContent =
-							"Official Canva credential";
-
-
-						info.appendChild(
-							credential
-						);
-
-
-
-						/* ADD INFO TO CARD */
-
-						item.appendChild(
-							info
-						);
-
-
-
-						/* ADD CARD TO PAGE */
-
-						certificateList.appendChild(
-							item
-						);
-
-					}
-				);
-
-			}
-		);
-
+				const info = document.createElement("div");
+				info.className = "certificate-info";
+
+				const heading = document.createElement("h3");
+				heading.textContent = certificate.title;
+				info.appendChild(heading);
+
+				const label = document.createElement("p");
+				label.textContent = "View certificate →";
+				info.appendChild(label);
+
+				const credential = document.createElement("p");
+				credential.className = "certificate-credential";
+				credential.textContent = "Official " + company.name + " credential";
+				info.appendChild(credential);
+
+				item.appendChild(info);
+				certificateList.appendChild(item);
+			});
+		});
 	</script>
 
 </body>
