@@ -31,9 +31,9 @@
 			background: linear-gradient(
 				to bottom,
 				#f6e7ff 0%,
-				#eaf5ff 26%,
-				#fff7e7 50%,
-				#fff 80%,
+				#eaf5ff 22%,
+				#fff7e7 46%,
+				#fff 74%,
 				#fff 100%
 			);
 			margin: 0;
@@ -45,9 +45,16 @@
 		   ========================================================= */
 
 		.page-wrap {
-			max-width: 860px;
+			max-width: 780px;
 			margin: 0 auto;
-			padding: 60px 30px 110px;
+			padding: 60px 30px 0;
+			position: relative;
+		}
+
+		.wide-wrap {
+			max-width: 1040px;
+			margin: 0 auto;
+			padding: 0 30px;
 			position: relative;
 		}
 
@@ -139,47 +146,18 @@
 
 
 		/* =========================================================
-		   GALLERY
+		   SCROLL REVEAL (shared by images + sections)
 		   ========================================================= */
 
-		.gallery-wrap {
-			position: relative;
-			z-index: 1;
-			margin-bottom: 50px;
+		.reveal {
+			opacity: 0;
+			transform: translateY(36px);
+			transition: opacity 0.9s ease-out, transform 0.9s ease-out;
 		}
 
-		.gallery-carousel {
-			display: flex;
-			align-items: center;
-			gap: 12px;
-			width: 100%;
-			overflow-x: auto;
-			padding: 6px 2px 16px;
-			scroll-snap-type: x mandatory;
-		}
-
-		.gallery-carousel img {
-			height: 220px;
-			max-width: 320px;
-			object-fit: cover;
-			border-radius: 10px;
-			cursor: zoom-in;
-			flex-shrink: 0;
-			scroll-snap-align: start;
-			box-shadow: 0 14px 30px rgba(150, 60, 120, 0.18);
-			transition: transform 0.25s ease;
-		}
-
-		.gallery-carousel img:hover {
-			transform: translateY(-4px);
-		}
-
-		.gallery-hint {
-			text-align: center;
-			font-size: 0.85em !important;
-			font-weight: 400 !important;
-			opacity: 0.6;
-			margin: 0;
+		.reveal.visible {
+			opacity: 1;
+			transform: translateY(0);
 		}
 
 
@@ -191,7 +169,7 @@
 			position: relative;
 			z-index: 1;
 			text-align: center;
-			margin-bottom: 46px;
+			margin-bottom: 60px;
 		}
 
 		.gd-eyebrow {
@@ -208,7 +186,7 @@
 		}
 
 		h1.gd-title {
-			font-size: 3em;
+			font-size: 3.1em;
 			margin: 0 0 14px;
 			background: linear-gradient(90deg, #c46b9d, #9a6bd4, #d9a34e);
 			-webkit-background-clip: text;
@@ -226,6 +204,82 @@
 
 
 		/* =========================================================
+		   IMAGE MOMENTS — big, spaced-out, one/two at a time
+		   ========================================================= */
+
+		.moment {
+			margin: 0 0 90px;
+		}
+
+		.moment-caption {
+			text-align: center;
+			font-size: 0.88em !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			opacity: 0.55;
+			margin: 16px 0 0;
+		}
+
+		.moment-full img {
+			display: block;
+			width: 100%;
+			max-height: 620px;
+			object-fit: cover;
+			border-radius: 20px;
+			cursor: zoom-in;
+			box-shadow: 0 30px 60px rgba(150, 60, 120, 0.2);
+		}
+
+		.moment-pair {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 24px;
+		}
+
+		.moment-pair img {
+			display: block;
+			width: 100%;
+			height: 420px;
+			object-fit: cover;
+			border-radius: 18px;
+			cursor: zoom-in;
+			box-shadow: 0 24px 50px rgba(150, 60, 120, 0.18);
+			transition: transform 0.3s ease;
+		}
+
+		.moment-pair img:hover {
+			transform: translateY(-5px);
+		}
+
+		.moment-trio {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 24px;
+		}
+
+		.moment-trio img {
+			display: block;
+			width: 100%;
+			height: 340px;
+			object-fit: cover;
+			border-radius: 18px;
+			cursor: zoom-in;
+			box-shadow: 0 24px 50px rgba(150, 60, 120, 0.18);
+			transition: transform 0.3s ease;
+		}
+
+		.moment-trio img:hover {
+			transform: translateY(-5px);
+		}
+
+		.moment-trio img:first-child {
+			grid-column: 1 / -1;
+			height: 460px;
+		}
+
+
+		/* =========================================================
 		   REFLECTION CARD
 		   ========================================================= */
 
@@ -235,7 +289,7 @@
 			background: rgba(255, 255, 255, 0.72);
 			border-radius: 18px;
 			padding: 38px 40px;
-			margin-bottom: 40px;
+			margin-bottom: 60px;
 			box-shadow: 0 20px 45px rgba(150, 60, 120, 0.12);
 		}
 
@@ -264,6 +318,7 @@
 		.gd-body {
 			position: relative;
 			z-index: 1;
+			padding-bottom: 100px;
 		}
 
 		.gd-body p {
@@ -327,7 +382,7 @@
 			align-items: center;
 			justify-content: center;
 			padding: 30px;
-			background: rgba(0, 0, 0, 0.88);
+			background: rgba(0, 0, 0, 0.9);
 		}
 
 		.image-modal.is-open {
@@ -368,9 +423,25 @@
 				font-size: 2.3em;
 			}
 
-			.gallery-carousel img {
-				height: 160px;
-				max-width: 230px;
+			.moment-full img {
+				max-height: 360px;
+			}
+
+			.moment-pair {
+				grid-template-columns: 1fr;
+			}
+
+			.moment-pair img {
+				height: 260px;
+			}
+
+			.moment-trio {
+				grid-template-columns: 1fr;
+			}
+
+			.moment-trio img,
+			.moment-trio img:first-child {
+				height: 260px;
 			}
 
 			.gd-butterflies {
@@ -423,26 +494,6 @@
 		</nav>
 
 
-		<!-- Gallery -->
-		<div class="gallery-wrap">
-
-			<div class="gallery-carousel" id="mun-gallery">
-
-				<img src="images/mun/c5535df6-6f53-40cc-aa23-c48b84b380b1.jpg" alt="AIM Model UN moment 1">
-				<img src="images/mun/fe94139a-f566-4e39-9143-99f12bab6aae.jpg" alt="AIM Model UN moment 2">
-				<img src="images/mun/AWARDS%20ABD%20SPONSORS%20WOOT%20WOOT.png" alt="AIM Model UN awards and sponsors">
-				<img src="images/mun/ANYA.png" alt="Anya at AIM Model UN">
-				<img src="images/mun/UnSC%20(1).png" alt="UNSC committee session 1">
-				<img src="images/mun/UnSC%20(2).png" alt="UNSC committee session 2">
-				<img src="images/mun/UnSC.png" alt="UNSC committee session">
-
-			</div>
-
-			<p class="gallery-hint">tap a photo to see it up close · swipe for more</p>
-
-		</div>
-
-
 		<!-- Hero title -->
 		<header class="gd-hero">
 			<span class="gd-eyebrow">Beyond the Metrics</span>
@@ -450,22 +501,105 @@
 			<p class="gd-subtitle">I'm endlessly curious about how people from completely different backgrounds find a way to talk to each other, negotiate, and actually move forward together.</p>
 		</header>
 
+	</div>
 
-		<!-- Reflection -->
-		<div class="reflection-card">
+
+	<!-- ===================================================
+	     MOMENT 1 — big single opening photo
+	     =================================================== -->
+
+	<div class="wide-wrap">
+
+		<div class="moment moment-full reveal">
+			<img src="images/mun/c5535df6-6f53-40cc-aa23-c48b84b380b1.jpg" alt="AIM Model UN moment 1" class="gallery-img">
+		</div>
+
+	</div>
+
+
+	<div class="page-wrap">
+		<div class="reflection-card reveal">
 			<p>AIM MUN will forever hold a really special place in my heart. The amazing executive board and learnings I gained were exceptional. From late nights fine-tuning conference logistics to the buzz of watching a committee session come together, I found a group of people who pushed me to think faster, listen harder, and lead with a lot more patience than I thought I had.</p>
 			<p>Serving alongside such a dedicated board taught me lessons in trust, follow-through, and quiet leadership that no classroom could have given me, and I still carry pieces of that experience into every room I walk into today.</p>
 		</div>
+	</div>
 
 
-		<!-- Body content -->
+	<!-- ===================================================
+	     MOMENT 2 — second big single photo
+	     =================================================== -->
+
+	<div class="wide-wrap">
+
+		<div class="moment moment-full reveal">
+			<img src="images/mun/fe94139a-f566-4e39-9143-99f12bab6aae.jpg" alt="AIM Model UN moment 2" class="gallery-img">
+		</div>
+
+	</div>
+
+
+	<div class="page-wrap">
+
 		<div class="gd-body">
 
 			<p>That curiosity is what pulled me into Model United Nations in the first place, and it's what keeps me there as Undersecretary General of Internal Affairs for AIM Model UN. My role sits behind the scenes, training delegates on public speaking, negotiation, and diplomatic tact, while keeping the internal machinery of our conferences running smoothly.</p>
 
 			<p>What I love most is watching a delegate go from nervous and unsure to genuinely persuasive over the course of a single committee session. There's a real skill to disagreeing with someone while still keeping the conversation open, and helping people build that skill feels like some of the most useful work I do.</p>
 
+		</div>
+
+	</div>
+
+
+	<!-- ===================================================
+	     MOMENT 3 — awards & sponsors + Anya, side by side
+	     =================================================== -->
+
+	<div class="wide-wrap">
+
+		<div class="moment reveal">
+			<div class="moment-pair">
+				<img src="images/mun/AWARDS%20ABD%20SPONSORS%20WOOT%20WOOT.png" alt="AIM Model UN awards and sponsors" class="gallery-img">
+				<img src="images/mun/ANYA.png" alt="Anya at AIM Model UN" class="gallery-img">
+			</div>
+			<p class="moment-caption">Awards, sponsors, and a proud moment on the mic</p>
+		</div>
+
+	</div>
+
+
+	<div class="page-wrap">
+
+		<div class="gd-body" style="padding-top: 0; padding-bottom: 0;">
+
 			<p>Diplomacy, to me, isn't just a debate format. It's a way of thinking about complex problems that carries over into how I approach data, business, and pretty much everything else I care about.</p>
+
+		</div>
+
+	</div>
+
+
+	<!-- ===================================================
+	     MOMENT 4 — UNSC committee, three photos
+	     =================================================== -->
+
+	<div class="wide-wrap">
+
+		<div class="moment reveal">
+			<div class="moment-trio">
+				<img src="images/mun/UnSC%20(1).png" alt="UNSC committee session 1" class="gallery-img">
+				<img src="images/mun/UnSC%20(2).png" alt="UNSC committee session 2" class="gallery-img">
+				<img src="images/mun/UnSC.png" alt="UNSC committee session" class="gallery-img">
+			</div>
+			<p class="moment-caption">Inside the United Nations Security Council committee room</p>
+		</div>
+
+	</div>
+
+
+	<div class="page-wrap">
+
+		<div class="gd-body" style="padding-top: 20px;">
 
 			<ul class="highlight-list">
 
@@ -502,11 +636,32 @@
 
 		document.addEventListener("DOMContentLoaded", function () {
 
+			/* Scroll reveal for images + reflection card */
+
+			const revealEls = document.querySelectorAll(".reveal");
+
+			const revealObserver = new IntersectionObserver(function (entries) {
+
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("visible");
+					}
+				});
+
+			}, { threshold: 0.15 });
+
+			revealEls.forEach(function (el) {
+				revealObserver.observe(el);
+			});
+
+
+			/* Image modal */
+
 			const modal = document.getElementById("image-modal");
 			const modalPhoto = document.getElementById("image-modal-photo");
 			const closeModal = document.getElementById("image-modal-close");
 
-			document.querySelectorAll("#mun-gallery img").forEach(function (image) {
+			document.querySelectorAll(".gallery-img").forEach(function (image) {
 
 				image.addEventListener("click", function () {
 					modalPhoto.src = this.src;
