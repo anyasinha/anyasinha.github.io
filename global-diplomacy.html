@@ -31,9 +31,9 @@
 			background: linear-gradient(
 				to bottom,
 				#f6e7ff 0%,
-				#eaf5ff 22%,
-				#fff7e7 46%,
-				#fff 74%,
+				#eaf5ff 24%,
+				#fff7e7 48%,
+				#fff 78%,
 				#fff 100%
 			);
 			margin: 0;
@@ -45,16 +45,9 @@
 		   ========================================================= */
 
 		.page-wrap {
-			max-width: 780px;
+			max-width: 720px;
 			margin: 0 auto;
-			padding: 60px 30px 0;
-			position: relative;
-		}
-
-		.wide-wrap {
-			max-width: 1040px;
-			margin: 0 auto;
-			padding: 0 30px;
+			padding: 55px 30px 100px;
 			position: relative;
 		}
 
@@ -62,13 +55,13 @@
 			display: flex;
 			gap: 22px;
 			flex-wrap: wrap;
-			margin-bottom: 46px;
+			margin-bottom: 40px;
 		}
 
 		.back-link {
 			display: inline-block;
 			font-weight: 600;
-			font-size: 0.95em;
+			font-size: 0.92em;
 			text-decoration: none !important;
 			border-bottom: 2px solid #000;
 			padding-bottom: 2px;
@@ -82,15 +75,15 @@
 
 
 		/* =========================================================
-		   HERO BUTTERFLIES (page-wide accent)
+		   BUTTERFLIES
 		   ========================================================= */
 
 		.gd-butterflies {
 			position: absolute;
-			top: 20px;
+			top: 10px;
 			left: 0;
 			right: 0;
-			height: 220px;
+			height: 170px;
 			pointer-events: none;
 			z-index: 0;
 			overflow: visible;
@@ -98,17 +91,17 @@
 
 		.gd-butterfly {
 			position: absolute;
-			width: 18px;
-			height: 14px;
-			opacity: 0.75;
+			width: 16px;
+			height: 13px;
+			opacity: 0.7;
 			animation: gd-float 7.5s ease-in-out infinite;
 		}
 
 		.gd-butterfly .wing {
 			position: absolute;
 			top: 0;
-			width: 9px;
-			height: 13px;
+			width: 8px;
+			height: 12px;
 			border-radius: 65% 65% 65% 8%;
 			animation: gd-flap 0.45s ease-in-out infinite alternate;
 		}
@@ -141,24 +134,28 @@
 
 		@keyframes gd-float {
 			0%, 100% { transform: translateY(0) rotate(-3deg); }
-			50% { transform: translateY(-14px) rotate(5deg); }
+			50% { transform: translateY(-11px) rotate(5deg); }
 		}
 
 
 		/* =========================================================
-		   SCROLL REVEAL (shared by images + sections)
+		   SCROLL REVEAL — subtle, gradual
 		   ========================================================= */
 
 		.reveal {
 			opacity: 0;
-			transform: translateY(36px);
-			transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+			transform: translateY(18px);
+			transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 		}
 
 		.reveal.visible {
 			opacity: 1;
 			transform: translateY(0);
 		}
+
+		.reveal.d1 { transition-delay: 0.08s; }
+		.reveal.d2 { transition-delay: 0.16s; }
+		.reveal.d3 { transition-delay: 0.24s; }
 
 
 		/* =========================================================
@@ -169,25 +166,25 @@
 			position: relative;
 			z-index: 1;
 			text-align: center;
-			margin-bottom: 60px;
+			margin-bottom: 44px;
 		}
 
 		.gd-eyebrow {
 			display: inline-block;
-			font-size: 0.8em;
+			font-size: 0.76em;
 			font-weight: 700;
-			letter-spacing: 0.14em;
+			letter-spacing: 0.13em;
 			text-transform: uppercase;
-			padding: 8px 18px;
+			padding: 7px 16px;
 			border-radius: 20px;
 			background: #000;
 			color: #fff !important;
-			margin-bottom: 20px;
+			margin-bottom: 16px;
 		}
 
 		h1.gd-title {
-			font-size: 3.1em;
-			margin: 0 0 14px;
+			font-size: 2.5em;
+			margin: 0 0 12px;
 			background: linear-gradient(90deg, #c46b9d, #9a6bd4, #d9a34e);
 			-webkit-background-clip: text;
 			background-clip: text;
@@ -195,87 +192,11 @@
 		}
 
 		.gd-subtitle {
-			font-size: 1.15em;
+			font-size: 1.08em;
 			font-weight: 400 !important;
-			max-width: 560px;
+			max-width: 480px;
 			margin: 0 auto;
 			opacity: 0.85;
-		}
-
-
-		/* =========================================================
-		   IMAGE MOMENTS — big, spaced-out, one/two at a time
-		   ========================================================= */
-
-		.moment {
-			margin: 0 0 90px;
-		}
-
-		.moment-caption {
-			text-align: center;
-			font-size: 0.88em !important;
-			font-weight: 600 !important;
-			letter-spacing: 0.04em;
-			text-transform: uppercase;
-			opacity: 0.55;
-			margin: 16px 0 0;
-		}
-
-		.moment-full img {
-			display: block;
-			width: 100%;
-			max-height: 620px;
-			object-fit: cover;
-			border-radius: 20px;
-			cursor: zoom-in;
-			box-shadow: 0 30px 60px rgba(150, 60, 120, 0.2);
-		}
-
-		.moment-pair {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 24px;
-		}
-
-		.moment-pair img {
-			display: block;
-			width: 100%;
-			height: 420px;
-			object-fit: cover;
-			border-radius: 18px;
-			cursor: zoom-in;
-			box-shadow: 0 24px 50px rgba(150, 60, 120, 0.18);
-			transition: transform 0.3s ease;
-		}
-
-		.moment-pair img:hover {
-			transform: translateY(-5px);
-		}
-
-		.moment-trio {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 24px;
-		}
-
-		.moment-trio img {
-			display: block;
-			width: 100%;
-			height: 340px;
-			object-fit: cover;
-			border-radius: 18px;
-			cursor: zoom-in;
-			box-shadow: 0 24px 50px rgba(150, 60, 120, 0.18);
-			transition: transform 0.3s ease;
-		}
-
-		.moment-trio img:hover {
-			transform: translateY(-5px);
-		}
-
-		.moment-trio img:first-child {
-			grid-column: 1 / -1;
-			height: 460px;
 		}
 
 
@@ -287,23 +208,23 @@
 			position: relative;
 			z-index: 1;
 			background: rgba(255, 255, 255, 0.72);
-			border-radius: 18px;
-			padding: 38px 40px;
-			margin-bottom: 60px;
-			box-shadow: 0 20px 45px rgba(150, 60, 120, 0.12);
+			border-radius: 16px;
+			padding: 28px 30px;
+			margin-bottom: 44px;
+			box-shadow: 0 14px 32px rgba(150, 60, 120, 0.1);
 		}
 
 		.reflection-card::before {
 			content: '✦';
 			display: block;
-			font-size: 1.4em;
+			font-size: 1.2em;
 			color: #c46b9d !important;
-			margin-bottom: 10px;
+			margin-bottom: 8px;
 		}
 
 		.reflection-card p {
-			margin-bottom: 1em;
-			font-size: 1.05em;
+			margin-bottom: 0.9em;
+			font-size: 1em;
 		}
 
 		.reflection-card p:last-child {
@@ -318,12 +239,91 @@
 		.gd-body {
 			position: relative;
 			z-index: 1;
-			padding-bottom: 100px;
 		}
 
 		.gd-body p {
 			margin-bottom: 1.2em;
-			font-size: 1.02em;
+			font-size: 1em;
+		}
+
+		.gd-section {
+			overflow: auto;
+			margin-bottom: 6px;
+		}
+
+
+		/* =========================================================
+		   FLOATED EDITORIAL IMAGES — small, tucked into the text
+		   ========================================================= */
+
+		.float-img {
+			display: block;
+			width: 240px;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 12px;
+			box-shadow: 0 12px 26px rgba(150, 60, 120, 0.16);
+			cursor: zoom-in;
+			transition: transform 0.25s ease;
+			margin-bottom: 10px;
+		}
+
+		.float-img:hover {
+			transform: translateY(-3px);
+		}
+
+		.float-right {
+			float: right;
+			margin: 4px 0 16px 24px;
+		}
+
+		.float-left {
+			float: left;
+			margin: 4px 24px 16px 0;
+		}
+
+
+		/* =========================================================
+		   SMALL GALLERY ROWS
+		   ========================================================= */
+
+		.mini-gallery {
+			display: grid;
+			gap: 12px;
+			margin: 30px 0 8px;
+		}
+
+		.mini-gallery.cols-2 {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.mini-gallery.cols-3 {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		.mini-gallery img {
+			display: block;
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 12px;
+			cursor: zoom-in;
+			box-shadow: 0 10px 22px rgba(150, 60, 120, 0.14);
+			transition: transform 0.25s ease;
+		}
+
+		.mini-gallery img:hover {
+			transform: translateY(-3px);
+		}
+
+		.mini-gallery-caption {
+			text-align: center;
+			font-size: 0.8em !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.03em;
+			text-transform: uppercase;
+			opacity: 0.5;
+			margin: 12px 0 30px;
 		}
 
 
@@ -334,38 +334,38 @@
 		.highlight-list {
 			list-style: none;
 			padding: 0;
-			margin: 2.4em 0 0;
+			margin: 2em 0 0;
 			display: grid;
-			gap: 16px;
+			gap: 14px;
 		}
 
 		.highlight-list li {
 			position: relative;
-			padding: 22px 24px 22px 56px;
-			border-radius: 14px;
+			padding: 18px 20px 18px 48px;
+			border-radius: 12px;
 			background: rgba(255, 255, 255, 0.65);
-			box-shadow: 0 10px 26px rgba(150, 60, 120, 0.1);
+			box-shadow: 0 8px 20px rgba(150, 60, 120, 0.09);
 		}
 
 		.highlight-list li::before {
 			content: '✦';
 			position: absolute;
-			left: 20px;
-			top: 22px;
-			font-size: 1em;
+			left: 18px;
+			top: 18px;
+			font-size: 0.95em;
 			color: #c46b9d !important;
 		}
 
 		.highlight-list strong {
 			display: block;
-			font-size: 1.12em;
-			margin-bottom: 4px;
+			font-size: 1.08em;
+			margin-bottom: 3px;
 			font-family: 'Cormorant Garamond', serif !important;
 			font-weight: 700 !important;
 		}
 
 		.highlight-list span {
-			font-size: 0.96em;
+			font-size: 0.94em;
 			opacity: 0.85;
 		}
 
@@ -413,35 +413,26 @@
 		   RESPONSIVE
 		   ========================================================= */
 
-		@media screen and (max-width: 736px) {
-
-			.reflection-card {
-				padding: 28px 24px;
-			}
+		@media screen and (max-width: 600px) {
 
 			h1.gd-title {
-				font-size: 2.3em;
+				font-size: 2em;
 			}
 
-			.moment-full img {
-				max-height: 360px;
+			.reflection-card {
+				padding: 22px 22px;
 			}
 
-			.moment-pair {
-				grid-template-columns: 1fr;
+			.float-img {
+				float: none;
+				width: 100%;
+				height: 200px;
+				margin: 0 0 18px;
 			}
 
-			.moment-pair img {
-				height: 260px;
-			}
-
-			.moment-trio {
-				grid-template-columns: 1fr;
-			}
-
-			.moment-trio img,
-			.moment-trio img:first-child {
-				height: 260px;
+			.mini-gallery.cols-2,
+			.mini-gallery.cols-3 {
+				grid-template-columns: 1fr 1fr;
 			}
 
 			.gd-butterflies {
@@ -459,27 +450,22 @@
 		<!-- Decorative butterflies -->
 		<div class="gd-butterflies" aria-hidden="true">
 
-			<div class="gd-butterfly" style="left: 4%; top: 10px; animation-delay: 0s;">
+			<div class="gd-butterfly" style="left: 4%; top: 6px; animation-delay: 0s;">
 				<div class="wing left"></div>
 				<div class="wing right"></div>
 			</div>
 
-			<div class="gd-butterfly gold" style="right: 6%; top: 30px; animation-delay: 1.8s;">
+			<div class="gd-butterfly gold" style="right: 6%; top: 22px; animation-delay: 1.8s;">
 				<div class="wing left"></div>
 				<div class="wing right"></div>
 			</div>
 
-			<div class="gd-butterfly" style="left: 22%; top: 60px; animation-delay: 3.2s;">
+			<div class="gd-butterfly" style="left: 24%; top: 46px; animation-delay: 3.2s;">
 				<div class="wing left"></div>
 				<div class="wing right"></div>
 			</div>
 
-			<div class="gd-butterfly gold" style="right: 24%; top: 5px; animation-delay: 4.6s;">
-				<div class="wing left"></div>
-				<div class="wing right"></div>
-			</div>
-
-			<div class="gd-butterfly" style="left: 48%; top: 40px; animation-delay: 2.4s;">
+			<div class="gd-butterfly gold" style="right: 26%; top: 2px; animation-delay: 4.6s;">
 				<div class="wing left"></div>
 				<div class="wing right"></div>
 			</div>
@@ -495,113 +481,49 @@
 
 
 		<!-- Hero title -->
-		<header class="gd-hero">
+		<header class="gd-hero reveal visible">
 			<span class="gd-eyebrow">Beyond the Metrics</span>
 			<h1 class="gd-title">Global Diplomacy</h1>
 			<p class="gd-subtitle">I'm endlessly curious about how people from completely different backgrounds find a way to talk to each other, negotiate, and actually move forward together.</p>
 		</header>
 
-	</div>
 
-
-	<!-- ===================================================
-	     MOMENT 1 — big single opening photo
-	     =================================================== -->
-
-	<div class="wide-wrap">
-
-		<div class="moment moment-full reveal">
-			<img src="images/mun/c5535df6-6f53-40cc-aa23-c48b84b380b1.jpg" alt="AIM Model UN moment 1" class="gallery-img">
-		</div>
-
-	</div>
-
-
-	<div class="page-wrap">
+		<!-- Reflection -->
 		<div class="reflection-card reveal">
 			<p>AIM MUN will forever hold a really special place in my heart. The amazing executive board and learnings I gained were exceptional. From late nights fine-tuning conference logistics to the buzz of watching a committee session come together, I found a group of people who pushed me to think faster, listen harder, and lead with a lot more patience than I thought I had.</p>
 			<p>Serving alongside such a dedicated board taught me lessons in trust, follow-through, and quiet leadership that no classroom could have given me, and I still carry pieces of that experience into every room I walk into today.</p>
 		</div>
-	</div>
 
 
-	<!-- ===================================================
-	     MOMENT 2 — second big single photo
-	     =================================================== -->
-
-	<div class="wide-wrap">
-
-		<div class="moment moment-full reveal">
-			<img src="images/mun/fe94139a-f566-4e39-9143-99f12bab6aae.jpg" alt="AIM Model UN moment 2" class="gallery-img">
-		</div>
-
-	</div>
-
-
-	<div class="page-wrap">
-
+		<!-- Body content, with small floated photos tucked into the text -->
 		<div class="gd-body">
 
-			<p>That curiosity is what pulled me into Model United Nations in the first place, and it's what keeps me there as Undersecretary General of Internal Affairs for AIM Model UN. My role sits behind the scenes, training delegates on public speaking, negotiation, and diplomatic tact, while keeping the internal machinery of our conferences running smoothly.</p>
+			<div class="gd-section reveal">
+				<img src="images/mun/c5535df6-6f53-40cc-aa23-c48b84b380b1.jpg" alt="AIM Model UN moment 1" class="float-img float-right gallery-img">
+				<p>That curiosity is what pulled me into Model United Nations in the first place, and it's what keeps me there as Undersecretary General of Internal Affairs for AIM Model UN. My role sits behind the scenes, training delegates on public speaking, negotiation, and diplomatic tact, while keeping the internal machinery of our conferences running smoothly.</p>
+			</div>
 
-			<p>What I love most is watching a delegate go from nervous and unsure to genuinely persuasive over the course of a single committee session. There's a real skill to disagreeing with someone while still keeping the conversation open, and helping people build that skill feels like some of the most useful work I do.</p>
+			<div class="gd-section reveal">
+				<img src="images/mun/fe94139a-f566-4e39-9143-99f12bab6aae.jpg" alt="AIM Model UN moment 2" class="float-img float-left gallery-img">
+				<p>What I love most is watching a delegate go from nervous and unsure to genuinely persuasive over the course of a single committee session. There's a real skill to disagreeing with someone while still keeping the conversation open, and helping people build that skill feels like some of the most useful work I do.</p>
+			</div>
 
-		</div>
+			<p class="reveal">Diplomacy, to me, isn't just a debate format. It's a way of thinking about complex problems that carries over into how I approach data, business, and pretty much everything else I care about.</p>
 
-	</div>
-
-
-	<!-- ===================================================
-	     MOMENT 3 — awards & sponsors + Anya, side by side
-	     =================================================== -->
-
-	<div class="wide-wrap">
-
-		<div class="moment reveal">
-			<div class="moment-pair">
+			<div class="mini-gallery cols-2 reveal">
 				<img src="images/mun/AWARDS%20ABD%20SPONSORS%20WOOT%20WOOT.png" alt="AIM Model UN awards and sponsors" class="gallery-img">
 				<img src="images/mun/ANYA.png" alt="Anya at AIM Model UN" class="gallery-img">
 			</div>
-			<p class="moment-caption">Awards, sponsors, and a proud moment on the mic</p>
-		</div>
+			<p class="mini-gallery-caption">Awards, sponsors, and a proud moment on the mic</p>
 
-	</div>
-
-
-	<div class="page-wrap">
-
-		<div class="gd-body" style="padding-top: 0; padding-bottom: 0;">
-
-			<p>Diplomacy, to me, isn't just a debate format. It's a way of thinking about complex problems that carries over into how I approach data, business, and pretty much everything else I care about.</p>
-
-		</div>
-
-	</div>
-
-
-	<!-- ===================================================
-	     MOMENT 4 — UNSC committee, three photos
-	     =================================================== -->
-
-	<div class="wide-wrap">
-
-		<div class="moment reveal">
-			<div class="moment-trio">
+			<div class="mini-gallery cols-3 reveal">
 				<img src="images/mun/UnSC%20(1).png" alt="UNSC committee session 1" class="gallery-img">
 				<img src="images/mun/UnSC%20(2).png" alt="UNSC committee session 2" class="gallery-img">
 				<img src="images/mun/UnSC.png" alt="UNSC committee session" class="gallery-img">
 			</div>
-			<p class="moment-caption">Inside the United Nations Security Council committee room</p>
-		</div>
+			<p class="mini-gallery-caption">Inside the United Nations Security Council committee room</p>
 
-	</div>
-
-
-	<div class="page-wrap">
-
-		<div class="gd-body" style="padding-top: 20px;">
-
-			<ul class="highlight-list">
+			<ul class="highlight-list reveal">
 
 				<li>
 					<strong>Delegate training</strong>
@@ -636,7 +558,7 @@
 
 		document.addEventListener("DOMContentLoaded", function () {
 
-			/* Scroll reveal for images + reflection card */
+			/* Subtle, gradual scroll reveal */
 
 			const revealEls = document.querySelectorAll(".reveal");
 
@@ -648,7 +570,7 @@
 					}
 				});
 
-			}, { threshold: 0.15 });
+			}, { threshold: 0.12 });
 
 			revealEls.forEach(function (el) {
 				revealObserver.observe(el);
