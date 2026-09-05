@@ -153,10 +153,6 @@
 			transform: translateY(0);
 		}
 
-		.reveal.d1 { transition-delay: 0.08s; }
-		.reveal.d2 { transition-delay: 0.16s; }
-		.reveal.d3 { transition-delay: 0.24s; }
-
 
 		/* =========================================================
 		   HERO TITLE
@@ -258,8 +254,8 @@
 
 		.float-img {
 			display: block;
-			width: 240px;
-			height: 200px;
+			width: 210px;
+			height: 250px;
 			object-fit: cover;
 			border-radius: 12px;
 			box-shadow: 0 12px 26px rgba(150, 60, 120, 0.16);
@@ -284,32 +280,42 @@
 
 
 		/* =========================================================
-		   SMALL GALLERY ROWS
+		   SMALL GALLERY ROWS (asymmetric for variety)
 		   ========================================================= */
 
 		.mini-gallery {
 			display: grid;
-			gap: 12px;
+			gap: 10px;
 			margin: 30px 0 8px;
 		}
 
-		.mini-gallery.cols-2 {
-			grid-template-columns: 1fr 1fr;
+		.mini-gallery.pair {
+			grid-template-columns: 1.4fr 1fr;
 		}
 
-		.mini-gallery.cols-3 {
-			grid-template-columns: 1fr 1fr 1fr;
+		.mini-gallery.trio {
+			grid-template-columns: 1fr 1fr;
+			grid-auto-rows: 120px;
+		}
+
+		.mini-gallery.trio img:first-child {
+			grid-column: 1 / -1;
+			height: 170px;
 		}
 
 		.mini-gallery img {
 			display: block;
 			width: 100%;
-			height: 150px;
+			height: 100%;
 			object-fit: cover;
 			border-radius: 12px;
 			cursor: zoom-in;
 			box-shadow: 0 10px 22px rgba(150, 60, 120, 0.14);
 			transition: transform 0.25s ease;
+		}
+
+		.mini-gallery.pair img {
+			height: 190px;
 		}
 
 		.mini-gallery img:hover {
@@ -323,7 +329,189 @@
 			letter-spacing: 0.03em;
 			text-transform: uppercase;
 			opacity: 0.5;
-			margin: 12px 0 30px;
+			margin: 12px 0 34px;
+		}
+
+
+		/* =========================================================
+		   INSTAGRAM LAPTOP MOCKUP
+		   ========================================================= */
+
+		.ig-section {
+			text-align: center;
+			margin: 54px 0 46px;
+		}
+
+		.ig-heading {
+			font-size: 1.7em;
+			margin: 0 0 6px;
+		}
+
+		.ig-subheading {
+			font-size: 0.98em;
+			font-weight: 400 !important;
+			opacity: 0.75;
+			margin: 0 0 30px;
+		}
+
+		.laptop {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+
+		.laptop-lid {
+			background: linear-gradient(160deg, #2b2b2f, #17171a);
+			border-radius: 16px 16px 4px 4px;
+			padding: 10px 10px 0;
+			box-shadow: 0 24px 46px rgba(60, 30, 70, 0.28);
+		}
+
+		.laptop-camera {
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: #444;
+			margin: 0 auto 8px;
+		}
+
+		.laptop-screen {
+			background: #fff;
+			border-radius: 6px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			height: 400px;
+		}
+
+		.browser-bar {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			padding: 8px 10px;
+			background: #ececec;
+			flex-shrink: 0;
+		}
+
+		.browser-dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+		}
+
+		.browser-dot.red { background: #ff5f57; }
+		.browser-dot.yellow { background: #febc2e; }
+		.browser-dot.green { background: #28c840; }
+
+		.browser-url {
+			flex: 1;
+			background: #fff;
+			border-radius: 5px;
+			padding: 3px 10px;
+			font-size: 0.68em !important;
+			text-align: center;
+			opacity: 0.55;
+			margin-left: 6px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.ig-profile-header {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			padding: 14px 16px 12px;
+			border-bottom: 1px solid #eee;
+			flex-shrink: 0;
+			text-align: left;
+		}
+
+		.ig-avatar {
+			width: 46px;
+			height: 46px;
+			border-radius: 50%;
+			flex-shrink: 0;
+			background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.ig-avatar svg {
+			width: 22px;
+			height: 22px;
+		}
+
+		.ig-handle {
+			font-weight: 700 !important;
+			font-size: 0.95em;
+			margin: 0;
+		}
+
+		.ig-bio {
+			font-size: 0.78em !important;
+			opacity: 0.6;
+			margin: 2px 0 0;
+		}
+
+		.ig-feed {
+			flex: 1;
+			overflow-y: auto;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 3px;
+			padding: 3px;
+		}
+
+		.ig-feed img {
+			width: 100%;
+			height: 108px;
+			object-fit: cover;
+		}
+
+		.laptop-base {
+			height: 13px;
+			background: linear-gradient(180deg, #3a3a3f, #232326);
+			border-radius: 0 0 10px 10px;
+			position: relative;
+		}
+
+		.laptop-base::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			transform: translateX(-50%);
+			width: 70px;
+			height: 6px;
+			background: #1a1a1c;
+			border-radius: 0 0 8px 8px;
+		}
+
+		.ig-cta {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			margin-top: 30px;
+			padding: 12px 26px;
+			border-radius: 24px;
+			background: linear-gradient(90deg, #f9ce34, #ee2a7b, #6228d7);
+			color: #fff !important;
+			font-weight: 700;
+			text-decoration: none !important;
+			font-size: 0.95em;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+			box-shadow: 0 12px 26px rgba(150, 40, 120, 0.28);
+		}
+
+		.ig-cta:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 16px 32px rgba(150, 40, 120, 0.34);
+		}
+
+		.ig-cta svg {
+			width: 16px;
+			height: 16px;
 		}
 
 
@@ -426,13 +614,28 @@
 			.float-img {
 				float: none;
 				width: 100%;
-				height: 200px;
+				height: 220px;
 				margin: 0 0 18px;
 			}
 
-			.mini-gallery.cols-2,
-			.mini-gallery.cols-3 {
+			.mini-gallery.pair {
 				grid-template-columns: 1fr 1fr;
+			}
+
+			.mini-gallery.pair img {
+				height: 150px;
+			}
+
+			.laptop {
+				max-width: 300px;
+			}
+
+			.laptop-screen {
+				height: 340px;
+			}
+
+			.ig-feed img {
+				height: 78px;
 			}
 
 			.gd-butterflies {
@@ -499,29 +702,108 @@
 		<div class="gd-body">
 
 			<div class="gd-section reveal">
-				<img src="images/mun/c5535df6-6f53-40cc-aa23-c48b84b380b1.jpg" alt="AIM Model UN moment 1" class="float-img float-right gallery-img">
+				<img src="images/mun/c5535df6-6f53-40cc-aa23-c48b84b380b1.jpg" alt="AIM Model UN moment 1" class="float-img float-left gallery-img">
 				<p>That curiosity is what pulled me into Model United Nations in the first place, and it's what keeps me there as Undersecretary General of Internal Affairs for AIM Model UN. My role sits behind the scenes, training delegates on public speaking, negotiation, and diplomatic tact, while keeping the internal machinery of our conferences running smoothly.</p>
 			</div>
 
 			<div class="gd-section reveal">
-				<img src="images/mun/fe94139a-f566-4e39-9143-99f12bab6aae.jpg" alt="AIM Model UN moment 2" class="float-img float-left gallery-img">
+				<img src="images/mun/fe94139a-f566-4e39-9143-99f12bab6aae.jpg" alt="AIM Model UN moment 2" class="float-img float-right gallery-img">
 				<p>What I love most is watching a delegate go from nervous and unsure to genuinely persuasive over the course of a single committee session. There's a real skill to disagreeing with someone while still keeping the conversation open, and helping people build that skill feels like some of the most useful work I do.</p>
 			</div>
 
 			<p class="reveal">Diplomacy, to me, isn't just a debate format. It's a way of thinking about complex problems that carries over into how I approach data, business, and pretty much everything else I care about.</p>
 
-			<div class="mini-gallery cols-2 reveal">
+			<div class="mini-gallery pair reveal">
 				<img src="images/mun/AWARDS%20ABD%20SPONSORS%20WOOT%20WOOT.png" alt="AIM Model UN awards and sponsors" class="gallery-img">
 				<img src="images/mun/ANYA.png" alt="Anya at AIM Model UN" class="gallery-img">
 			</div>
 			<p class="mini-gallery-caption">Awards, sponsors, and a proud moment on the mic</p>
 
-			<div class="mini-gallery cols-3 reveal">
+			<div class="mini-gallery trio reveal">
+				<img src="images/mun/UnSC.png" alt="UNSC committee session" class="gallery-img">
 				<img src="images/mun/UnSC%20(1).png" alt="UNSC committee session 1" class="gallery-img">
 				<img src="images/mun/UnSC%20(2).png" alt="UNSC committee session 2" class="gallery-img">
-				<img src="images/mun/UnSC.png" alt="UNSC committee session" class="gallery-img">
 			</div>
 			<p class="mini-gallery-caption">Inside the United Nations Security Council committee room</p>
+
+
+			<!-- ===================================================
+			     INSTAGRAM LAPTOP MOCKUP
+			     =================================================== -->
+
+			<div class="ig-section reveal">
+
+				<h2 class="ig-heading">Follow the Journey</h2>
+				<p class="ig-subheading">AIM Model UN's Instagram, one scroll away.</p>
+
+				<div class="laptop">
+
+					<div class="laptop-lid">
+
+						<div class="laptop-camera"></div>
+
+						<div class="laptop-screen">
+
+							<div class="browser-bar">
+								<span class="browser-dot red"></span>
+								<span class="browser-dot yellow"></span>
+								<span class="browser-dot green"></span>
+								<span class="browser-url">instagram.com/aim.mun</span>
+							</div>
+
+							<div class="ig-profile-header">
+
+								<div class="ig-avatar">
+									<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect x="3" y="3" width="18" height="18" rx="5" stroke="#fff" stroke-width="1.6"/>
+										<circle cx="12" cy="12" r="4.2" stroke="#fff" stroke-width="1.6"/>
+										<circle cx="17.2" cy="6.8" r="1" fill="#fff"/>
+									</svg>
+								</div>
+
+								<div>
+									<p class="ig-handle">@aim.mun</p>
+									<p class="ig-bio">AIM Model United Nations</p>
+								</div>
+
+							</div>
+
+							<div class="ig-feed" id="ig-feed">
+								<img src="images/mun/c5535df6-6f53-40cc-aa23-c48b84b380b1.jpg" alt="AIM Model UN Instagram post">
+								<img src="images/mun/fe94139a-f566-4e39-9143-99f12bab6aae.jpg" alt="AIM Model UN Instagram post">
+								<img src="images/mun/UnSC.png" alt="AIM Model UN Instagram post">
+								<img src="images/mun/AWARDS%20ABD%20SPONSORS%20WOOT%20WOOT.png" alt="AIM Model UN Instagram post">
+								<img src="images/mun/ANYA.png" alt="AIM Model UN Instagram post">
+								<img src="images/mun/UnSC%20(1).png" alt="AIM Model UN Instagram post">
+								<img src="images/mun/UnSC%20(2).png" alt="AIM Model UN Instagram post">
+								<img src="images/mun/c5535df6-6f53-40cc-aa23-c48b84b380b1.jpg" alt="AIM Model UN Instagram post">
+								<img src="images/mun/fe94139a-f566-4e39-9143-99f12bab6aae.jpg" alt="AIM Model UN Instagram post">
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="laptop-base"></div>
+
+				</div>
+
+				<a
+					href="https://www.instagram.com/aim.mun/"
+					target="_blank"
+					rel="noopener"
+					class="ig-cta"
+				>
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="3" y="3" width="18" height="18" rx="5" stroke="#fff" stroke-width="1.8"/>
+						<circle cx="12" cy="12" r="4.2" stroke="#fff" stroke-width="1.8"/>
+						<circle cx="17.2" cy="6.8" r="1" fill="#fff"/>
+					</svg>
+					Open on Instagram
+				</a>
+
+			</div>
+
 
 			<ul class="highlight-list reveal">
 
@@ -577,7 +859,7 @@
 			});
 
 
-			/* Image modal */
+			/* Image modal — applies to editorial photos, not the Instagram feed thumbnails */
 
 			const modal = document.getElementById("image-modal");
 			const modalPhoto = document.getElementById("image-modal-photo");
@@ -607,6 +889,17 @@
 					hideModal();
 				}
 			});
+
+
+			/* Clicking inside the mock Instagram feed opens the real account */
+
+			const igFeed = document.getElementById("ig-feed");
+
+			if (igFeed) {
+				igFeed.addEventListener("click", function () {
+					window.open("https://www.instagram.com/aim.mun/", "_blank", "noopener");
+				});
+			}
 
 		});
 
