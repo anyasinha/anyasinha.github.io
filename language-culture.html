@@ -4,17 +4,37 @@
 	<title>Language &amp; Culture | Anya Sinha</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
 
 	<style>
-		*, body, p, li, a { font-family: 'Inter', sans-serif !important; color: #000 !important; }
-		h1, h2 { font-family: 'Cormorant Garamond', serif !important; font-weight: 700 !important; }
-		p, li { line-height: 1.8 !important; }
+
+		/* =========================================================
+		   GLOBAL
+		   ========================================================= */
+
+		*, body, p, li, a {
+			font-family: 'Inter', sans-serif !important;
+			color: #000 !important;
+		}
+
+		h2 {
+			font-family: 'Cormorant Garamond', serif !important;
+			font-weight: 700 !important;
+		}
+
+		p, li {
+			line-height: 1.85 !important;
+		}
 
 		body {
 			background: linear-gradient(to bottom, #f6e7ff 0%, #eaf5ff 28%, #fff7e7 52%, #fff 83%, #fff 100%);
 		}
+
+
+		/* =========================================================
+		   LAYOUT
+		   ========================================================= */
 
 		.page-wrap {
 			max-width: 760px;
@@ -31,8 +51,188 @@
 			border-bottom: 2px solid #000;
 		}
 
-		h1 { font-size: 2.8em; margin-bottom: 0.2em; }
-		.page-intro { font-size: 1.2em; font-weight: 400 !important; margin-bottom: 2em; }
+		.page-intro {
+			font-size: 1.2em;
+			font-weight: 400 !important;
+			margin-bottom: 2em;
+		}
+
+
+		/* =========================================================
+		   FUN HEADLINE
+		   ========================================================= */
+
+		.fun-header {
+			font-family: 'Baloo 2', cursive !important;
+			font-weight: 800 !important;
+			font-size: 2.5em;
+			line-height: 1.2;
+			margin: 0 0 8px;
+			display: inline-block;
+			background: linear-gradient(90deg, #d9457a, #a259d9, #2f8fd9);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			animation: wiggle 0.7s ease-in-out 0.4s 1;
+			transform-origin: left center;
+		}
+
+		@keyframes wiggle {
+			0% { transform: rotate(0deg); }
+			25% { transform: rotate(-2.5deg); }
+			50% { transform: rotate(2deg); }
+			75% { transform: rotate(-1.5deg); }
+			100% { transform: rotate(0deg); }
+		}
+
+		.fun-subheader {
+			font-family: 'Baloo 2', cursive !important;
+			font-weight: 500 !important;
+			font-size: 1.2em;
+			opacity: 0.75;
+			margin: 0 0 40px;
+		}
+
+
+		/* =========================================================
+		   ANIMATED FLAGS
+		   ========================================================= */
+
+		.flags-row {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			gap: 46px;
+			flex-wrap: wrap;
+			margin: 10px 0 50px;
+			padding: 10px 0;
+		}
+
+		.flag-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.flagpole {
+			position: relative;
+			width: 5px;
+			height: 78px;
+			background: linear-gradient(#cba053, #8a6a30);
+			border-radius: 3px;
+		}
+
+		.flagpole::before {
+			content: '';
+			position: absolute;
+			top: -6px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+			background: #d4af37;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+		}
+
+		.flag-wave {
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			width: 66px;
+			height: 44px;
+			transform-origin: left center;
+			border-radius: 0 5px 5px 0;
+			overflow: hidden;
+			box-shadow: 2px 4px 10px rgba(0,0,0,0.18);
+			animation: wave 2.6s ease-in-out infinite;
+		}
+
+		.flag-item:nth-child(2) .flag-wave { animation-delay: 0.3s; }
+		.flag-item:nth-child(3) .flag-wave { animation-delay: 0.6s; }
+
+		@keyframes wave {
+			0%, 100% { transform: rotateZ(0deg) skewY(0deg); }
+			25% { transform: rotateZ(-3deg) skewY(-4deg); }
+			50% { transform: rotateZ(1.5deg) skewY(3deg); }
+			75% { transform: rotateZ(-1.5deg) skewY(-2.5deg); }
+		}
+
+		.flag-label {
+			font-size: 0.82em !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.03em;
+			opacity: 0.7;
+			text-align: center;
+		}
+
+
+		/* Philippines flag */
+		.flag-ph {
+			background: linear-gradient(to bottom, #0038a8 50%, #ce1126 50%);
+		}
+		.flag-ph::before {
+			content: '';
+			position: absolute;
+			left: 0; top: 0; bottom: 0;
+			width: 42%;
+			background: #fff;
+			clip-path: polygon(0 0, 100% 50%, 0 100%);
+		}
+		.flag-ph::after {
+			content: '';
+			position: absolute;
+			left: 9px; top: 50%;
+			width: 8px; height: 8px;
+			border-radius: 50%;
+			background: #fcd116;
+			transform: translateY(-50%);
+			box-shadow:
+				-9px -8px 0 -2.5px #fcd116,
+				-9px  8px 0 -2.5px #fcd116,
+				 5px -13px 0 -3px #fcd116;
+		}
+
+		/* United States flag */
+		.flag-us {
+			background: repeating-linear-gradient(to bottom, #B22234 0 12.5%, #fff 12.5% 25%);
+		}
+		.flag-us::before {
+			content: '';
+			position: absolute;
+			left: 0; top: 0;
+			width: 46%;
+			height: 55%;
+			background: #3C3B6E;
+			background-image:
+				radial-gradient(circle, #fff 1px, transparent 1.3px);
+			background-size: 7px 7px;
+			background-position: 2px 2px;
+		}
+
+		/* India flag */
+		.flag-in {
+			background: linear-gradient(to bottom, #FF9933 0 33%, #fff 33% 66%, #138808 66% 100%);
+		}
+		.flag-in::after {
+			content: '';
+			position: absolute;
+			left: 50%; top: 50%;
+			width: 13px; height: 13px;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			border: 1.4px solid #0b1f66;
+			background:
+				repeating-conic-gradient(#0b1f66 0deg 15deg, transparent 15deg 30deg);
+			-webkit-mask: radial-gradient(circle, transparent 3px, #000 4px);
+			mask: radial-gradient(circle, transparent 3px, #000 4px);
+		}
+
+
+		/* =========================================================
+		   HIGHLIGHT LIST
+		   ========================================================= */
 
 		.highlight-list {
 			list-style: none;
@@ -48,6 +248,24 @@
 		.highlight-list li:last-child { border-bottom: 1px solid rgba(0,0,0,0.15); }
 
 		.highlight-list strong { display: block; font-size: 1.1em; margin-bottom: 4px; }
+
+
+		/* =========================================================
+		   RESPONSIVE
+		   ========================================================= */
+
+		@media screen and (max-width: 600px) {
+
+			.fun-header {
+				font-size: 1.85em;
+			}
+
+			.flags-row {
+				gap: 26px;
+			}
+
+		}
+
 	</style>
 </head>
 <body>
@@ -55,10 +273,46 @@
 		<a href="index.html" class="back-link">&larr; Back to Home</a>
 		<a href="index.html#interests" class="back-link">&larr; Back to Beyond the Metrics</a>
 
-		<h1>Language &amp; Culture</h1>
-		<p class="page-intro">Language has always felt like a doorway to me, a way of understanding how other people see the world, not just a subject to study.</p>
+		<h1 class="fun-header">Wait....you speak Filipino and Hindi?!!</h1>
+		<p class="fun-subheader">Yes. Also yes. Let me explain. 👇</p>
 
-		<p>That fascination is a big part of why I became a Duolingo English Test Ambassador. Creating promotional content for the platform let me connect with a community of over 40K followers from every corner of the globe, and cheering people on as they cross communication milestones, whether that's passing an exam or finally feeling confident in a second language, never gets old for me.</p>
+		<!-- Animated flags -->
+		<div class="flags-row" aria-hidden="true">
+
+			<div class="flag-item">
+				<div class="flagpole">
+					<div class="flag-wave flag-ph"></div>
+				</div>
+				<span class="flag-label">Philippines</span>
+			</div>
+
+			<div class="flag-item">
+				<div class="flagpole">
+					<div class="flag-wave flag-us"></div>
+				</div>
+				<span class="flag-label">United States</span>
+			</div>
+
+			<div class="flag-item">
+				<div class="flagpole">
+					<div class="flag-wave flag-in"></div>
+				</div>
+				<span class="flag-label">India</span>
+			</div>
+
+		</div>
+
+		<p>Okay, let's rewind. I spent ten years fully immersed in Tagalog, not the flashcard, textbook kind, but the real, everyday, arguing-with-your-relatives-at-lunch kind. I grew up in the Philippines, went to school there, celebrated the fiestas, rode the jeepneys, and somewhere between all the "kumusta ka" greetings, Tagalog stopped being a language I was learning and just became a language I lived in.</p>
+
+		<p>Then life did what life does, and I ended up living in a handful of different places around the world. Not because I was chasing some big adventure story, but because that's just how things unfolded for my family. Every move meant new neighbors, new slang, new ways of saying hello, and a crash course in figuring out who I was outside of the one country I'd always known.</p>
+
+		<p>Meanwhile, Hindi was always humming quietly in the background at home. It's part of my family's heritage, the language of dinner-table stories and song lyrics I'd hum along to long before I actually understood what they meant. I didn't "study" it the way I studied Tagalog. It's more like I absorbed it in pieces, and only later started stitching those pieces together on purpose.</p>
+
+		<p>So when someone hears my name and assumes there's just one culture, one language, one neat box to check, that's usually the moment I get to say "okay, funny story..." and watch their face do a little double take. Growing up genuinely bilingual, arguably closer to tri-, in a family that moved around a lot didn't just teach me vocabulary. It taught me how to walk into a completely unfamiliar room and actually figure out how to connect with the people in it, instead of just politely existing among them.</p>
+
+		<p class="page-intro">That fascination is a big part of why language has always felt like a doorway to me: a way of understanding how other people see the world, not just a subject to study.</p>
+
+		<p>That fascination is also a big part of why I became a Duolingo English Test Ambassador. Creating promotional content for the platform let me connect with a community of over 40K followers from every corner of the globe, and cheering people on as they cross communication milestones, whether that's passing an exam or finally feeling confident in a second language, never gets old for me.</p>
 
 		<p>I'm drawn to the small cultural details that live inside a language: the idioms that don't translate cleanly, the humor that shifts from one country to the next, the way politeness is expressed differently depending on where you are. Exploring that has made me a lot more curious and a lot more patient when navigating unfamiliar contexts, both online and off.</p>
 
