@@ -4,19 +4,24 @@
 	<title>Duolingo English Test Ambassador | Anya Sinha</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
-
 	<style>
+
+		/* =========================================================
+		   GLOBAL
+		   ========================================================= */
+
 		*, body, p, li, a { font-family: 'Inter', sans-serif !important; color: #000 !important; }
 		h1, h2 { font-family: 'Cormorant Garamond', serif !important; font-weight: 700 !important; }
 		p, li { line-height: 1.8 !important; }
 
 		body {
 			background: linear-gradient(to bottom, #f6e7ff 0%, #eaf5ff 28%, #fff7e7 52%, #fff 83%, #fff 100%);
+			margin: 0;
 		}
 
-		.page-wrap { max-width: 760px; margin: 0 auto; padding: 80px 30px 100px; }
+		.page-wrap { max-width: 760px; margin: 0 auto; padding: 80px 30px 110px; position: relative; }
 
 		.back-link {
 			display: inline-block;
@@ -29,20 +34,270 @@
 
 		h1 { font-size: 2.6em; margin-bottom: 0.1em; }
 		.exp-date { display: block; font-weight: 700; margin-bottom: 1.5em; }
-		.page-intro { font-size: 1.15em; font-weight: 400 !important; margin-bottom: 2em; }
+		.page-intro { font-size: 1.15em; font-weight: 400 !important; margin-bottom: 3em; }
 
-		.coming-soon {
-			margin-top: 3em;
-			padding: 24px;
-			border: 1px dashed rgba(0,0,0,0.3);
-			border-radius: 8px;
+
+		/* =========================================================
+		   FEATURED PHOTO
+		   ========================================================= */
+
+		.feature-photo-wrap {
+			position: relative;
 			text-align: center;
-			font-style: italic;
+			margin: 0 0 60px;
 		}
+
+		.feature-photo {
+			display: inline-block;
+			max-width: 380px;
+			width: 100%;
+			padding: 10px;
+			background: #fff;
+			border-radius: 22px;
+			border: 4px solid #58CC02;
+			box-shadow: 0 22px 44px rgba(88, 204, 2, 0.22);
+			transform: rotate(-2deg);
+			transition: transform 0.3s ease;
+		}
+
+		.feature-photo:hover {
+			transform: rotate(0deg);
+		}
+
+		.feature-photo img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 14px;
+		}
+
+		.feature-photo-tag {
+			display: inline-block;
+			margin-top: 16px;
+			background: #58CC02;
+			color: #fff !important;
+			font-weight: 800;
+			font-size: 0.85em;
+			letter-spacing: 0.03em;
+			padding: 7px 16px;
+			border-radius: 20px;
+			border-bottom: 3px solid #46a302;
+			transform: rotate(2deg);
+		}
+
+
+		/* =========================================================
+		   ACHIEVEMENT MEDAL
+		   ========================================================= */
+
+		.badge-wrap {
+			text-align: center;
+			margin: 10px 0 20px;
+			position: relative;
+		}
+
+		.sparkle {
+			position: absolute;
+			font-size: 1.2em;
+			color: #f4a300 !important;
+			animation: twinkle 2.4s ease-in-out infinite;
+		}
+
+		@keyframes twinkle {
+			0%, 100% { opacity: 0.25; transform: scale(0.8); }
+			50% { opacity: 1; transform: scale(1.15); }
+		}
+
+		.medal {
+			position: relative;
+			width: 180px;
+			height: 180px;
+			border-radius: 50%;
+			margin: 0 auto;
+			padding: 8px;
+			background: linear-gradient(135deg, #ffe066, #f4a300);
+			box-shadow: 0 22px 42px rgba(244, 163, 0, 0.35);
+			z-index: 2;
+		}
+
+		.medal::after {
+			content: '';
+			position: absolute;
+			inset: -10px;
+			border-radius: 50%;
+			border: 2px solid rgba(244, 163, 0, 0.4);
+			animation: pulse-ring 2.6s ease-out infinite;
+		}
+
+		@keyframes pulse-ring {
+			0% { transform: scale(0.92); opacity: 0.8; }
+			100% { transform: scale(1.25); opacity: 0; }
+		}
+
+		.medal img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 50%;
+			border: 5px solid #fff;
+			display: block;
+		}
+
+		.ribbon {
+			width: 160px;
+			margin: -22px auto 0;
+			background: #e03131;
+			color: #fff !important;
+			text-align: center;
+			padding: 10px 10px 16px;
+			font-weight: 800;
+			font-size: 0.82em;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			position: relative;
+			z-index: 1;
+			clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+		}
+
+		.badge-caption {
+			font-size: 0.9em !important;
+			font-weight: 400 !important;
+			opacity: 0.65;
+			margin: 8px 0 60px;
+		}
+
+
+		/* =========================================================
+		   SKILL PATH — gamified timeline
+		   ========================================================= */
+
+		.duo-path {
+			position: relative;
+			margin: 20px 0 10px;
+			padding-left: 44px;
+		}
+
+		.duo-path::before {
+			content: '';
+			position: absolute;
+			left: 20px;
+			top: 6px;
+			bottom: 40px;
+			width: 3px;
+			background: repeating-linear-gradient(to bottom, #58CC02 0 10px, transparent 10px 20px);
+		}
+
+		.duo-node {
+			position: relative;
+			padding-left: 40px;
+			margin-bottom: 46px;
+		}
+
+		.duo-node-circle {
+			position: absolute;
+			left: -44px;
+			top: -2px;
+			width: 44px;
+			height: 44px;
+			border-radius: 50%;
+			background: #58CC02;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.3em;
+			box-shadow: 0 8px 16px rgba(88, 204, 2, 0.35);
+			border-bottom: 4px solid #46a302;
+		}
+
+		.duo-node h3 {
+			font-family: 'Baloo 2', cursive !important;
+			font-size: 1.15em;
+			font-weight: 700 !important;
+			margin: 0 0 4px;
+		}
+
+		.duo-node p {
+			margin: 0;
+			font-size: 0.95em;
+			opacity: 0.8;
+		}
+
+
+		/* =========================================================
+		   FINAL CTA NODE — TAKE THE TEST
+		   ========================================================= */
+
+		.duo-final {
+			position: relative;
+			padding-left: 40px;
+			text-align: left;
+		}
+
+		.duo-final .duo-node-circle {
+			background: linear-gradient(135deg, #ffe066, #f4a300);
+			border-bottom: 4px solid #c98600;
+			box-shadow: 0 8px 18px rgba(244, 163, 0, 0.4);
+		}
+
+		.duo-final h3 {
+			font-family: 'Baloo 2', cursive !important;
+			font-size: 1.3em;
+			margin: 0 0 6px;
+		}
+
+		.duo-final p {
+			margin: 0 0 18px;
+			opacity: 0.8;
+			font-size: 0.98em;
+		}
+
+		.duo-button {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			background: #58CC02;
+			color: #fff !important;
+			font-family: 'Baloo 2', cursive !important;
+			font-weight: 800 !important;
+			font-size: 1.02em;
+			letter-spacing: 0.03em;
+			text-transform: uppercase;
+			text-decoration: none !important;
+			padding: 15px 30px;
+			border-radius: 16px;
+			border-bottom: 6px solid #46a302;
+			transition: transform 0.12s ease, border-bottom-width 0.12s ease, box-shadow 0.12s ease;
+			box-shadow: 0 10px 22px rgba(88, 204, 2, 0.3);
+		}
+
+		.duo-button:hover {
+			box-shadow: 0 14px 26px rgba(88, 204, 2, 0.4);
+		}
+
+		.duo-button:active {
+			transform: translateY(4px);
+			border-bottom-width: 2px;
+		}
+
+		.duo-button svg { width: 18px; height: 18px; }
+
+
+		/* =========================================================
+		   RESPONSIVE
+		   ========================================================= */
+
+		@media screen and (max-width: 600px) {
+
+			.medal { width: 140px; height: 140px; }
+			.ribbon { width: 130px; }
+
+		}
+
 	</style>
 </head>
 <body>
 	<div class="page-wrap">
+
 		<a href="index.html" class="back-link">&larr; Back to Home</a>
 		<a href="index.html#experience" class="back-link">&larr; Back to Experience</a>
 
@@ -51,7 +306,85 @@
 
 		<p class="page-intro">Spreading contagious enthusiasm for global language learning! Crafting lively promotional content allowed me to connect with a thriving community of over 40K followers, cheering test-takers on as they crossed global communication milestones.</p>
 
-		<div class="coming-soon">More details on this role coming soon.</div>
+
+		<!-- ===================================================
+		     FEATURED PHOTO
+		     =================================================== -->
+
+		<div class="feature-photo-wrap">
+			<div class="feature-photo">
+				<img src="images/duolingo.png" alt="Anya as a Duolingo English Test Ambassador">
+			</div>
+			<span class="feature-photo-tag">🦉 Duo approved</span>
+		</div>
+
+
+		<!-- ===================================================
+		     ACHIEVEMENT MEDAL
+		     =================================================== -->
+
+		<div class="badge-wrap">
+
+			<span class="sparkle" style="left: 22%; top: -6px;">✦</span>
+			<span class="sparkle" style="right: 20%; top: 10px; animation-delay: 0.8s;">✦</span>
+			<span class="sparkle" style="left: 30%; bottom: 20px; animation-delay: 1.6s;">✦</span>
+
+			<div class="medal">
+				<img src="images/duolingo.png" alt="Duolingo English Test Ambassador badge">
+			</div>
+
+			<div class="ribbon">Ambassador</div>
+
+		</div>
+
+		<p class="badge-caption">Officially unlocked: Duolingo English Test Ambassador status.</p>
+
+
+		<!-- ===================================================
+		     SKILL PATH TIMELINE
+		     =================================================== -->
+
+		<div class="duo-path">
+
+			<div class="duo-node">
+				<div class="duo-node-circle">🎬</div>
+				<h3>Content Creation</h3>
+				<p>Crafting lively, scroll-stopping promotional content that made the Duolingo English Test feel approachable instead of intimidating.</p>
+			</div>
+
+			<div class="duo-node">
+				<div class="duo-node-circle">🌍</div>
+				<h3>40K+ Community</h3>
+				<p>Connecting with a thriving global community of language learners and test-takers spread across every corner of the world.</p>
+			</div>
+
+			<div class="duo-node">
+				<div class="duo-node-circle">🏆</div>
+				<h3>Milestone Cheerleader</h3>
+				<p>Celebrating every "I passed!" moment, because crossing a communication milestone deserves a proper hype squad.</p>
+			</div>
+
+			<div class="duo-final">
+				<div class="duo-node-circle">🚀</div>
+				<h3>Curious how it works?</h3>
+				<p>Take the Duolingo English Test yourself and see what all the hype is about.</p>
+
+				<a
+					href="https://englishtest.duolingo.com/"
+					target="_blank"
+					rel="noopener"
+					class="duo-button"
+				>
+					Take the Test
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</a>
+
+			</div>
+
+		</div>
+
 	</div>
 </body>
 </html>
