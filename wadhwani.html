@@ -6,17 +6,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
-
 	<style>
+
+		/* =========================================================
+		   GLOBAL
+		   ========================================================= */
+
 		*, body, p, li, a { font-family: 'Inter', sans-serif !important; color: #000 !important; }
 		h1, h2 { font-family: 'Cormorant Garamond', serif !important; font-weight: 700 !important; }
 		p, li { line-height: 1.8 !important; }
 
 		body {
 			background: linear-gradient(to bottom, #f6e7ff 0%, #eaf5ff 28%, #fff7e7 52%, #fff 83%, #fff 100%);
+			margin: 0;
 		}
 
-		.page-wrap { max-width: 760px; margin: 0 auto; padding: 80px 30px 100px; }
+		.page-wrap { max-width: 780px; margin: 0 auto; padding: 80px 30px 110px; }
 
 		.back-link {
 			display: inline-block;
@@ -29,20 +34,274 @@
 
 		h1 { font-size: 2.6em; margin-bottom: 0.1em; }
 		.exp-date { display: block; font-weight: 700; margin-bottom: 1.5em; }
-		.page-intro { font-size: 1.15em; font-weight: 400 !important; margin-bottom: 2em; }
+		.page-intro { font-size: 1.15em; font-weight: 400 !important; margin-bottom: 2.5em; }
 
-		.coming-soon {
-			margin-top: 3em;
-			padding: 24px;
-			border: 1px dashed rgba(0,0,0,0.3);
-			border-radius: 8px;
+
+		/* =========================================================
+		   SECTION HEADINGS
+		   ========================================================= */
+
+		.section-heading {
+			font-size: 1.5em;
 			text-align: center;
-			font-style: italic;
+			margin: 0 0 6px;
 		}
+
+		.section-subheading {
+			text-align: center;
+			font-weight: 400 !important;
+			opacity: 0.7;
+			margin: 0 0 34px;
+			font-size: 0.98em;
+		}
+
+
+		/* =========================================================
+		   LAPTOP — PDF PRESENTATION VIEWER
+		   ========================================================= */
+
+		.laptop-section {
+			margin: 0 0 70px;
+		}
+
+		.laptop {
+			max-width: 480px;
+			margin: 0 auto;
+		}
+
+		.laptop-lid {
+			background: linear-gradient(160deg, #2b2b2f, #17171a);
+			border-radius: 16px 16px 4px 4px;
+			padding: 10px 10px 0;
+			box-shadow: 0 24px 46px rgba(60, 30, 70, 0.24);
+		}
+
+		.laptop-camera {
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: #444;
+			margin: 0 auto 8px;
+		}
+
+		.laptop-screen {
+			background: #fff;
+			border-radius: 6px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			height: 460px;
+		}
+
+		.browser-bar {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			padding: 8px 10px;
+			background: #ececec;
+			flex-shrink: 0;
+		}
+
+		.browser-dot { width: 8px; height: 8px; border-radius: 50%; }
+		.browser-dot.red { background: #ff5f57; }
+		.browser-dot.yellow { background: #febc2e; }
+		.browser-dot.green { background: #28c840; }
+
+		.browser-url {
+			flex: 1;
+			background: #fff;
+			border-radius: 5px;
+			padding: 3px 10px;
+			font-size: 0.68em !important;
+			text-align: center;
+			opacity: 0.55;
+			margin-left: 6px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.pdf-frame {
+			flex: 1;
+			width: 100%;
+			border: none;
+			display: block;
+		}
+
+		.laptop-base {
+			height: 13px;
+			background: linear-gradient(180deg, #3a3a3f, #232326);
+			border-radius: 0 0 10px 10px;
+			position: relative;
+		}
+
+		.laptop-base::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			transform: translateX(-50%);
+			width: 80px;
+			height: 6px;
+			background: #1a1a1c;
+			border-radius: 0 0 8px 8px;
+		}
+
+		.pdf-cta-row {
+			display: flex;
+			justify-content: center;
+			gap: 14px;
+			flex-wrap: wrap;
+			margin-top: 26px;
+		}
+
+		.pdf-cta {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 11px 24px;
+			border-radius: 24px;
+			font-weight: 700;
+			font-size: 0.92em;
+			text-decoration: none !important;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+
+		.pdf-cta.primary {
+			background: #000;
+			color: #fff !important;
+			box-shadow: 0 12px 24px rgba(0,0,0,0.22);
+		}
+
+		.pdf-cta.secondary {
+			background: rgba(255,255,255,0.8);
+			color: #000 !important;
+			border: 2px solid #000;
+		}
+
+		.pdf-cta:hover {
+			transform: translateY(-2px);
+		}
+
+		.pdf-cta svg { width: 15px; height: 15px; }
+
+
+		/* =========================================================
+		   PHOTO COLLAGE — scattered polaroid layout
+		   ========================================================= */
+
+		.collage {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 26px 20px;
+			padding: 20px 10px 10px;
+		}
+
+		.polaroid {
+			background: #fff;
+			padding: 10px 10px 26px;
+			border-radius: 4px;
+			box-shadow: 0 14px 26px rgba(150, 60, 120, 0.18);
+			cursor: zoom-in;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			flex-shrink: 0;
+		}
+
+		.polaroid img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 2px;
+		}
+
+		.polaroid:hover {
+			transform: translateY(-6px) rotate(0deg) !important;
+			box-shadow: 0 20px 36px rgba(150, 60, 120, 0.26);
+			z-index: 5;
+		}
+
+		.p1 { width: 250px; height: 210px; transform: rotate(-4deg); margin-top: 10px; }
+		.p2 { width: 190px; height: 230px; transform: rotate(3deg); margin-top: -6px; }
+		.p3 { width: 220px; height: 190px; transform: rotate(-2deg); margin-top: 24px; }
+		.p4 { width: 195px; height: 225px; transform: rotate(5deg); margin-top: -2px; }
+		.p5 { width: 235px; height: 200px; transform: rotate(-3deg); margin-top: 16px; }
+
+		.polaroid .pin {
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: radial-gradient(circle at 30% 30%, #ff9ec6, #c44f8f);
+			left: 50%;
+			top: -6px;
+			transform: translateX(-50%);
+			box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+		}
+
+		.polaroid { position: relative; }
+
+
+		/* =========================================================
+		   IMAGE MODAL
+		   ========================================================= */
+
+		.image-modal {
+			display: none;
+			position: fixed;
+			z-index: 100000;
+			inset: 0;
+			align-items: center;
+			justify-content: center;
+			padding: 30px;
+			background: rgba(0, 0, 0, 0.9);
+		}
+
+		.image-modal.is-open { display: flex; }
+
+		.image-modal img {
+			max-width: 92vw;
+			max-height: 88vh;
+			object-fit: contain;
+			border-radius: 6px;
+		}
+
+		.image-modal-close {
+			position: absolute;
+			top: 15px;
+			right: 22px;
+			border: 0 !important;
+			background: transparent !important;
+			color: #fff !important;
+			font-size: 2.5rem;
+			line-height: 1;
+			cursor: pointer;
+		}
+
+
+		/* =========================================================
+		   RESPONSIVE
+		   ========================================================= */
+
+		@media screen and (max-width: 600px) {
+
+			.laptop { max-width: 320px; }
+			.laptop-screen { height: 360px; }
+
+			.p1, .p2, .p3, .p4, .p5 {
+				width: 44vw;
+				height: 42vw;
+				margin-top: 0;
+			}
+
+		}
+
 	</style>
 </head>
 <body>
 	<div class="page-wrap">
+
 		<a href="index.html" class="back-link">&larr; Back to Home</a>
 		<a href="index.html#experience" class="back-link">&larr; Back to Experience</a>
 
@@ -51,7 +310,155 @@
 
 		<p class="page-intro">Kicked off my professional journey by championing empowering entrepreneurial initiatives! By analyzing the digital behaviors of modern moms, I helped launch hybrid outreach campaigns that successfully connected over 252K Filipinos with life-changing career upskilling paths.</p>
 
-		<div class="coming-soon">More details on this role coming soon.</div>
+
+		<!-- ===================================================
+		     LAPTOP — INTERNSHIP SHOWCASE PDF
+		     =================================================== -->
+
+		<div class="laptop-section">
+
+			<h2 class="section-heading">The Internship Showcase</h2>
+			<p class="section-subheading">A full walkthrough of the campaign, right here — scroll through it below.</p>
+
+			<div class="laptop">
+
+				<div class="laptop-lid">
+
+					<div class="laptop-camera"></div>
+
+					<div class="laptop-screen">
+
+						<div class="browser-bar">
+							<span class="browser-dot red"></span>
+							<span class="browser-dot yellow"></span>
+							<span class="browser-dot green"></span>
+							<span class="browser-url">Internship Showcase - Ananya Sinha.pdf</span>
+						</div>
+
+						<iframe
+							class="pdf-frame"
+							src="Internship%20Showcase%20-%20Ananya%20Sinha.pptx.pdf"
+							title="Internship Showcase - Ananya Sinha"
+						></iframe>
+
+					</div>
+
+				</div>
+
+				<div class="laptop-base"></div>
+
+			</div>
+
+			<div class="pdf-cta-row">
+
+				<a
+					href="Internship%20Showcase%20-%20Ananya%20Sinha.pptx.pdf"
+					target="_blank"
+					rel="noopener"
+					class="pdf-cta primary"
+				>
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					Open Full Presentation
+				</a>
+
+				<a
+					href="https://github.com/anyasinha/anyasinha.github.io/blob/main/Internship%20Showcase%20-%20Ananya%20Sinha.pptx.pdf"
+					target="_blank"
+					rel="noopener"
+					class="pdf-cta secondary"
+				>
+					View on GitHub
+				</a>
+
+			</div>
+
+		</div>
+
+
+		<!-- ===================================================
+		     PHOTO COLLAGE
+		     =================================================== -->
+
+		<h2 class="section-heading">Snapshots from the Internship</h2>
+		<p class="section-subheading">A few moments from the campaign, pinned up scrapbook-style.</p>
+
+		<div class="collage" id="wadhwani-collage">
+
+			<div class="polaroid p1">
+				<span class="pin"></span>
+				<img src="images/wadhwani1.png" alt="Wadhwani Foundation internship photo 1" class="gallery-img">
+			</div>
+
+			<div class="polaroid p2">
+				<span class="pin"></span>
+				<img src="images/wadhwani2.png" alt="Wadhwani Foundation internship photo 2" class="gallery-img">
+			</div>
+
+			<div class="polaroid p3">
+				<span class="pin"></span>
+				<img src="images/wadhwani3.png" alt="Wadhwani Foundation internship photo 3" class="gallery-img">
+			</div>
+
+			<div class="polaroid p4">
+				<span class="pin"></span>
+				<img src="images/wadhwani4.png" alt="Wadhwani Foundation internship photo 4" class="gallery-img">
+			</div>
+
+			<div class="polaroid p5">
+				<span class="pin"></span>
+				<img src="images/wadhwani5.png" alt="Wadhwani Foundation internship photo 5" class="gallery-img">
+			</div>
+
+		</div>
+
 	</div>
+
+
+	<!-- Image modal -->
+	<div class="image-modal" id="image-modal" aria-hidden="true">
+		<button class="image-modal-close" id="image-modal-close" aria-label="Close image viewer">&times;</button>
+		<img id="image-modal-photo" src="" alt="">
+	</div>
+
+
+	<script>
+
+		document.addEventListener("DOMContentLoaded", function () {
+
+			const modal = document.getElementById("image-modal");
+			const modalPhoto = document.getElementById("image-modal-photo");
+			const closeModal = document.getElementById("image-modal-close");
+
+			document.querySelectorAll(".gallery-img").forEach(function (image) {
+
+				image.addEventListener("click", function () {
+					modalPhoto.src = this.src;
+					modalPhoto.alt = this.alt;
+					modal.classList.add("is-open");
+					modal.setAttribute("aria-hidden", "false");
+				});
+
+			});
+
+			function hideModal() {
+				modal.classList.remove("is-open");
+				modal.setAttribute("aria-hidden", "true");
+				modalPhoto.src = "";
+			}
+
+			closeModal.addEventListener("click", hideModal);
+
+			modal.addEventListener("click", function (event) {
+				if (event.target === modal) {
+					hideModal();
+				}
+			});
+
+		});
+
+	</script>
+
 </body>
 </html>
