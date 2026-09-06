@@ -6,18 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
-
 	<style>
 		*, body, p, li, a { font-family: 'Inter', sans-serif !important; color: #000 !important; }
 		h1, h2 { font-family: 'Cormorant Garamond', serif !important; font-weight: 700 !important; }
 		p, li { line-height: 1.8 !important; }
-
 		body {
 			background: linear-gradient(to bottom, #f6e7ff 0%, #eaf5ff 28%, #fff7e7 52%, #fff 83%, #fff 100%);
 		}
-
 		.page-wrap { max-width: 760px; margin: 0 auto; padding: 80px 30px 100px; }
-
 		.back-link {
 			display: inline-block;
 			margin-bottom: 40px;
@@ -26,11 +22,9 @@
 			text-decoration: none !important;
 			border-bottom: 2px solid #000;
 		}
-
 		h1 { font-size: 2.6em; margin-bottom: 0.1em; }
 		.exp-date { display: block; font-weight: 700; margin-bottom: 1.5em; }
-		.page-intro { font-size: 1.15em; font-weight: 400 !important; margin-bottom: 2em; }
-
+		.page-intro { font-size: 1.15em; font-weight: 400 !important; margin-bottom: 0; }
 		.coming-soon {
 			margin-top: 3em;
 			padding: 24px;
@@ -39,17 +33,233 @@
 			text-align: center;
 			font-style: italic;
 		}
+
+		/* ---------- Ornamental section break ---------- */
+		.ornament {
+			text-align: center;
+			margin: 3.2em 0 2.6em;
+			font-size: 1.3em;
+			letter-spacing: 0.5em;
+			opacity: 0.4;
+		}
+		.ornament.tight { letter-spacing: 0.3em; }
+
+		.section-title {
+			font-size: 1.75em;
+			margin: 0 0 0.9em;
+		}
+
+		/* ---------- Essay column ---------- */
+		.essay p {
+			max-width: 62ch;
+			margin: 0 0 1.15em;
+		}
+		.mark {
+			color: #5b3a73 !important;
+			font-weight: 700;
+			padding-left: 0.15em;
+		}
+
+		/* ---------- Marginalia rows ---------- */
+		.marginalia-row {
+			display: flex;
+			gap: 44px;
+			align-items: flex-start;
+			margin: 0 0 0.2em;
+		}
+		.marginalia-row .essay-chunk { flex: 1 1 auto; min-width: 0; }
+		.marginalia-row .essay-chunk p { margin-bottom: 0; }
+
+		.m-note {
+			flex: 0 0 230px;
+			border-left: 2px solid rgba(91,58,115,0.35);
+			padding: 2px 0 2px 18px;
+			margin-top: 0.15em;
+		}
+		.m-note .m-mark {
+			color: #5b3a73 !important;
+			font-weight: 700;
+			margin-right: 6px;
+		}
+		.m-note .m-title {
+			font-family: 'Cormorant Garamond', serif !important;
+			font-style: italic;
+			font-weight: 600 !important;
+			font-size: 1.15em;
+			display: block;
+			margin-bottom: 3px;
+		}
+		.m-note .m-body {
+			font-size: 0.88em;
+			line-height: 1.65 !important;
+			opacity: 0.82;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			.m-note {
+				animation: grow-in 0.6s ease-out both;
+				transform-origin: top;
+			}
+			@keyframes grow-in {
+				from { opacity: 0; transform: translateY(6px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+		}
+
+		@media (max-width: 780px) {
+			.marginalia-row { flex-direction: column; gap: 10px; }
+			.m-note {
+				flex-basis: auto;
+				border-left: 2px solid rgba(91,58,115,0.35);
+				padding-left: 16px;
+				margin: 0.4em 0 1.3em;
+			}
+		}
+
+		/* ---------- Colophon (contact / instagram) ---------- */
+		.colophon-rule {
+			border: none;
+			border-top: 1px solid rgba(0,0,0,0.18);
+			margin: 0;
+		}
+		.colophon {
+			margin-top: 3.2em;
+			padding: 0.3em 0;
+		}
+		.colophon-grid {
+			display: flex;
+			padding: 26px 0;
+		}
+		.colophon-item {
+			flex: 1 1 50%;
+			text-decoration: none !important;
+			padding: 4px 30px;
+		}
+		.colophon-item:first-child { padding-left: 0; }
+		.colophon-item:last-child { padding-right: 0; }
+		.colophon-divider {
+			width: 1px;
+			background: rgba(0,0,0,0.18);
+			margin: 4px 0;
+		}
+		.colophon-label {
+			display: block;
+			font-family: 'Cormorant Garamond', serif !important;
+			font-style: italic;
+			font-size: 1.05em;
+			opacity: 0.65;
+			margin-bottom: 4px;
+		}
+		.colophon-value {
+			display: block;
+			font-weight: 600;
+			font-size: 1.12em;
+			letter-spacing: 0.01em;
+			transition: opacity 0.15s ease;
+		}
+		.colophon-item:hover .colophon-value { opacity: 0.6; }
+		.colophon-note {
+			font-size: 0.82em;
+			opacity: 0.55;
+			font-style: italic;
+			margin: 0.6em 0 0;
+		}
+
+		@media (max-width: 560px) {
+			.colophon-grid { flex-direction: column; gap: 20px; }
+			.colophon-item, .colophon-item:first-child, .colophon-item:last-child { padding: 0; }
+			.colophon-divider { width: auto; height: 1px; margin: 0; }
+		}
 	</style>
 </head>
 <body>
 	<div class="page-wrap">
 		<a href="index.html" class="back-link">&larr; Back to Home</a>
 		<a href="index.html#experience" class="back-link">&larr; Back to Experience</a>
-
 		<h1>Head of Content &amp; Content Writer | Youthify</h1>
 		<span class="exp-date">Aug 2022 - Mar 2024</span>
-
 		<p class="page-intro">Grew from a passionate mental health writer into the Content Head, guiding a brilliant editorial team! I loved crafting deeply empathetic stories that fostered safe, supportive digital communities around psychological well-being.</p>
+
+		<div class="ornament">⁂</div>
+
+		<h2 class="section-title">Why Mental Health Matters</h2>
+
+		<div class="essay">
+			<p>Mental health shapes how we think, feel, and move through the world — it's the lens every relationship, decision, and daily habit gets filtered through. At Youthify, the belief driving our editorial work was simple: mental health isn't a topic, it's the foundation everything else stands on.</p>
+		</div>
+
+		<div class="marginalia-row">
+			<div class="essay-chunk">
+				<p>Psychology gives us a language for experiences that often feel wordless: anxiety, burnout, grief, self-doubt. And the biology behind that language is, if anything, hopeful — the brain being described is never a finished thing.<span class="mark">§</span></p>
+			</div>
+			<div class="m-note">
+				<span><span class="m-mark">§</span><span class="m-title">The brain keeps changing</span></span>
+				<span class="m-body">Neuroplasticity means new neural pathways can form throughout life — habits and emotional responses are trainable, not fixed.</span>
+			</div>
+		</div>
+
+		<div class="marginalia-row">
+			<div class="essay-chunk">
+				<p>Naming an emotion accurately is often the first real step toward handling it — something measurable happens the moment a feeling gets a word attached to it.<span class="mark">¶</span></p>
+			</div>
+			<div class="m-note">
+				<span><span class="m-mark">¶</span><span class="m-title">Naming calms the body</span></span>
+				<span class="m-body">Affect-labeling research shows that putting a feeling into words can quiet the amygdala, the brain's threat-detection centre.</span>
+			</div>
+		</div>
+
+		<div class="marginalia-row">
+			<div class="essay-chunk">
+				<p>That mind–body link runs both ways. Isolation doesn't just feel bad — it registers in the body as a kind of chronic, low-grade stress.<span class="mark">†</span></p>
+			</div>
+			<div class="m-note">
+				<span><span class="m-mark">†</span><span class="m-title">Loneliness is physical</span></span>
+				<span class="m-body">Chronic loneliness has been linked to health outcomes on par with smoking several cigarettes a day. Connection functions as a biological need.</span>
+			</div>
+		</div>
+
+		<div class="marginalia-row">
+			<div class="essay-chunk">
+				<p>Attention is trainable too. Whatever we rehearse — worry, or what's going well — tends to become the mind's default setting over time.<span class="mark">‡</span></p>
+			</div>
+			<div class="m-note">
+				<span><span class="m-mark">‡</span><span class="m-title">Gratitude rewires attention</span></span>
+				<span class="m-body">Deliberately noticing what's going well loosens the brain's negativity bias, which is part of why gratitude practice shows up so often in wellbeing research.</span>
+			</div>
+		</div>
+
+		<div class="marginalia-row">
+			<div class="essay-chunk">
+				<p>None of this changes much if people never feel safe enough to ask for help — the biggest barrier to care still isn't access.<span class="mark">✳</span></p>
+			</div>
+			<div class="m-note">
+				<span><span class="m-mark">✳</span><span class="m-title">Stigma outweighs access</span></span>
+				<span class="m-body">Globally, most people with a diagnosable condition never seek treatment — more often from shame than from a lack of services.</span>
+			</div>
+		</div>
+
+		<div class="essay">
+			<p>This is exactly the gap content can help close: honest, well-researched writing that normalises seeking help, explains what therapy actually looks like, and reminds readers that struggling doesn't mean something is wrong with them — it means they're human.</p>
+		</div>
+
+		<div class="ornament tight">⁂</div>
+
+		<div class="colophon">
+			<hr class="colophon-rule">
+			<div class="colophon-grid">
+				<a href="https://www.instagram.com/youthify.in/" target="_blank" rel="noopener" class="colophon-item">
+					<span class="colophon-label">Instagram</span>
+					<span class="colophon-value">@youthify.in</span>
+				</a>
+				<div class="colophon-divider"></div>
+				<a href="tel:+910000000000" class="colophon-item">
+					<span class="colophon-label">Phone</span>
+					<span class="colophon-value">+91 00000 00000</span>
+				</a>
+			</div>
+			<hr class="colophon-rule">
+			<p class="colophon-note">Placeholder number — replace with the real contact number before publishing.</p>
+		</div>
 
 		<div class="coming-soon">More details on this role coming soon.</div>
 	</div>
