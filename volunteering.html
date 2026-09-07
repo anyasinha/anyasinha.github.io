@@ -6,22 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
-
 	<style>
 		*, body, p, li, a { font-family: 'Inter', sans-serif !important; color: #000 !important; }
 		h1, h2 { font-family: 'Cormorant Garamond', serif !important; font-weight: 700 !important; }
 		p, li { line-height: 1.8 !important; }
-
 		body {
 			background: linear-gradient(to bottom, #f6e7ff 0%, #eaf5ff 28%, #fff7e7 52%, #fff 83%, #fff 100%);
 		}
-
 		.page-wrap {
 			max-width: 760px;
 			margin: 0 auto;
 			padding: 80px 30px 100px;
 		}
-
 		.back-link {
 			display: inline-block;
 			margin-bottom: 40px;
@@ -30,45 +26,107 @@
 			text-decoration: none !important;
 			border-bottom: 2px solid #000;
 		}
-
 		h1 { font-size: 2.8em; margin-bottom: 0.2em; }
+		h2 { font-size: 1.9em; margin: 0 0 0.5em; }
 		.page-intro { font-size: 1.2em; font-weight: 400 !important; margin-bottom: 2em; }
-
 		.highlight-list {
 			list-style: none;
 			padding: 0;
 			margin: 2em 0;
 		}
-
 		.highlight-list li {
 			padding: 18px 0;
 			border-top: 1px solid rgba(0,0,0,0.15);
 		}
-
 		.highlight-list li:last-child { border-bottom: 1px solid rgba(0,0,0,0.15); }
-
 		.highlight-list strong { display: block; font-size: 1.1em; margin-bottom: 4px; }
+
+		.section-divider {
+			border: none;
+			border-top: 1px solid rgba(0,0,0,0.15);
+			margin: 3.5em 0;
+		}
+
+		.oldage-section {
+			position: relative;
+		}
+
+		.photo-cluster {
+			position: relative;
+			margin: 2.5em 0 3.5em;
+			min-height: 380px;
+		}
+
+		.photo-cluster img {
+			display: block;
+			object-fit: cover;
+			box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+			border: 6px solid #fff;
+		}
+
+		.photo-one {
+			width: 62%;
+			height: 320px;
+			transform: rotate(-3deg);
+			position: relative;
+			z-index: 1;
+		}
+
+		.photo-two {
+			width: 48%;
+			height: 260px;
+			position: absolute;
+			right: 0;
+			top: 140px;
+			transform: rotate(4deg);
+			z-index: 2;
+		}
+
+		.photo-caption {
+			font-size: 0.85em;
+			font-style: italic;
+			opacity: 0.65;
+			margin-top: 1em;
+			max-width: 260px;
+		}
+
+		@media (max-width: 640px) {
+			.photo-cluster { min-height: 480px; }
+			.photo-one { width: 85%; height: 220px; }
+			.photo-two { width: 65%; height: 190px; top: 220px; }
+		}
 	</style>
 </head>
 <body>
 	<div class="page-wrap">
 		<a href="index.html" class="back-link">&larr; Back to Home</a>
 		<a href="index.html#interests" class="back-link">&larr; Back to Beyond the Metrics</a>
-
 		<h1>Volunteering</h1>
 		<p class="page-intro">Showing up for other people is one of the things that grounds me most, and it's shaped nearly every chapter of my journey so far.</p>
-
 		<p>I first found this through writing. As a content writer and later Head of Content at Youthify, I got to craft stories that made mental health feel a little less lonely for the people reading them, and helping build that kind of safe, supportive space for others became something I couldn't stop chasing.</p>
-
 		<p>That instinct followed me into my work with the Wadhwani Foundation, where I helped design outreach that connected everyday Filipino mothers with real career upskilling opportunities. There's something quietly powerful about translating a program's benefits into language that actually reaches the people it's meant to help, and watching that reach turn into over 252K real connections.</p>
-
 		<p>Now, through Data Engineering Pilipinas, I get to pay that forward again, leading community initiatives that make data literacy feel accessible rather than intimidating for learners who are just getting started.</p>
-
 		<ul class="highlight-list">
 			<li><strong>Mental health advocacy</strong>Writing and editing stories that fostered supportive digital communities at Youthify.</li>
 			<li><strong>Community upskilling</strong>Helping Filipino mothers access career growth opportunities with the Wadhwani Foundation.</li>
 			<li><strong>Data literacy outreach</strong>Leading initiatives that make data skills approachable through Data Engineering Pilipinas.</li>
 		</ul>
+
+		<hr class="section-divider">
+
+		<div class="oldage-section">
+			<h2>An afternoon at the old age home</h2>
+			<p>One of the volunteering experiences that stayed with me the most was hosting and spending an afternoon at a local old age home. I helped plan the visit from the ground up, putting together small activities, music, and games that would give the residents something to look forward to and be part of.</p>
+
+			<div class="photo-cluster">
+				<img class="photo-one" src="images/0ff9f7ea-2fb5-4ca3-ad49-e20155e15878.jpg" alt="Hosting an activity at the old age home">
+				<img class="photo-two" src="images/6c95e5fb-b508-45b6-b2cc-ff94e49989eb.jpg" alt="Spending time with residents at the old age home">
+			</div>
+
+			<p>What struck me most was how much the residents simply wanted to be listened to. So much of the visit ended up being conversation: hearing stories from decades I hadn't lived through, swapping jokes, and just sitting with people who lit up at the company. Hosting the event taught me that volunteering isn't only about the activities you plan, it's about the presence you bring and how fully you show up for the people in front of you.</p>
+
+			<p>That afternoon reminded me why I keep coming back to this kind of work. Whether it's through writing, outreach, or simply sitting across from someone and listening, the through line is the same: making people feel seen.</p>
+		</div>
 	</div>
 </body>
 </html>
