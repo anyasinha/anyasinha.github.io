@@ -6,18 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
-
 	<style>
 		*, body, p, li, a { font-family: 'Inter', sans-serif !important; color: #000 !important; }
 		h1, h2 { font-family: 'Cormorant Garamond', serif !important; font-weight: 700 !important; }
 		p, li { line-height: 1.8 !important; }
-
 		body {
 			background: linear-gradient(to bottom, #f6e7ff 0%, #eaf5ff 28%, #fff7e7 52%, #fff 83%, #fff 100%);
 		}
-
 		.page-wrap { max-width: 760px; margin: 0 auto; padding: 80px 30px 100px; }
-
 		.back-link {
 			display: inline-block;
 			margin-bottom: 40px;
@@ -26,11 +22,9 @@
 			text-decoration: none !important;
 			border-bottom: 2px solid #000;
 		}
-
 		h1 { font-size: 2.6em; margin-bottom: 0.1em; }
 		.exp-date { display: block; font-weight: 700; margin-bottom: 1.5em; }
 		.page-intro { font-size: 1.15em; font-weight: 400 !important; margin-bottom: 2em; }
-
 		.coming-soon {
 			margin-top: 3em;
 			padding: 24px;
@@ -39,19 +33,335 @@
 			text-align: center;
 			font-style: italic;
 		}
+
+		/* ===================== Dirty -> Clean spreadsheet visual ===================== */
+
+		.transform-section {
+			position: relative;
+			height: 240vh;
+			margin: 0.5em 0 3em;
+		}
+
+		.transform-eyebrow {
+			text-align: center;
+			font-family: 'Cormorant Garamond', serif !important;
+			font-style: italic;
+			font-size: 1.3em;
+			color: #4c1d6b !important;
+			margin: 0 0 18px;
+		}
+
+		.transform-sticky {
+			position: sticky;
+			top: 7vh;
+			height: 78vh;
+			min-height: 440px;
+			max-height: 600px;
+			border-radius: 20px;
+			overflow: hidden;
+			background: #fbfbfa;
+			box-shadow: 0 34px 70px -30px rgba(76, 29, 107, 0.4), 0 0 0 1px rgba(0,0,0,0.06);
+		}
+
+		.transform-noise {
+			position: absolute;
+			inset: 0;
+			background-image: repeating-linear-gradient(135deg, rgba(185, 28, 28, 0.05) 0px, rgba(185, 28, 28, 0.05) 2px, transparent 2px, transparent 16px);
+			opacity: var(--dirty-op, 1);
+			pointer-events: none;
+			transition: opacity 0.05s linear;
+		}
+
+		.transform-labels {
+			position: absolute;
+			top: 18px;
+			left: 22px;
+			right: 22px;
+			display: flex;
+			justify-content: space-between;
+			z-index: 6;
+			pointer-events: none;
+		}
+
+		.transform-labels span {
+			font-family: 'Cormorant Garamond', serif !important;
+			font-weight: 700 !important;
+			font-size: 1.05em;
+			letter-spacing: 0.01em;
+			padding: 3px 12px;
+			border-radius: 999px;
+		}
+
+		.transform-labels .label-messy {
+			background: rgba(254, 226, 226, 0.9);
+			color: #991b1b !important;
+			opacity: var(--messy-label-op, 1);
+			transition: opacity 0.3s ease;
+		}
+
+		.transform-labels .label-clean {
+			background: rgba(233, 213, 255, 0.85);
+			color: #6b21a8 !important;
+			opacity: var(--clean-label-op, 0);
+			transition: opacity 0.3s ease;
+		}
+
+		.transform-grid {
+			position: absolute;
+			inset: 58px 16px 16px;
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			grid-template-rows: repeat(6, 1fr);
+			gap: 6px;
+			z-index: 2;
+		}
+
+		.cell {
+			position: relative;
+			border-radius: 6px;
+		}
+
+		.cell .layer {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			border-radius: 6px;
+			font-size: 0.72em;
+			font-weight: 600 !important;
+			padding: 2px 4px;
+			line-height: 1.15 !important;
+			overflow: hidden;
+			will-change: transform, opacity;
+		}
+
+		.cell .layer.dirty {
+			background: #fee2e2;
+			border: 1px solid #fca5a5;
+			color: #7f1d1d !important;
+			font-family: 'Inter', sans-serif !important;
+			opacity: var(--dirty-opacity, 1);
+			transform: var(--dirty-transform, none);
+		}
+
+		.cell .layer.clean {
+			background: linear-gradient(135deg, #f4e9ff, #e6f2ff);
+			border: 1px solid #ddd0f7;
+			color: #5b1f96 !important;
+			opacity: var(--clean-opacity, 0);
+			box-shadow: 0 0 0 rgba(245, 196, 81, 0);
+		}
+
+		.sparkle-layer {
+			position: absolute;
+			inset: 0;
+			z-index: 4;
+			pointer-events: none;
+			opacity: var(--glitter-opacity, 0);
+			transition: opacity 0.1s linear;
+		}
+
+		.sparkle {
+			position: absolute;
+			width: 7px;
+			height: 7px;
+			background: radial-gradient(circle, #fffaeb 0%, #f5c451 55%, transparent 100%);
+			clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			.sparkle { animation: twinkle 2.6s ease-in-out infinite; }
+		}
+
+		@keyframes twinkle {
+			0%, 100% { transform: scale(0.55) rotate(0deg); opacity: 0.35; }
+			50% { transform: scale(1.15) rotate(35deg); opacity: 1; }
+		}
+
+		.transform-shine {
+			position: absolute;
+			inset: 0;
+			z-index: 3;
+			pointer-events: none;
+			opacity: var(--shine-opacity, 0);
+			background: linear-gradient(115deg, transparent 30%, rgba(255, 250, 224, 0.55) 48%, transparent 66%);
+			background-size: 220% 220%;
+			background-position: var(--shine-pos, 0% 0%);
+		}
+
+		.transform-badge {
+			position: absolute;
+			left: 50%;
+			bottom: 16px;
+			transform: translateX(-50%) translateY(var(--badge-y, 10px));
+			z-index: 6;
+			background: linear-gradient(135deg, #f5c451, #fbbf24);
+			color: #5b1f00 !important;
+			font-weight: 700 !important;
+			font-size: 0.85em;
+			padding: 6px 16px;
+			border-radius: 999px;
+			opacity: var(--badge-op, 0);
+			box-shadow: 0 8px 18px -6px rgba(180, 130, 20, 0.6);
+			white-space: nowrap;
+		}
+
+		.transform-caption {
+			text-align: center;
+			font-size: 0.95em;
+			font-style: italic;
+			color: #55506b !important;
+			margin-top: 16px;
+		}
+
+		@media (max-width: 700px) {
+			.transform-section { height: 210vh; }
+			.transform-sticky { top: 5vh; height: 66vh; min-height: 400px; }
+			.transform-grid { inset: 52px 10px 12px; gap: 4px; }
+			.cell .layer { font-size: 0.6em; }
+		}
 	</style>
 </head>
 <body>
 	<div class="page-wrap">
 		<a href="index.html" class="back-link">&larr; Back to Home</a>
 		<a href="index.html#experience" class="back-link">&larr; Back to Experience</a>
-
 		<h1>Data Cleaning Intern | MacroAsia Corporation</h1>
 		<span class="exp-date">Aug 2026 - Present</span>
-
 		<p class="page-intro">Diving headfirst into dynamic supply chain operations! I love scrubbing vendor and material records to prep everything seamlessly for SAP migration. Tracking down duplicates and standardizing datasets with advanced Excel brings me so much joy because clean data truly powers brilliant business decisions.</p>
+
+		<p class="transform-eyebrow">Scroll to watch a vendor sheet go from chaos to SAP-ready</p>
+		<section class="transform-section" id="transformSection">
+			<div class="transform-sticky">
+				<div class="transform-noise"></div>
+				<div class="transform-labels">
+					<span class="label-messy">messy input</span>
+					<span class="label-clean">clean output</span>
+				</div>
+				<div class="transform-grid" id="transformGrid"></div>
+				<div class="transform-shine"></div>
+				<div class="sparkle-layer" id="sparkleLayer"></div>
+				<div class="transform-badge">&#10003; SAP-ready</div>
+			</div>
+		</section>
+		<p class="transform-caption">Same records, zero duplicates, one format.</p>
 
 		<div class="coming-soon">More details on this role coming soon.</div>
 	</div>
+
+	<script>
+	(function () {
+		var pairs = [
+			{ dirty: "vndr_09", clean: "Vendor 009" },
+			{ dirty: "ACME CO", clean: "Acme Co." },
+			{ dirty: "acme co ", clean: "Acme Co." },
+			{ dirty: "#REF!", clean: "\u2014" },
+			{ dirty: "09/31/2026", clean: "10/01/2026" },
+			{ dirty: "$1,20O.5", clean: "$1,200.50" },
+			{ dirty: "12000", clean: "$12,000.00" },
+			{ dirty: "N/A", clean: "\u2014" },
+			{ dirty: "DUPLICATE", clean: "Merged" },
+			{ dirty: "won-134", clean: "WON-134" },
+			{ dirty: "null", clean: "\u2014" },
+			{ dirty: "Qty: 5,00", clean: "Qty: 500" }
+		];
+
+		var COLS = 6, ROWS = 6, TOTAL = COLS * ROWS;
+		var grid = document.getElementById("transformGrid");
+		var sparkleLayer = document.getElementById("sparkleLayer");
+		var section = document.getElementById("transformSection");
+		var sticky = document.querySelector(".transform-sticky");
+		var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+		var cells = [];
+		for (var i = 0; i < TOTAL; i++) {
+			var pair = pairs[i % pairs.length];
+			var cell = document.createElement("div");
+			cell.className = "cell";
+
+			var dirtyLayer = document.createElement("div");
+			dirtyLayer.className = "layer dirty";
+			dirtyLayer.textContent = pair.dirty;
+
+			var cleanLayer = document.createElement("div");
+			cleanLayer.className = "layer clean";
+			cleanLayer.textContent = pair.clean;
+
+			cell.appendChild(dirtyLayer);
+			cell.appendChild(cleanLayer);
+			grid.appendChild(cell);
+
+			var row = Math.floor(i / COLS);
+			cells.push({
+				dirtyEl: dirtyLayer,
+				cleanEl: cleanLayer,
+				seedRot: (Math.random() - 0.5) * 22,
+				seedX: (Math.random() - 0.5) * 14,
+				seedY: (Math.random() - 0.5) * 10,
+				delay: (row / (ROWS - 1)) * 0.35 + (Math.random() * 0.06)
+			});
+		}
+
+		var sparkleCount = 22;
+		for (var s = 0; s < sparkleCount; s++) {
+			var sp = document.createElement("div");
+			sp.className = "sparkle";
+			sp.style.left = (Math.random() * 96 + 2) + "%";
+			sp.style.top = (Math.random() * 92 + 4) + "%";
+			sp.style.animationDelay = (Math.random() * 2.4) + "s";
+			sparkleLayer.appendChild(sp);
+		}
+
+		function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+		function smoothstep(edge0, edge1, x) {
+			var t = clamp((x - edge0) / (edge1 - edge0), 0, 1);
+			return t * t * (3 - 2 * t);
+		}
+
+		var ticking = false;
+
+		function update() {
+			ticking = false;
+			var rect = section.getBoundingClientRect();
+			var maxScroll = rect.height - window.innerHeight;
+			var p = maxScroll > 0 ? clamp(-rect.top / maxScroll, 0, 1) : 0;
+
+			sticky.style.setProperty("--dirty-op", 1 - smoothstep(0.15, 0.75, p));
+			sticky.style.setProperty("--messy-label-op", 1 - smoothstep(0.55, 0.85, p));
+			sticky.style.setProperty("--clean-label-op", smoothstep(0.15, 0.5, p));
+			sticky.style.setProperty("--glitter-opacity", smoothstep(0.72, 1, p));
+			sticky.style.setProperty("--shine-opacity", smoothstep(0.8, 0.95, p) * (1 - smoothstep(0.97, 1, p)));
+			sticky.style.setProperty("--shine-pos", (30 - p * 60) + "% " + (30 - p * 60) + "%");
+			sticky.style.setProperty("--badge-op", smoothstep(0.85, 1, p));
+			sticky.style.setProperty("--badge-y", (10 - smoothstep(0.85, 1, p) * 10) + "px");
+
+			for (var i = 0; i < cells.length; i++) {
+				var c = cells[i];
+				var cp = clamp((p - c.delay) / (1 - c.delay), 0, 1);
+				c.dirtyEl.style.opacity = 1 - cp;
+				c.cleanEl.style.opacity = cp;
+				if (!reduceMotion) {
+					var settle = 1 - cp;
+					c.dirtyEl.style.transform =
+						"rotate(" + (c.seedRot * settle) + "deg) translate(" +
+						(c.seedX * settle) + "px, " + (c.seedY * settle) + "px)";
+				}
+			}
+		}
+
+		function onScroll() {
+			if (!ticking) {
+				window.requestAnimationFrame(update);
+				ticking = true;
+			}
+		}
+
+		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("resize", onScroll);
+		update();
+	})();
+	</script>
 </body>
 </html>
