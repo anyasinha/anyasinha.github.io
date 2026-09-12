@@ -1,0 +1,485 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Anya Sinha | Business Card</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+
+<style>
+
+	/* =========================================================
+	   GLOBAL (matches index.html)
+	   ========================================================= */
+
+	*,
+	body,
+	input,
+	select,
+	textarea {
+		font-family: 'Inter', sans-serif !important;
+		color: #000 !important;
+	}
+
+	h1 {
+		font-family: 'Cormorant Garamond', serif !important;
+		font-size: 3em !important;
+		font-weight: 700 !important;
+	}
+
+	h2,
+	.major h2 {
+		font-family: 'Cormorant Garamond', serif !important;
+		font-size: 2.3em !important;
+		font-weight: 700 !important;
+	}
+
+	p, span, a, li {
+		line-height: 1.8 !important;
+	}
+
+	body {
+		background: linear-gradient(
+			to bottom,
+			#f6e7ff 0%,
+			#eaf5ff 28%,
+			#fff7e7 52%,
+			#fff 83%,
+			#fff 100%
+		);
+		background-attachment: scroll;
+		background-size: 100% 100%;
+	}
+
+	#header,
+	header.major > :last-child,
+	#main > .inner > section,
+	#sidebar > .inner > *,
+	#menu > ul > li {
+		border-color: transparent !important;
+	}
+
+	#header,
+	header.major > :last-child {
+		border-bottom: none !important;
+	}
+
+	#sidebar,
+	#sidebar > .inner,
+	#sidebar > .inner > section {
+		background: #ffffff !important;
+		box-shadow: none !important;
+	}
+
+	#sidebar .toggle::after {
+		background: #ffffff !important;
+		border: 1px solid #000000;
+	}
+
+	#sidebar .toggle::before,
+	#menu ul a:hover,
+	a,
+	a:hover {
+		color: #000000 !important;
+	}
+
+	#sidebar *:not(.toggle):not(.toggle *) {
+		background: none !important;
+		background-color: transparent !important;
+		background-image: none !important;
+		box-shadow: none !important;
+	}
+
+	section {
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+	}
+
+	section.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+
+	/* =========================================================
+	   BUSINESS CARD PAGE
+	   ========================================================= */
+
+	#card-section {
+		min-height: 78vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 40px 0 10px;
+	}
+
+	#card-section header.major {
+		margin-bottom: 0.2em;
+	}
+
+	.card-instructions {
+		font-weight: 400 !important;
+		font-size: 1.05em;
+		letter-spacing: 0.02em;
+		opacity: 0.75;
+		margin-bottom: 3em;
+	}
+
+	/* Stage holds the card and gives it room to tilt in 3D */
+
+	.card-stage {
+		--rx: 0deg;
+		--ry: 0deg;
+		perspective: 1800px;
+		width: min(90vw, 520px);
+		aspect-ratio: 7 / 4;
+		margin: 0 auto;
+	}
+
+	.card-flip {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		transform-style: preserve-3d;
+		transform: rotateX(var(--rx)) rotateY(calc(var(--ry) + var(--flip, 0deg)));
+		transition: transform 0.15s ease-out;
+	}
+
+	.card-stage.settling .card-flip {
+		transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.card-stage.is-flipped {
+		--flip: 180deg;
+	}
+
+	.card-face {
+		position: absolute;
+		inset: 0;
+		border-radius: 16px;
+		overflow: hidden;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		box-shadow:
+			0 10px 20px rgba(120, 60, 140, 0.18),
+			0 30px 60px rgba(120, 60, 140, 0.22);
+	}
+
+	.card-face img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.card-face.back {
+		transform: rotateY(180deg);
+	}
+
+	/* Holographic foil edge */
+
+	.card-face::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: 16px;
+		padding: 1.5px;
+		background: linear-gradient(
+			120deg,
+			#f0a8c6 0%,
+			#e6b8ff 25%,
+			#a8d4ff 50%,
+			#fff0b8 75%,
+			#f0a8c6 100%
+		);
+		-webkit-mask:
+			linear-gradient(#fff 0 0) content-box,
+			linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		pointer-events: none;
+		z-index: 3;
+	}
+
+	/* Shine sweep that follows the tilt */
+
+	.card-face::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 2;
+		pointer-events: none;
+		background: linear-gradient(
+			115deg,
+			transparent 20%,
+			rgba(255, 255, 255, 0.55) 42%,
+			rgba(255, 255, 255, 0.05) 50%,
+			transparent 65%
+		);
+		background-size: 250% 250%;
+		background-position: calc(50% + var(--ry) * 3) calc(50% - var(--rx) * 3);
+		mix-blend-mode: overlay;
+		opacity: 0.9;
+	}
+
+	.card-glow {
+		position: absolute;
+		inset: -18px;
+		border-radius: 30px;
+		z-index: -1;
+		filter: blur(22px);
+		opacity: 0.55;
+		background: linear-gradient(
+			120deg,
+			#f0a8c6,
+			#c88cf0,
+			#8cc8f0,
+			#f5d98a
+		);
+		background-size: 300% 300%;
+		animation: glow-drift 7s ease-in-out infinite;
+	}
+
+	@keyframes glow-drift {
+		0%, 100% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+	}
+
+	.card-hint {
+		margin-top: 2.4em;
+		font-size: 0.9em !important;
+		font-weight: 400 !important;
+		letter-spacing: 0.02em;
+		opacity: 0.6;
+	}
+
+	.card-side-label {
+		margin-top: 0.6em;
+		font-size: 0.85em !important;
+		font-weight: 600 !important;
+		letter-spacing: 0.08em;
+		opacity: 0.45;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.card-glow { animation: none; }
+		.card-flip { transition: none; }
+	}
+
+	@media screen and (max-width: 480px) {
+		.card-stage { width: 88vw; }
+	}
+
+</style>
+
+</head>
+
+<body class="is-preload">
+
+<div id="wrapper">
+
+	<div id="main">
+
+		<div class="inner">
+
+			<header id="header">
+				<a href="index.html" class="logo">
+					<strong>Anya Sinha</strong> | Portfolio
+				</a>
+
+				<ul class="icons">
+					<li>
+						<a href="https://www.linkedin.com/in/ananya-sinha-992536299/" target="_blank" class="icon brands fa-linkedin-in">
+							<span class="label">LinkedIn</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/anyasinha" target="_blank" class="icon brands fa-github">
+							<span class="label">GitHub</span>
+						</a>
+					</li>
+				</ul>
+			</header>
+
+
+			<section id="card-section" class="visible">
+
+				<header class="major">
+					<h2>Business Card</h2>
+				</header>
+
+				<p class="card-instructions">
+					Tap the card to flip it over
+				</p>
+
+				<div class="card-stage" id="cardStage">
+					<div class="card-glow" aria-hidden="true"></div>
+					<div class="card-flip" id="cardFlip">
+						<div class="card-face front">
+							<img src="images/1.png" alt="Anya Sinha business card, front">
+						</div>
+						<div class="card-face back">
+							<img src="images/2.png" alt="Anya Sinha business card, back">
+						</div>
+					</div>
+				</div>
+
+				<p class="card-side-label" id="sideLabel">FRONT</p>
+
+				<p class="card-hint">click or tap anywhere on the card</p>
+
+			</section>
+
+		</div>
+
+	</div>
+
+
+	<!-- =====================================================
+	     SIDEBAR
+	     ===================================================== -->
+
+	<div id="sidebar">
+
+		<div class="inner">
+
+			<nav id="menu">
+
+				<header class="major">
+					<h2>Menu</h2>
+				</header>
+
+				<ul>
+					<li><a href="index.html">Homepage</a></li>
+					<li><a href="education.html">Education</a></li>
+					<li><a href="creatives-portfolio.html">Creatives Portfolio</a></li>
+					<li><a href="certifications.html">Certifications</a></li>
+					<li><a href="business-card.html">Business Card</a></li>
+					<li><a href="resume.pdf" target="_blank">Download Resume</a></li>
+				</ul>
+
+			</nav>
+
+			<footer id="footer">
+				<p class="copyright">
+					&copy; Anya Sinha. All rights reserved.
+					Design: <a href="https://html5up.net">HTML5 UP</a>.
+				</p>
+			</footer>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+
+	document.addEventListener("DOMContentLoaded", function () {
+
+		const stage = document.getElementById("cardStage");
+		const flip = document.getElementById("cardFlip");
+		const sideLabel = document.getElementById("sideLabel");
+
+		let isFlipped = false;
+		let hovering = false;
+
+		/* --- Tilt effect, follows the pointer while hovering --- */
+
+		function handleMove(event) {
+
+			const rect = stage.getBoundingClientRect();
+			const x = (event.clientX ?? (event.touches && event.touches[0].clientX)) - rect.left;
+			const y = (event.clientY ?? (event.touches && event.touches[0].clientY)) - rect.top;
+
+			const px = (x / rect.width) - 0.5;
+			const py = (y / rect.height) - 0.5;
+
+			const maxTilt = 10;
+
+			stage.style.setProperty("--ry", (px * maxTilt * 2).toFixed(2) + "deg");
+			stage.style.setProperty("--rx", (-py * maxTilt * 2).toFixed(2) + "deg");
+
+		}
+
+		function resetTilt() {
+
+			stage.classList.add("settling");
+			stage.style.setProperty("--rx", "0deg");
+			stage.style.setProperty("--ry", "0deg");
+
+			setTimeout(() => stage.classList.remove("settling"), 900);
+
+		}
+
+		stage.addEventListener("mouseenter", () => { hovering = true; });
+
+		stage.addEventListener("mousemove", (event) => {
+
+			if (!hovering) return;
+			handleMove(event);
+
+		});
+
+		stage.addEventListener("mouseleave", () => {
+
+			hovering = false;
+			resetTilt();
+
+		});
+
+
+		/* --- Flip on click / tap --- */
+
+		function toggleFlip() {
+
+			isFlipped = !isFlipped;
+
+			stage.classList.add("settling");
+			stage.classList.toggle("is-flipped", isFlipped);
+
+			sideLabel.textContent = isFlipped ? "BACK" : "FRONT";
+
+			setTimeout(() => stage.classList.remove("settling"), 900);
+
+		}
+
+		flip.addEventListener("click", toggleFlip);
+
+		flip.addEventListener("keydown", function (event) {
+
+			if (event.key === "Enter" || event.key === " ") {
+
+				event.preventDefault();
+				toggleFlip();
+
+			}
+
+		});
+
+		flip.setAttribute("tabindex", "0");
+		flip.setAttribute("role", "button");
+		flip.setAttribute("aria-label", "Flip business card");
+
+	});
+
+</script>
+
+</body>
+</html>
